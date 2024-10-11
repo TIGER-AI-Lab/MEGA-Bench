@@ -511,16 +511,16 @@
             <h2 class="title is-3">Error Analysis</h2>
             <div class="content has-text-justified">
               <p>
-                We delve into the analysis of errors by GPT-4V, a pivotal aspect for understanding its operational capabilities and limitations.
-                This analysis serves not only to identify the model's current shortcomings but also to guide future enhancements in its design and training.
-                We meticulously examine 150 randomly sampled error instances from GPT-4V's predictions.
-                These instances are analyzed by expert annotators who identify the root causes of mispredictions based on their knowledge and the golden explanations if available.
-                The distribution of these errors is illustrated in Figure, and a selection of 100 notable cases, along with detailed analyses, is included in the Appendix.
+                To understand the limitations of state-of-the-art VLMs, we analyze the GPT-4o (0513) results by
+                manually identifying the error types over a subset of 255 tasks from the Core set. We use the CoT
+                setting since the reasoning process helps determine the error type. For GPT-4o, the lack of various reasoning capabilities (e.g., symbolic reasoning
+                for planning/coding tasks, spatial or temporal reasoning for complex perception tasks, etc.) is the
+                dominating failure mode on MEGA-BENCH.
               </p>
             </div>
             <div class="content has-text-centered">
-              <img src="static/images/error_distribution_1.Jpeg" alt="error distribution" width="25%">
-              <p> Error distribution over 150 annotated GPT-4V errors.</p>
+              <img src="static/images/error_distribution.jpg" alt="error distribution" width="30%">
+              <p>The task-wise error distribution of GPT-4o (0513) over a subset of 255 Core tasks</p>
             </div>
           </div>
         </div>
