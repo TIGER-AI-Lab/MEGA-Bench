@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MEGA-Bench</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+
+    
+    <meta charset="utf-8">
+    <meta name="description"
+          content="MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks">
+    <meta name="keywords" content="Mega-Bench, LMM, LMM Evaluation, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks </title>
+
+    <link rel="icon" href="./static/images/mega-bench-logo_no_shadow.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    
+    <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+
+    <!-- Styles -->
+    <style>
+      #chartdiv {
+        width: 100%;
+        height: 700px;
+      }
+    </style>
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
+
+
+    <script src="./static/js/taxonomy_plot.js" defer></script>
+    <script src="./static/js/dimension_plot.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More Research
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://huggingface.co/datasets/MMMU/MMMU_Pro">
+                <b>MMMU-Pro</b> <span style="font-size:18px; display: inline; margin-left: 5px;">🔥</span>
+              </a>
+              <a class="navbar-item" href="https://mmmu-benchmark.github.io/">
+                MMMU
+              </a>
+              <a class="navbar-item" href="https://tiger-ai-lab.github.io/MAmmoTH/">
+                MAmmoTH
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title is-bold">
+                <img src="static/images/mega-bench-logo_shadow.png" style="width:1em;vertical-align: middle" alt="Logo"/>
+                <span class="mmmu" style="vertical-align: middle">MEGA-Bench</span>
+              </h1>
+              <h2 class="subtitle is-3 publication-subtitle">
+                Scaling Multimodal Evaluation to over 500 Real-World Tasks
+              </h2>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://jcchen.me/" style="text-decoration: none; color: inherit;">Jiacheng Chen*<sup>†</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="" style="text-decoration: none; color: inherit;">Tianhao Liang*</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/real-sherman-siu/?originalSubdomain=ca" style="text-decoration: none; color: inherit;">Sherman Siu*</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://eric-zqwang.github.io/" style="text-decoration: none; color: inherit;">Zhengqing Wang</a>,
+                </span>
+                <span class="author-block">
+                  <a href="" style="text-decoration: none; color: inherit;">Kai Wang</a>,
+                </span><br>
+                <span class="author-block"> 
+                  <a href="" style="text-decoration: none; color: inherit;">Yubo Wang</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://yuanshengni.github.io/" style="text-decoration: none; color: inherit;">Yuansheng Ni</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://billzhu.me/" style="text-decoration: none; color: inherit;">Wang Zhu</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://xmhzz2018.github.io/" style="text-decoration: none; color: inherit;">Ziyan Jiang</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://lyubh.cn/" style="text-decoration: none; color: inherit;">Bohan Lyu</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://jdf-prog.github.io/" style="text-decoration: none; color: inherit;">Dongfu Jiang</a>,
+                </span><br>
+                <span class="author-block">
+                  <a href="" style="text-decoration: none; color: inherit;">Xuan He</a>,
+                </span>
+                <span class="author-block"> 
+                  <a href="https://yuanliuuuuuu.github.io/" style="text-decoration: none; color: inherit;">Yuan Liu</a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.hexianghu.com/" style="text-decoration: none; color: inherit;">Hexiang Hu<sup>‡</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://xiangyue9607.github.io/" style="text-decoration: none; color: inherit;">Xiang Yue<sup>‡</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://wenhuchen.github.io/" style="text-decoration: none; color: inherit;">Wenhu Chen*<sup>†</sup></a>
+                </span>
+              </div>
+
+              <br>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"> MEGA-Bench Team </span>
+              </div>
+
+              <br>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">*Core Contributors, <sup>‡</sup>Contributed equally in strategic advising</span><br>
+                <span class="author-block"><sup>†</sup>Corresponding to:</span>
+                <span class="author-block"><a href="mailto:xiangyue.work@gmail.com">jcchen.work@gmail.com</a>,</span>
+                <span class="author-block"><a href="mailto:wenhuchen@uwaterloo.ca">wenhuchen@uwaterloo.ca</a></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2311.16502" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/MMMU/MMMU_Pro" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>MMMU-Pro</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/MMMU/MMMU" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="font-size:18px">🤗</span>
+                      <span>MMMU</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://github.com/MMMU-Benchmark/MMMU" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#leaderboard" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-trophy"></i>
+                      </span>
+                      <span>Leaderboard</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://eval.ai/web/challenges/challenge-page/2179/overview" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-medal"></i>
+                      </span>
+                      <span>EvalAI</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://twitter.com/xiangyue96/status/1729698316554801358" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-brands fa-x-twitter"></i>
+                      </span>
+                      <span>Twitter</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="#examples" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon has-text-white">
+                        <i class="fa-solid fa-book"></i>
+                      </span>
+                      <span>Examples</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop has-text-centered">
+        <img src="static/images/mega-bench-taxonomy_tree.png" alt="geometric reasoning">
+        <p> MEGA-Bench contains 505 multimodal tasks with diverse data sources, input/output formats, and skill requirements. 
+          The taxonomy tree is derived from the application dimension, which guides and calibrates the annotation process.
+          The benchmark is equiped with a suite of 45 evaluation metrics to handle various output formats beyond multiple-choice questions. 
+        </p>
+      </div>
+    </section>
+
+  <!------------------------------------------------ News and Intro -------------------------------------------------------------------->
+    <section class="section">
+      <div class="container" style="margin-bottom: 2vh;">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">🔔News</h2>
+            <div class="content has-text-justified">
+              <p>
+                <b>🔥[2024-xx-xx]: xxxx </b>
+                <!-- <b>🔥[2024-xx-xx]: Our evaluation server for the test set is now available on <a href="https://eval.ai/web/challenges/challenge-page/2179/overview"><b>EvalAI</b></a>. We welcome all submissions and look forward to your participation! 😆</b> -->
+              </p>
+          </div>
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+              <p>
+                We present MEGA-Bench, an evaluation suite that scales multimodal evaluation to over 500 real-world tasks, to address the highly heterogeneous daily use cases of end users. Our objective is to optimize for a set of high-quality data samples that cover a highly diverse and rich set of multimodal tasks, while enabling cost-effective and accurate model evaluation. In particular, we collected 505 realistic tasks encompassing over 8,000 samples from 16 expert annotators to extensively cover the multimodal task space. Instead of unifying these problems into standard multi-choice questions (like MMMU, MMBench, and MMT-Bench), we embrace a wide range of output formats like numbers, phrases, code, \( \LaTeX \), coordinates, JSON, free-form, etc. To accommodate these formats, we developed over 40 metrics to evaluate these tasks. Unlike existing benchmarks, MEGA-Bench offers a fine-grained capability report across multiple dimensions (e.g., application, input type, input/output format, skill), allowing users to interact with and visualize model capabilities in depth. We evaluate a wide variety of frontier vision-language models on MEGA-Bench to understand their capabilities across these dimensions. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+    </section>
+  
+<!------------------------------------------------ Interactive Visualization Section -------------------------------------------------------------------->
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 mmmu">
+        <img src="static/images/mega-bench-logo_no_shadow.png" alt="Logo" class="mmmu-logo"/>
+        <span class="mmmu">MEGA-Bench Visualization</span>
+      </h1>
+    </div>
+  </section>
+
+  <!------------------------------------------------ Taxonomy navigator -------------------------------------------------------------------->
+    <section class="section">
+      <div class="container" style="margin-bottom: 1vh;">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h4 class="title is-3">Interactive Task Viewer</h4>
+            <div class="content has-text-centered"> 
+              <p class="interactive-taxonomy-text"> 
+                Navigate through our application-based task taxonomy!<br>
+                <strong>Click the leaf node</strong> to view a visualization page with detailed task information,<br>
+                including the evaluation results of several flagship models.
+              </p>
+            </div>
+              <div class="column is-full has-text-centered content">
+                <!-- Flex container to center the chart -->
+                <div class="is-flex is-justify-content-center">
+                  <div id="chartdiv" style="width: 1000px; height: 1000px;"></div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!------------------------------------------------ Per-dimension stats -------------------------------------------------------------------->
+    <section class="section">
+      <div class="container">
+          <div class="content has-text-centered mb-6">
+              <h2 class="title is-3">Per-dimension Statistics</h2>
+          </div>
+          <div class="columns is-multiline is-centered">
+              <div class="column is-6-tablet is-5-desktop">
+                  <div class="card">
+                      <div class="card-content">
+                          <figure class="stats-image">
+                              <img src="static/images/MEGA-Bench_dimension_stats/input_format.png" alt="Input Format" height="500">
+                          </figure>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-6-tablet is-5-desktop">
+                  <div class="card">
+                      <div class="card-content">
+                          <figure class="stats-image">
+                              <img src="static/images/MEGA-Bench_dimension_stats/output_format.png" alt="Output Format">
+                          </figure>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-6-tablet is-5-desktop">
+                  <div class="card">
+                      <div class="card-content">
+                          <figure class="stats-image">
+                              <img src="static/images/MEGA-Bench_dimension_stats/visual_input.png" alt="Visual Input Number">
+                          </figure>
+                      </div>
+                  </div>
+              </div>
+              <div class="column is-6-tablet is-5-desktop">
+                  <div class="card">
+                      <div class="card-content">
+                          <figure class="stats-image">
+                              <img src="static/images/MEGA-Bench_dimension_stats/skills_long_full_text.png" alt="Skills">
+                          </figure>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+<!------------------------------------------------ Radar Plot -------------------------------------------------------------------->
+    <section class="section">
+      <div class="container">
+        <h4 class="title is-3 has-text-centered">
+          Breakdown Model Analysis
+        </h4>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div class="field is-grouped is-grouped-centered">
+              <div class="control" style="width: 250px;">
+                <label class="label" for="dimension-select">Comparison Dimension</label>
+                <div class="select is-fullwidth">
+                  <select id="dimension-select">
+                    <option value="skills">Skills</option>
+                    <option value="input_format">Input Format</option>
+                    <option value="output_format">Output Format</option>
+                    <option value="input_num">Input Number</option>
+                    <option value="app">Application</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control" style="width: 250px;">
+                <label class="label" for="model-set-select">Model Set</label>
+                <div class="select is-fullwidth">
+                  <select id="model-set-select">
+                    <option value="all_flagship"> Flagship models</option>
+                    <option value="all_efficiency"> Efficiency models</option>
+                    <option value="all">All models</option>
+                    <option value="prop_flagship">Proprietary Flagship models</option>
+                    <option value="prop_efficiency">Proprietary Efficiency models</option>
+                    <option value="open_source_flagship">Open-source Flagship models</option>
+                    <option value="open_source_efficiency">Open-source Efficiency models</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <canvas id="radarChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>    
+
+    <!-- RESULTS SECTION -->
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title is-1 mmmu">Experiment Results</h1>
+      </div>
+    </section>
+
+
+    <section class="section"></section>
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
+            <div class="content has-text-justified">
+              <p>
+                To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure.
+                From the <i>breadth</i> perspective, the prior benchmarks are heavily focused on daily knowledge and common sense.
+                The covered image format is also limited. Our benchmark aims to cover college-level knowledge with 30 image formats including diagrams,
+                tables, charts, chemical structures, photos, paintings, geometric shapes, music sheets, medical images, etc.
+                In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning.
+                In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/compare.Jpeg" alt="algebraic reasoning" class="center">
+                <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+            <div class="content has-text-justified">
+              <p>
+                We evaluate various models including LLMs and LMMs.
+                In each type, we consider both closed- and open-source models.
+                Our evaluation is conducted under a zero-shot setting to assess the capability of models to generate accurate answers without fine-tuning or few-shot demonstrations on our benchmark.
+                For all models, we use the default prompt provided by each model for multi-choice or open QA, if available.
+                If models do not provide prompts for task types in MMMU, we conduct prompt engineering on the validation set and use the most effective prompt for the later zero-shot experiment.
+              </p>
+            </div>
+            <br>
+            <div class="model-labels-container">
+              <span class="leaderboard-label human_expert">Human Expert</span>
+              <span class="leaderboard-label open_source">Open-Source</span>
+              <span class="leaderboard-label proprietary">Proprietary</span>
+            </div>
+            <br>
+            <div class="content has-text-centered">
+              <p>
+                Click on MMMU-Pro, MMMU (Val) or MMMU (Test) to expand detailed results.
+              </p>
+            </div>
+            <div class="leaderboard-container">
+              <div class="table-wrapper">
+                <table id="mmmu-table">
+                  <thead>
+                    <tr>
+                      <th colspan="3" class="reset-cell clickable" style="text-align: center;">Reset</th>
+                      <th class="pro-details-cell clickable" colspan="1">MMMU-Pro</th>
+                      <th class="val-details-cell clickable" colspan="1">MMMU(Val)</th>
+                      <th class="test-details-cell clickable" colspan="1">MMMU(Test)</th>
+                    </tr>
+                    <tr>
+                      <th class="sortable clickable" data-sort="string">Name</th>
+                      <th class="clickable" data-sort="string">Size</th>
+                      <th class="sortable clickable" data-sort="date">Date</th>
+                      <th class="sortable clickable pro-overall" data-sort="number">Overall</th>
+                      <th class="hidden pro-details sortable clickable" data-sort="number">Vision</th>
+                      <th class="hidden pro-details sortable clickable" data-sort="number">Standard</th>
+                      <th class="sortable clickable val-overall" data-sort="number">Overall</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Art & Design</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Business</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Science</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Health & Medicine</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
+                      <th class="hidden val-details sortable clickable" data-sort="number">Tech & Eng.</th>
+                      <th class="sortable clickable test-overall" data-sort="number">Overall</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Art & Design</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Business</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Science</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Health & Medicine</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
+                      <th class="hidden test-details sortable clickable" data-sort="number">Tech & Eng.</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Table body will be populated dynamically -->
+                  </tbody>
+                </table>
+                <p class="test-desc"> Overall results of different models on the MMMU leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
+      <!-------------------------------------------------------------------- Error Analysis SECTION -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3">Error Analysis</h2>
+            <div class="content has-text-justified">
+              <p>
+                We delve into the analysis of errors by GPT-4V, a pivotal aspect for understanding its operational capabilities and limitations.
+                This analysis serves not only to identify the model's current shortcomings but also to guide future enhancements in its design and training.
+                We meticulously examine 150 randomly sampled error instances from GPT-4V's predictions.
+                These instances are analyzed by expert annotators who identify the root causes of mispredictions based on their knowledge and the golden explanations if available.
+                The distribution of these errors is illustrated in Figure, and a selection of 100 notable cases, along with detailed analyses, is included in the Appendix.
+              </p>
+            </div>
+            <div class="content has-text-centered">
+              <img src="static/images/error_distribution_1.Jpeg" alt="error distribution" width="25%">
+              <p> Error distribution over 150 annotated GPT-4V errors.</p>
+            </div>
+          </div>
+        </div>
+      <!-------------------------------------------------------------------- Error Example  -------------------------------------------------------------------->
+        <div class="columns is-centered m-6">
+          <div class="column is-full has-text-centered content">
+            <h2 class="title is-3" id="examples">Error Examples</h2>
+            <div class="carousel results-carousel">
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/1.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/2.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/3.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/4.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/5.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/6.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/7.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/8.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/9.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/10.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/11.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/12.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/13.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <!-- <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/14.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div> -->
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/15.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/16.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/17.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/18.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/19.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+              <div class="box m-5">
+                <div class="content has-text-centered">
+                  <img src="static/images/error/20.png" alt="grade-lv" width="60%"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- @PAN TODO: bibtex -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">BibTeX</h2>
+        <pre><code>
+          @article{chen2024mega-bench,
+            title={MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks},
+            author={},
+            journal={arXiv preprint arXiv:},
+            year={2024},
+          }
+    </code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

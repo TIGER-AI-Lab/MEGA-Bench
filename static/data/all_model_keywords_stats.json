@@ -1,0 +1,3746 @@
+{
+    "GPT_4o_mini": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.4429909934280333
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.48060186754905737
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.5102426279568899
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.4641521896713614
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.3222199510508968
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.5547540232110841
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.6902380952380953
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.41300758333237414
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.28823102687329444
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.19422793560945503
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.4655039798346373
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.35466804367155547
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.37290853450226225
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.45508480503584553
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.471532547740058
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.45901211061556435
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.31359036737114065
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.39798729040532393
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.38249486960840945
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.43588702981956984
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.3485917474375143
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.5713834131825314
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.39790805918014094
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.32072510822510825
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.42910492843560755
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.4542025795905699
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.45508480503584553
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.2446950388242115
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.3654788727780814
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.5614048402979765
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.23543423190651533
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.3429298063311347
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.4231753830920363
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.5176671720617656
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.34804078564825247
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.5341710047763333
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.32268930192145195
+            }
+        }
+    },
+    "Llama_3_2_11B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4765,
+                "tasks": [],
+                "average_score": 0.18707879121424656
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.1400232093216297
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.1931880558885116
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.22019056249941749
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.1280160589883402
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 864,
+                "tasks": [],
+                "average_score": 0.3221622768170084
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.4260501253132832
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.17571701122311711
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.15293502077400425
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.06563884729522687
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.11734566704777244
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.11418939095582403
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.162423583059787
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.2123769209846321
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.24859496115858218
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2257,
+                "tasks": [],
+                "average_score": 0.24646355513186505
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.05769304871426659
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1523,
+                "tasks": [],
+                "average_score": 0.12043286975571285
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.15905271628127968
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.15624674412707995
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.14957770076034715
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.3003142292328822
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.19018056899089497
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.1512709235209235
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.07218422378500869
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5229,
+                "tasks": [],
+                "average_score": 0.19058993016430603
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.2123769209846321
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.13616609728964765
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.1917559229920897
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.17132208681320973
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.07669550265916106
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.059981250564742024
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.19602795658854585
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.254316961351997
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.1480234868407023
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1630,
+                "tasks": [],
+                "average_score": 0.27864351505948726
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.1353381291903422
+            }
+        }
+    },
+    "InternVL2_8B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.27838510054220966
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.2747224228928316
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2511,
+                "tasks": [],
+                "average_score": 0.31532445084651933
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2469,
+                "tasks": [],
+                "average_score": 0.322130516509178
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.23154666096713186
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.39745029204132
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.4700852130325815
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.26852224712116207
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2454,
+                "tasks": [],
+                "average_score": 0.22825769435442747
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.08260405712900723
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.2231805521804823
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.19446735991070854
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.27472621231914973
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 700,
+                "tasks": [],
+                "average_score": 0.34791358240562653
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.2928770563163256
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.334815950725695
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.10933317885944857
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.24020844600443939
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.24728226108092738
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.2711056300802032
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.21933676004592012
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1456,
+                "tasks": [],
+                "average_score": 0.3537549824897016
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.30261189962428353
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.14733044733044734
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.1977925824278006
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.29503872328602254
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 700,
+                "tasks": [],
+                "average_score": 0.34791358240562653
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.17809121222777496
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.25325675816233856
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.2873995110061628
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.11697205088939218
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.24408451552664076
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2330,
+                "tasks": [],
+                "average_score": 0.31365101909668
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.3995660275981844
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.24861016700581123
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.3357559394299191
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.2164543278966402
+            }
+        }
+    },
+    "llava_onevision_7B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.2501801349971035
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.18632530946604975
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.2542915849875391
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.299178979985922
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.1863014520910229
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.361338161162083
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.44998746867167916
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.24373866526811672
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.21720742567741974
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.06658775725427067
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.14459080676123617
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.12873469910135948
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.2409028700781941
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.30985943541023103
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.3207171496592504
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.32240166470678455
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.13043163858789789
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.1961083768502304
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.18024552575376837
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.25333159300939356
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.21963437368983108
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.3127341248874411
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.27945961553774346
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.15627705627705626
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.1372830718977941
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.25219674667056047
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.30985943541023103
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.178599474219982
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.23303386776560192
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.1928034378058809
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.09625048054100868
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.1497436071202675
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.28226386794667724
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.3600079950628582
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.23654776813656775
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.3208594629365453
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.2166207649020309
+            }
+        }
+    },
+    "llava_onevision_72B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.3600079707810047
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.27938940454581856
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.3646717126494333
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.4190111481267269
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.2870570494868231
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.4881554543181679
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.6005438596491229
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.31565001082364397
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.29206269813456803
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.13872280436872364
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.23121064224951524
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.2092652458268876
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.3383700485010631
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.4446001874842145
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.440731721132948
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.42460376759915675
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.23897262553543516
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.2857886309445329
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.25432277015790294
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.3701503567841733
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.30045626848109636
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.4293132525502993
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.3977649054743389
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.20116305916305913
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.28044255995176454
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.3442194993637166
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.4446001874842145
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.2506923544171153
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.34951397531112494
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.30288199240357844
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.17619329508896048
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.22948932261076477
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.3770835501648292
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.4807891958712894
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.3194880064768579
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.4395876926895875
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.31372017888625675
+            }
+        }
+    },
+    "Gemini_1.5_pro_002": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.5141704832700049
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.4869539115256549
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.5452154226143182
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.5420221115346744
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.4041467277409185
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.5777148144024509
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.6982330827067671
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.5089476841567141
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.3779406429779353
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.23899503258223884
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.455872699272462
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.4112911214979081
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.47547178719278127
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.5028718355967439
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.554460063290289
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.5457809940400888
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.42271926865603926
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.43445284388754385
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.43598418361916363
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.5090019960121032
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.4558798612468325
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.5580414823700747
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.5479432032687359
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.3798654401154401
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.5366407495523445
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.4919482525825614
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.5028718355967439
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.48895998424932735
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.4549539032488441
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.5363999437599276
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.32914977669650297
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.43173323092677923
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.51229911859401
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.5821004797173627
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.5001202700736016
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.5694899491411605
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.3868563299265245
+            }
+        }
+    },
+    "MiniCPM_v2.6": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.2565801329859789
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.24891752091491526
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.29773444286452716
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.3157400586946004
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.18412104707713056
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.3994900412005253
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.48798245614035085
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.2356652196555241
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.19451506798504573
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.08735883237069725
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.20799670484593094
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.1847073933209849
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.21739210022894168
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.3527537836840162
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.30195016232445787
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.31115028134390815
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.0755920550038197
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.22496654662154433
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.17440284489403765
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.2530621233388366
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.20680365462419575
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.36473950920880716
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.29590781504458435
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.1392128427128427
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.23573816517508447
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.26086279686079006
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.3527537836840162
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.17159979347711754
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.21594482765499878
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.2612435338275162
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.11301474099840449
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.15126991656877808
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.2883712307599658
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.3777897246686755
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.2768530633944168
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.323441722598465
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.162769495891775
+            }
+        }
+    },
+    "GPT_4o": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.5556842975011196
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.6117320660140386
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.6034862513454251
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.5768260271004327
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.42932660893750163
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.6415106716450563
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.6795263157894738
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.5485312831202764
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.3885484435949957
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.22934807257231926
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.5985617072936236
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.4895830912861233
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.4863583530201646
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.5315979872161023
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.5578904607063636
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.5566067662339081
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.47760591698367955
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.53175592379499
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.47186063266535705
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.5929126429669098
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.4381804441412679
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.6274371950293718
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.537324690172532
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.46885822510822517
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.5311216924926105
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.55722123894551
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.5315979872161023
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.44841214687955483
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.49647240062719955
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.692337644389793
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.3261806326416243
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.5025168669618384
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.5385980232877294
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.6095778863474799
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.5160644475796148
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.6164876877021671
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.44047720383044436
+            }
+        }
+    },
+    "Phi-3.5-vision": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.2521280626801198
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.2438290872812223
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.2842709574357873
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.3034961069911203
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.21053017278998007
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.3638967375485923
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.46663157894736845
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.2400709296422175
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.21211568838163097
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.08944481289041872
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.1831230819084452
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.17236054986178947
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.25584173994291826
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.24669318645450836
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.2778786326030912
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.33655910094524877
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.15444746077692828
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.21192005138196704
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.20962118049334919
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.25608967195918764
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.20838306839570364
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.365192668303297
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.2587623582128225
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.11976010101010102
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.14310561995193113
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.27464658280269566
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.24669318645450836
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.20097973334174915
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.2781996321455909
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.2186199412002406
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.0875589926636344
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.21859921387910006
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.31018918372552556
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.3945898792928062
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.21925278489551242
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.328572325968808
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.17359462787688432
+            }
+        }
+    },
+    "InternVL2_76B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.3707630084601794
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.3903732131871096
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.4207438903514693
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.4259418943032953
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.28476331106052016
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.5272832303783744
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.5660426065162908
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.32871406232098954
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.2944179912605584
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.15607717794428766
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.3439678838846007
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.29807487406929783
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.339342384983848
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.3927783849157777
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.4409333913352093
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.42311214196159186
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.30002372441445885
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.34141241256583776
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.3343054592099344
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.39515316436376763
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.2856712564646558
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.45655405811949923
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.3775622959569418
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.1878246753246753
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.3300765490686581
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.4028734224327577
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.3927783849157777
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.24295399392140188
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.31829824708564486
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.4135301532022651
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.19511118524565932
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.27312016204331196
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.4156481636739385
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.46049157682367026
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.2967012395894948
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.45759339422036743
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.28561335969063983
+            }
+        }
+    },
+    "Gemini_1.5_flash_002": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.45854342335704357
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.4275635150140285
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.49465421214738015
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.5058011479144896
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.33125602312956703
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.5679115038363058
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.6380250626566416
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.44641221488057037
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.3379600984261134
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.18973764406890803
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.3832741289497708
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.3520904086739811
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.39185928636103207
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.4903530871753026
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.50333457539852
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.5135460351027616
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.3849084036535956
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.38035367917117485
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.3904926155712013
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.4474576366169373
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.3616730458504315
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.5448638967636353
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.4757778299423718
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.3213924963924964
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.43682360128338954
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.43616152696623217
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.4903530871753026
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.423885344401261
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.4229518719788516
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.4580335951641753
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.24585062227050217
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.40080519663062353
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.4680695323314415
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.6010361821632402
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.4569546533897065
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.5158776834345912
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.3350884699215748
+            }
+        }
+    },
+    "Pixtral_12B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.3414932098308581
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.3746202810250893
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.3797203734472587
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.3752148439065049
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.2754514427417308
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.4164944661195342
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.5687919799498747
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.32609459130814406
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.2633222743448462
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.10591240329992047
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.3046220964287959
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.2849592049047783
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.31433526018227215
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.409643099998057
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.37301998612512155
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.3663454999766782
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.24009431093278263
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.2982373381468822
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.31082924123465966
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.36590507387581567
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.31574807470492794
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.4166613092238043
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.29997230546219794
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.18845598845598843
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.16603579634406213
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.3670481271767714
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.409643099998057
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.25827021165220604
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.3026017043956036
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.42462436786587576
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.12910641949602142
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.2537084726363664
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.38235685031286676
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.5020540387409291
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.31548291986871196
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.3806562688286909
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.2400617842381752
+            }
+        }
+    },
+    "Claude_3.5": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.5337218990147076
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.5931788887777611
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.5646344292991624
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.5414493521871199
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.45387013755318945
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.5810266712681684
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.6969774436090224
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.5263891614378416
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.3995713738206683
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.23803578664609892
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.5617175315414115
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.46733166674637705
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.5083527104815062
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.508735695828719
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.5657427463763787
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.5055591409716305
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.4494575485910079
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.4916959505151163
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.48672200009102073
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.5246943545474206
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.4371648997871376
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.5838224169821388
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.5388925509222359
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.44195526695526693
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.5401661338039295
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.5256798135379611
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.508735695828719
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.44253578693118684
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.49530837336601335
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.6632650602668251
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.3306405901430791
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.5186329729024226
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.5171384338390436
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.5808831682303479
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.5036223945443545
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.550548993225336
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.45297496268124393
+            }
+        }
+    },
+    "Idefics3": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4765,
+                "tasks": [],
+                "average_score": 0.13796418859045587
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.11248781842342191
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.1687851066178137
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.14579014401702434
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.12588594886892324
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 864,
+                "tasks": [],
+                "average_score": 0.183660593739271
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.28640852130325817
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.17807450372933234
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.09746991203467593
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.04211916597550756
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.09931723746384494
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.10798170635547318
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.153395246416482
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.1516442511317052
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.18379205845752777
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2257,
+                "tasks": [],
+                "average_score": 0.14555449591125869
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.0395540896656236
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1523,
+                "tasks": [],
+                "average_score": 0.130323017922687
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.10155504910756574
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.06961261042146726
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.09594368931148199
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.2987797010800956
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.10569256251144793
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.09628427128427129
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.0920649520823737
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5229,
+                "tasks": [],
+                "average_score": 0.1423916165238487
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.1516442511317052
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.1220382864762513
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.11765439344452676
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.14796971463424646
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.048625471596450615
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.09065540194572455
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.13890461283953368
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.14564374862578883
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.21517246691890196
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1630,
+                "tasks": [],
+                "average_score": 0.16959092218746374
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.12736072540751542
+            }
+        }
+    },
+    "Qwen2_VL_7B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.3658106744727886
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.39665770044983734
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2511,
+                "tasks": [],
+                "average_score": 0.39826465779824266
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2469,
+                "tasks": [],
+                "average_score": 0.4095878618700041
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.2734859494075705
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.4841163075704261
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.5215889724310777
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.3312387276018362
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2454,
+                "tasks": [],
+                "average_score": 0.27186960424765266
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.1473690605854188
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.37730895273521375
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.2862711202385967
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.3146907832090635
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 700,
+                "tasks": [],
+                "average_score": 0.4111189310485516
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.34884645431433386
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.3991647327925393
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.262166593895899
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.3303467955379113
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.336142466114184
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.3509375735107792
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.31879026716674164
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1456,
+                "tasks": [],
+                "average_score": 0.3909745200389741
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.3981397810085664
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.18532647907647906
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.3746057845859021
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.37193225502694527
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 700,
+                "tasks": [],
+                "average_score": 0.4111189310485516
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.2648589046627897
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.31902273354954525
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.4215056457274999
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.19422135516235592
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.32410017770549077
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2330,
+                "tasks": [],
+                "average_score": 0.3933902274305303
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.4245693009859056
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.30126862910373414
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.4227758421738412
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.24927118416396007
+            }
+        }
+    },
+    "Qwen2_VL_72B": {
+        "skills": {
+            "Object Recognition and Classification": {
+                "count": 304,
+                "num_samples": 4764,
+                "tasks": [],
+                "average_score": 0.4909711539708778
+            },
+            "Text Recognition (OCR)": {
+                "count": 137,
+                "num_samples": 2239,
+                "tasks": [],
+                "average_score": 0.5318907644643712
+            },
+            "Language Understanding and Generation": {
+                "count": 154,
+                "num_samples": 2509,
+                "tasks": [],
+                "average_score": 0.5306349462265523
+            },
+            "Scene and Event Understanding": {
+                "count": 154,
+                "num_samples": 2467,
+                "tasks": [],
+                "average_score": 0.5054107189754079
+            },
+            "Mathematical and Logical Reasoning": {
+                "count": 110,
+                "num_samples": 1925,
+                "tasks": [],
+                "average_score": 0.3636400794917191
+            },
+            "Commonsense and Social Reasoning": {
+                "count": 52,
+                "num_samples": 863,
+                "tasks": [],
+                "average_score": 0.56769075094139
+            },
+            "Ethical and Safety Reasoning": {
+                "count": 15,
+                "num_samples": 245,
+                "tasks": [],
+                "average_score": 0.60496992481203
+            },
+            "Domain-Specific Knowledge and Skills": {
+                "count": 77,
+                "num_samples": 1387,
+                "tasks": [],
+                "average_score": 0.45983870343624184
+            },
+            "Spatial and Temporal Reasoning": {
+                "count": 153,
+                "num_samples": 2452,
+                "tasks": [],
+                "average_score": 0.3450077166952228
+            },
+            "Planning and Decision Making": {
+                "count": 37,
+                "num_samples": 577,
+                "tasks": [],
+                "average_score": 0.2201150812944581
+            }
+        },
+        "input_format": {
+            "User Interface Screenshots": {
+                "count": 93,
+                "num_samples": 1517,
+                "tasks": [],
+                "average_score": 0.5347207859626002
+            },
+            "Text-Based Images and Documents": {
+                "count": 82,
+                "num_samples": 1294,
+                "tasks": [],
+                "average_score": 0.41800215778323224
+            },
+            "Diagrams and Data Visualizations": {
+                "count": 102,
+                "num_samples": 1733,
+                "tasks": [],
+                "average_score": 0.41126417560626405
+            },
+            "Videos": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.49943888306036405
+            },
+            "Artistic and Creative Content": {
+                "count": 32,
+                "num_samples": 542,
+                "tasks": [],
+                "average_score": 0.5038007637028403
+            },
+            "Photographs": {
+                "count": 144,
+                "num_samples": 2256,
+                "tasks": [],
+                "average_score": 0.4911120993536096
+            },
+            "3D Models and Aerial Imagery": {
+                "count": 11,
+                "num_samples": 169,
+                "tasks": [],
+                "average_score": 0.36212605501536715
+            }
+        },
+        "output_format": {
+            "contextual_formatted_text": {
+                "count": 99,
+                "num_samples": 1522,
+                "tasks": [],
+                "average_score": 0.4339011595705088
+            },
+            "structured_output": {
+                "count": 110,
+                "num_samples": 1714,
+                "tasks": [],
+                "average_score": 0.4400280222457894
+            },
+            "exact_text": {
+                "count": 83,
+                "num_samples": 1279,
+                "tasks": [],
+                "average_score": 0.5075927954748319
+            },
+            "numerical_data": {
+                "count": 50,
+                "num_samples": 877,
+                "tasks": [],
+                "average_score": 0.3960739743248267
+            },
+            "open_ended_output": {
+                "count": 80,
+                "num_samples": 1454,
+                "tasks": [],
+                "average_score": 0.5157810622684265
+            },
+            "multiple_choice": {
+                "count": 85,
+                "num_samples": 1363,
+                "tasks": [],
+                "average_score": 0.5141117447072644
+            }
+        },
+        "input_num": {
+            "6-8 images": {
+                "count": 22,
+                "num_samples": 329,
+                "tasks": [],
+                "average_score": 0.3113275613275614
+            },
+            "9-image or more": {
+                "count": 41,
+                "num_samples": 623,
+                "tasks": [],
+                "average_score": 0.5462480109465611
+            },
+            "1-image": {
+                "count": 315,
+                "num_samples": 5228,
+                "tasks": [],
+                "average_score": 0.4822096367611803
+            },
+            "video": {
+                "count": 43,
+                "num_samples": 698,
+                "tasks": [],
+                "average_score": 0.49943888306036405
+            },
+            "4-5 images": {
+                "count": 34,
+                "num_samples": 521,
+                "tasks": [],
+                "average_score": 0.3671971608851571
+            },
+            "2-3 images": {
+                "count": 52,
+                "num_samples": 810,
+                "tasks": [],
+                "average_score": 0.4452537586015993
+            }
+        },
+        "app": {
+            "Information_Extraction": {
+                "count": 71,
+                "num_samples": 1109,
+                "tasks": [],
+                "average_score": 0.5756803723264525
+            },
+            "Planning": {
+                "count": 78,
+                "num_samples": 1239,
+                "tasks": [],
+                "average_score": 0.3057595810337358
+            },
+            "Coding": {
+                "count": 31,
+                "num_samples": 474,
+                "tasks": [],
+                "average_score": 0.4329506892362679
+            },
+            "Perception": {
+                "count": 146,
+                "num_samples": 2328,
+                "tasks": [],
+                "average_score": 0.5247842896200104
+            },
+            "Metrics": {
+                "count": 20,
+                "num_samples": 309,
+                "tasks": [],
+                "average_score": 0.4968249101570037
+            },
+            "Science": {
+                "count": 29,
+                "num_samples": 574,
+                "tasks": [],
+                "average_score": 0.441496083094735
+            },
+            "Knowledge": {
+                "count": 99,
+                "num_samples": 1629,
+                "tasks": [],
+                "average_score": 0.5153855930223854
+            },
+            "Mathematics": {
+                "count": 33,
+                "num_samples": 547,
+                "tasks": [],
+                "average_score": 0.29483610721219067
+            }
+        }
+    }
+}
