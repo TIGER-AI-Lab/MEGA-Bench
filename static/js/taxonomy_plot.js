@@ -257,7 +257,7 @@ function createChart(hierarchicalData) {
 
     setUpCenter(root);
 
-    setupLeafNodeClick(series)
+    // setupLeafNodeClick(series)
 
     series.data.setAll([hierarchicalData]);
 
@@ -265,24 +265,24 @@ function createChart(hierarchicalData) {
 
 }
 
-function setupLeafNodeClick(series) {
-    series.slices.template.events.on("click", function(ev) {
-      var dataItem = ev.target.dataItem;
-      if (dataItem && dataItem.get("children").length === 0) {
-        // This is a leaf node
-        window.open("", "_blank");  // probably add link to each task (an html page)
-      }
-    });
+// function setupLeafNodeClick(series) {
+//     series.slices.template.events.on("click", function(ev) {
+//       var dataItem = ev.target.dataItem;
+//       if (dataItem && dataItem.get("children").length === 0) {
+//         // This is a leaf node
+//         window.open("", "_blank");  // probably add link to each task (an html page)
+//       }
+//     });
   
-    // Change cursor to pointer for leaf nodes
-    series.slices.template.adapters.add("cursorOverStyle", function(cursorOverStyle, target) {
-      var dataItem = target.dataItem;
-      if (dataItem && dataItem.get("children").length === 0) {
-        return "pointer";
-      }
-      return cursorOverStyle;
-    });
-  }
+//     // Change cursor to pointer for leaf nodes
+//     series.slices.template.adapters.add("cursorOverStyle", function(cursorOverStyle, target) {
+//       var dataItem = target.dataItem;
+//       if (dataItem && dataItem.get("children").length === 0) {
+//         return "pointer";
+//       }
+//       return cursorOverStyle;
+//     });
+//   }
 
 
 function customBreakWords(text, maxLength) {
