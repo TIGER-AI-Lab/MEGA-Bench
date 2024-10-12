@@ -451,14 +451,13 @@
             </div>
             <br>
             <div class="model-labels-container">
-              <span class="leaderboard-label human_expert">Human Expert</span>
               <span class="leaderboard-label open_source">Open-Source</span>
               <span class="leaderboard-label proprietary">Proprietary</span>
             </div>
             <br>
             <div class="content has-text-centered">
               <p>
-                Click on MMMU-Pro, MMMU (Val) or MMMU (Test) to expand detailed results.
+                Click to expand detailed results.
               </p>
             </div>
             <div class="leaderboard-container">
@@ -466,32 +465,23 @@
                 <table id="mmmu-table">
                   <thead>
                     <tr>
-                      <th colspan="3" class="reset-cell clickable" style="text-align: center;">Reset</th>
-                      <th class="pro-details-cell clickable" colspan="1">MMMU-Pro</th>
-                      <th class="val-details-cell clickable" colspan="1">MMMU(Val)</th>
-                      <th class="test-details-cell clickable" colspan="1">MMMU(Test)</th>
+                      <th colspan="2" class="reset-cell clickable" style="text-align: center;">Reset</th>
+                      <th class="core-noncot-details-cell clickable" colspan="1">Core NonCoT</th>
+                      <th class="core-cot-details-cell clickable" colspan="1">Core CoT</th>
+                      <th class="open-details-cell clickable" colspan="1">Open</th>
                     </tr>
                     <tr>
-                      <th class="sortable clickable" data-sort="string">Name</th>
-                      <th class="clickable" data-sort="string">Size</th>
-                      <th class="sortable clickable" data-sort="date">Date</th>
-                      <th class="sortable clickable pro-overall" data-sort="number">Overall</th>
-                      <th class="hidden pro-details sortable clickable" data-sort="number">Vision</th>
-                      <th class="hidden pro-details sortable clickable" data-sort="number">Standard</th>
-                      <th class="sortable clickable val-overall" data-sort="number">Overall</th>
-                      <th class="hidden val-details sortable clickable" data-sort="number">Art & Design</th>
-                      <th class="hidden val-details sortable clickable" data-sort="number">Business</th>
-                      <th class="hidden val-details sortable clickable" data-sort="number">Science</th>
-                      <th class="hidden val-details sortable clickable" data-sort="number">Health & Medicine</th>
-                      <th class="hidden val-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
-                      <th class="hidden val-details sortable clickable" data-sort="number">Tech & Eng.</th>
-                      <th class="sortable clickable test-overall" data-sort="number">Overall</th>
-                      <th class="hidden test-details sortable clickable" data-sort="number">Art & Design</th>
-                      <th class="hidden test-details sortable clickable" data-sort="number">Business</th>
-                      <th class="hidden test-details sortable clickable" data-sort="number">Science</th>
-                      <th class="hidden test-details sortable clickable" data-sort="number">Health & Medicine</th>
-                      <th class="hidden test-details sortable clickable" data-sort="number">Human. & Social Sci.</th>
-                      <th class="hidden test-details sortable clickable" data-sort="number">Tech & Eng.</th>
+                      <th class="sortable clickable" data-sort="string">Model Name</th>
+                      <th class="sortable clickable overall-score" data-sort="number">Overall Score</th>
+                      <th class="sortable clickable core-noncot-overall" data-sort="number">Overall</th>
+                      <th class="hidden core-noncot-details sortable clickable" data-sort="number">Macro Mean</th>
+                      <th class="hidden core-noncot-details sortable clickable" data-sort="number">Micro Mean</th>
+                      <th class="sortable clickable core-cot-overall" data-sort="number">Overall</th>
+                      <th class="hidden core-cot-details sortable clickable" data-sort="number">Macro Mean</th>
+                      <th class="hidden core-cot-details sortable clickable" data-sort="number">Micro Mean</th>
+                      <th class="sortable clickable open-overall" data-sort="number">Overall</th>
+                      <th class="hidden open-details sortable clickable" data-sort="number">Macro Mean</th>
+                      <th class="hidden open-details sortable clickable" data-sort="number">Micro Mean</th>
                     </tr>
                   </thead>
                   <tbody>

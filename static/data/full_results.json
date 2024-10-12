@@ -1,0 +1,418 @@
+{
+    "GPT_4o": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.5187898818829914,
+            "micro_mean_score": 0.5127977300993917
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.5251654337401854,
+            "micro_mean_score": 0.522332974147119
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2448,
+            "macro_mean_score": 0.6478225794744895,
+            "micro_mean_score": 0.665391229578676
+        },
+        "overall_score": 0.5409529871515315
+    },
+    "Gemini_1.5_pro_002": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.46887846869580546,
+            "micro_mean_score": 0.46403536258864253
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.481393687771543,
+            "micro_mean_score": 0.4756661334397647
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2448,
+            "macro_mean_score": 0.5858190649927173,
+            "micro_mean_score": 0.6104901117798793
+        },
+        "overall_score": 0.4948345779089219
+    },
+    "Gemini_1.5_flash_002": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.4183865592515826,
+            "micro_mean_score": 0.41216971462683855
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.41844075889028587,
+            "micro_mean_score": 0.41521247747029055
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2168,
+            "macro_mean_score": 0.5691365176285039,
+            "micro_mean_score": 0.5987532244196045
+        },
+        "overall_score": 0.43783724268827434
+    },
+    "Claude_3.5": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.4863241841253708,
+            "micro_mean_score": 0.4798092874490549
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.5023557473841108,
+            "micro_mean_score": 0.4985442599850241
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2288,
+            "macro_mean_score": 0.6373907158949892,
+            "micro_mean_score": 0.6569647463456579
+        },
+        "overall_score": 0.519736485905313
+    },
+    "GPT_4o_mini": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.3974259652331149,
+            "micro_mean_score": 0.392578163407945
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.4070959243997505,
+            "micro_mean_score": 0.40376078514357017
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 1224,
+            "macro_mean_score": 0.586537827213665,
+            "micro_mean_score": 0.6133276010318144
+        },
+        "overall_score": 0.43019240694015537
+    },
+    "Qwen2_VL_72B": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.4623988230573754,
+            "micro_mean_score": 0.4568583770401895
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.45284699372478177,
+            "micro_mean_score": 0.4487693487093462
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2448,
+            "macro_mean_score": 0.5639771804231668,
+            "micro_mean_score": 0.5835339638865004
+        },
+        "overall_score": 0.4754732650945565
+    },
+    "Qwen2_VL_7B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.34229945754166574,
+            "micro_mean_score": 0.3389314421444108
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.3245922827824277,
+            "micro_mean_score": 0.3204679553645243
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1170,
+            "num_total_samples": 2452,
+            "macro_mean_score": 0.43955105763038577,
+            "micro_mean_score": 0.45508547008546996
+        },
+        "overall_score": 0.35476761139919394
+    },
+    "llava_onevision_72B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.31735814905373455,
+            "micro_mean_score": 0.3143493977051004
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.2947521259582447,
+            "micro_mean_score": 0.2921126338494651
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 1224,
+            "macro_mean_score": 0.4599484231632498,
+            "micro_mean_score": 0.4850386930352536
+        },
+        "overall_score": 0.3356389534267494
+    },
+    "llava_onevision_7B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.2215741886828344,
+            "micro_mean_score": 0.22017916953552288
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.21149155052898844,
+            "micro_mean_score": 0.20891419050994647
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2448,
+            "macro_mean_score": 0.33979975321921935,
+            "micro_mean_score": 0.36474634565778147
+        },
+        "overall_score": 0.23673131234134528
+    },
+    "InternVL2_76B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.3450618580287729,
+            "micro_mean_score": 0.34024658301348193
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.35093333920818226,
+            "micro_mean_score": 0.345516133368332
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 1224,
+            "macro_mean_score": 0.5192997443033639,
+            "micro_mean_score": 0.5421324161650903
+        },
+        "overall_score": 0.37251877575884657
+    },
+    "InternVL2_8B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.2547782447512239,
+            "micro_mean_score": 0.2498226652389815
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.2358003115750046,
+            "micro_mean_score": 0.23314366334265152
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1165,
+            "num_total_samples": 2452,
+            "macro_mean_score": 0.3978571701460552,
+            "micro_mean_score": 0.4108583690987125
+        },
+        "overall_score": 0.27312169672492026
+    },
+    "MiniCPM_v2.6": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.22838207666977445,
+            "micro_mean_score": 0.22452805919103805
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.22901463640480854,
+            "micro_mean_score": 0.2250606411323753
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2448,
+            "macro_mean_score": 0.41728623355613875,
+            "micro_mean_score": 0.43452278589853827
+        },
+        "overall_score": 0.25324761425596987
+    },
+    "Phi-3.5-vision": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.23240864879023493,
+            "micro_mean_score": 0.22932978620408923
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.2295097914016776,
+            "micro_mean_score": 0.2266573336398296
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2428,
+            "macro_mean_score": 0.3947914647737769,
+            "micro_mean_score": 0.42459157351676696
+        },
+        "overall_score": 0.2533094072831661
+    },
+    "Pixtral_12B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.314534535737468,
+            "micro_mean_score": 0.3110624685350339
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6561,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6985,
+            "macro_mean_score": 0.3099208340027757,
+            "micro_mean_score": 0.3061038800771607
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 1224,
+            "macro_mean_score": 0.4566234428542061,
+            "micro_mean_score": 0.4870593293207223
+        },
+        "overall_score": 0.33275106229089596
+    },
+    "Llama_3_2_11B": {
+        "core_noncot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6562,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6986,
+            "macro_mean_score": 0.0974906825644251,
+            "micro_mean_score": 0.09679393606766225
+        },
+        "core_cot": {
+            "num_eval_tasks": 442,
+            "num_eval_samples": 6562,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6986,
+            "macro_mean_score": 0.15708094742072423,
+            "micro_mean_score": 0.1546579708823364
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 1224,
+            "macro_mean_score": 0.3173342406187366,
+            "micro_mean_score": 0.3487962166809973
+        },
+        "overall_score": 0.17762624142046943
+    },
+    "Idefics3": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.11118980301103833,
+            "micro_mean_score": 0.11201785633274061
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "num_total_samples": 6961,
+            "macro_mean_score": 0.08956972487602757,
+            "micro_mean_score": 0.08982225274252693
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "num_total_samples": 2448,
+            "macro_mean_score": 0.3210866162255635,
+            "micro_mean_score": 0.35649183147033553
+        },
+        "overall_score": 0.138206224513898
+    }
+}
