@@ -409,31 +409,6 @@
     </section>
 
 
-    <!-- <section class="section"></section>
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
-            <div class="content has-text-justified">
-              <p>
-                To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure.
-                From the <i>breadth</i> perspective, the prior benchmarks are heavily focused on daily knowledge and common sense.
-                The covered image format is also limited. Our benchmark aims to cover college-level knowledge with 30 image formats including diagrams,
-                tables, charts, chemical structures, photos, paintings, geometric shapes, music sheets, medical images, etc.
-                In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning.
-                In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
-              </p>
-              <div class="content has-text-centered">
-                <img src="static/images/compare.Jpeg" alt="algebraic reasoning" class="center">
-                <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-
     <section class="section">
       <div class="container">
         <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
@@ -451,44 +426,31 @@
             </div>
             <br>
             <div class="model-labels-container">
-              <span class="leaderboard-label open_source">Open-Source</span>
               <span class="leaderboard-label proprietary">Proprietary</span>
+              <span class="leaderboard-label open_source">Open-Source</span>
             </div>
             <br>
             <div class="content has-text-centered">
-              <p>
+              <!-- <p>
                 Click to expand detailed results.
-              </p>
+              </p> -->
             </div>
             <div class="leaderboard-container">
               <div class="table-wrapper">
                 <table id="mmmu-table">
                   <thead>
                     <tr>
-                      <th colspan="2" class="reset-cell clickable" style="text-align: center;">Reset</th>
-                      <th class="core-noncot-details-cell clickable" colspan="1">Core NonCoT</th>
-                      <th class="core-cot-details-cell clickable" colspan="1">Core CoT</th>
-                      <th class="open-details-cell clickable" colspan="1">Open</th>
-                    </tr>
-                    <tr>
-                      <th class="sortable clickable" data-sort="string">Model Name</th>
-                      <th class="sortable clickable overall-score" data-sort="number">Overall Score</th>
-                      <th class="sortable clickable core-noncot-overall" data-sort="number">Overall</th>
-                      <th class="hidden core-noncot-details sortable clickable" data-sort="number">Macro Mean</th>
-                      <th class="hidden core-noncot-details sortable clickable" data-sort="number">Micro Mean</th>
-                      <th class="sortable clickable core-cot-overall" data-sort="number">Overall</th>
-                      <th class="hidden core-cot-details sortable clickable" data-sort="number">Macro Mean</th>
-                      <th class="hidden core-cot-details sortable clickable" data-sort="number">Micro Mean</th>
-                      <th class="sortable clickable open-overall" data-sort="number">Overall</th>
-                      <th class="hidden open-details sortable clickable" data-sort="number">Macro Mean</th>
-                      <th class="hidden open-details sortable clickable" data-sort="number">Micro Mean</th>
+                      <th class="sortable" data-sort="string">Model Name</th>
+                      <th class="sortable" data-sort="number">Core</th>
+                      <th class="sortable" data-sort="number">Open-ended</th>
+                      <th class="sortable overall-score" data-sort="number">Overall</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- Table body will be populated dynamically -->
+                    <!-- Table body will be populated dynamically by JavaScript -->
                   </tbody>
                 </table>
-                <p class="test-desc"> Overall results of different models on the MMMU leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u>. *: results provided by the authors.</p>
+                <p class="test-desc"> Overall results of different models on the MEGA-BENCH leaderboard. The best-performing model in each category is <b>in-bold</b>, and the second best is <u>underlined</u></p>
               </div>
             </div>
           </div>
