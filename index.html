@@ -175,23 +175,19 @@
               <div class="column has-text-centered">
                 <div class="publication-links">
                   <span class="link-block">
-                    <a href="https://arxiv.org/abs/2311.16502" class="external-link button is-normal is-rounded is-dark">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>arXiv</span>
+                      <span> Paper </span>
                     </a>
                   </span>
                   <span class="link-block">
-                    <a href="https://huggingface.co/datasets/MMMU/MMMU_Pro" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon" style="font-size:18px">🤗</span>
-                      <span>MMMU-Pro</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://huggingface.co/datasets/MMMU/MMMU" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon" style="font-size:18px">🤗</span>
-                      <span>MMMU</span>
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Data (coming soon)</span>
                     </a>
                   </span>
                   <span class="link-block">
@@ -199,7 +195,7 @@
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                      <span>Code</span>
+                      <span>Code (coming soon)</span>
                     </a>
                   </span>
                   <span class="link-block">
@@ -210,22 +206,14 @@
                       <span>Leaderboard</span>
                     </a>
                   </span>
-                  <span class="link-block">
-                    <a href="https://eval.ai/web/challenges/challenge-page/2179/overview" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon has-text-white">
-                        <i class="fa-solid fa-medal"></i>
-                      </span>
-                      <span>EvalAI</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://twitter.com/xiangyue96/status/1729698316554801358" class="external-link button is-normal is-rounded is-dark">
+                  <!-- <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon has-text-white">
                         <i class="fa-brands fa-x-twitter"></i>
                       </span>
                       <span>Twitter</span>
                     </a>
-                  </span>
+                  </span> -->
                   <span class="link-block">
                     <a href="#examples" class="external-link button is-normal is-rounded is-dark">
                       <span class="icon has-text-white">
@@ -464,15 +452,12 @@
             <div class="content has-text-justified">
               <p>
                 To understand the limitations of state-of-the-art VLMs, we analyze the GPT-4o (0513) results by
-                manually identifying the error types over a subset of 255 tasks from the Core set. We use the CoT
-                setting since the reasoning process helps determine the error type. For GPT-4o, the lack of various reasoning capabilities (e.g., symbolic reasoning
-                for planning/coding tasks, spatial or temporal reasoning for complex perception tasks, etc.) is the
-                dominating failure mode on MEGA-BENCH.
+                manually identifying the error types over a subset of 255 tasks from the Core set of MEGA-Bench. We use the results with Chain-of-Thought prompting (See details in the paper) since the reasoning process helps determine the error type. For GPT-4o, the lack of various reasoning capabilities (e.g., symbolic reasoning for planning/coding tasks, spatial or temporal reasoning for complex perception tasks, etc.) is the dominating failure mode on MEGA-BENCH.
               </p>
             </div>
             <div class="content has-text-centered">
               <img src="static/images/error_distribution.jpg" alt="error distribution" width="30%">
-              <p>The task-wise error distribution of GPT-4o (0513) over a subset of 255 Core tasks</p>
+              <p>The task-wise error distribution of GPT-4o (0513) over a subset of 255 MEGA-Bench tasks</p>
             </div>
           </div>
         </div>
