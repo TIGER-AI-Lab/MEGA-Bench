@@ -71,23 +71,32 @@ fetch('./static/data/all_model_keywords_stats.json')
         globalData = data;
         
         // Populate model select options
-        const modelSelect = document.getElementById('model-select');
+        const modelSelect1 = document.getElementById('model-select-1');
+        const modelSelect2 = document.getElementById('model-select-2');
+        
         modelOrder.forEach(modelName => {
-            const option = document.createElement('option');
-            option.value = modelName;
-            option.textContent = modelName;
-            modelSelect.appendChild(option);
+            const option1 = document.createElement('option');
+            option1.value = modelName;
+            option1.textContent = modelName;
+            modelSelect1.appendChild(option1);
+
+            const option2 = document.createElement('option');
+            option2.value = modelName;
+            option2.textContent = modelName;
+            modelSelect2.appendChild(option2);
         });
 
-        // Add event listener for model selection change
-        modelSelect.addEventListener('change', updateCharts);
+        // Add event listeners for model selection changes
+        modelSelect1.addEventListener('change', updateCharts);
+        modelSelect2.addEventListener('change', updateCharts);
 
         // Initial chart creation
         updateCharts();
     });
 
 function updateCharts() {
-    const selectedModel = document.getElementById('model-select').value;
+    const selectedModel1 = document.getElementById('model-select-1').value;
+    const selectedModel2 = document.getElementById('model-select-2').value;
     const containerElement = document.getElementById('radar-charts-container');
     
     // Clear existing charts
@@ -104,40 +113,55 @@ function updateCharts() {
         chartContainer.appendChild(canvas);
         containerElement.appendChild(chartContainer);
 
-        const radarData = prepareRadarData(globalData, selectedModel, dimension);
+        const radarData = prepareRadarData(globalData, selectedModel1, selectedModel2, dimension);
         const chart = createRadarChart(canvas, radarData, dimension);
         chartInstances.push(chart);
     });
 }
 
-function prepareRadarData(data, modelName, dimensionKey) {
+function prepareRadarData(data, modelName1, modelName2, dimensionKey) {
     const radarData = {
         labels: [],
         datasets: []
     };
 
-    const dataModelName = modelNameMapping[modelName];
-    const modelData = data[dataModelName]?.[dimensionKey] || {};
+    const dataModelName1 = modelNameMapping[modelName1];
+    const modelData1 = data[dataModelName1]?.[dimensionKey] || {};
 
-    radarData.labels = Object.keys(modelData).sort();
+    radarData.labels = Object.keys(modelData1).sort();
 
     // Normalize the data to 0-1 range if necessary
-    const maxValue = Math.max(...radarData.labels.map(field => modelData[field]?.average_score || 0));
-    const normalizeValue = (value) => maxValue > 1 ? value / maxValue : value;
+    const maxValue1 = Math.max(...radarData.labels.map(field => modelData1[field]?.average_score || 0));
+    const normalizeValue = (value, maxValue) => maxValue > 1 ? value / maxValue : value;
 
-    const dataset = {
-        label: modelName,
-        data: radarData.labels.map(field => normalizeValue(modelData[field]?.average_score || 0)),
+    const dataset1 = {
+        label: modelName1,
+        data: radarData.labels.map(field => normalizeValue(modelData1[field]?.average_score || 0, maxValue1)),
         fill: true,
-        borderColor: modelColorMapping[modelName],
-        backgroundColor: modelColorMapping[modelName].replace('0.6', '0.2')
+        borderColor: modelColorMapping[modelName1],
+        backgroundColor: modelColorMapping[modelName1].replace('0.6', '0.2')
     };
 
-    radarData.datasets.push(dataset);
+    radarData.datasets.push(dataset1);
+
+    if (modelName2 && modelName2 !== "") {
+        const dataModelName2 = modelNameMapping[modelName2];
+        const modelData2 = data[dataModelName2]?.[dimensionKey] || {};
+        const maxValue2 = Math.max(...radarData.labels.map(field => modelData2[field]?.average_score || 0));
+
+        const dataset2 = {
+            label: modelName2,
+            data: radarData.labels.map(field => normalizeValue(modelData2[field]?.average_score || 0, maxValue2)),
+            fill: true,
+            borderColor: modelColorMapping[modelName2],
+            backgroundColor: modelColorMapping[modelName2].replace('0.6', '0.2')
+        };
+
+        radarData.datasets.push(dataset2);
+    }
 
     return radarData;
 }
-
 
 function createRadarChart(canvas, radarData, dimension) {
     return new Chart(canvas.getContext('2d'), {
@@ -154,12 +178,12 @@ function createRadarChart(canvas, radarData, dimension) {
                     ticks: {
                         stepSize: 0.2,
                         font: {
-                            size: 10
+                            size: 12
                         }
                     },
                     pointLabels: {
                         font: {
-                            size: 10
+                            size: 14
                         },
                         callback: function(label) {
                             const words = label.split(' ');
@@ -167,7 +191,7 @@ function createRadarChart(canvas, radarData, dimension) {
                             let currentLine = '';
 
                             words.forEach(word => {
-                                if (currentLine.length + word.length <= 10) {
+                                if (currentLine.length + word.length <= 15) {
                                     currentLine += (currentLine ? ' ' : '') + word;
                                 } else {
                                     lines.push(currentLine);
@@ -184,15 +208,43 @@ function createRadarChart(canvas, radarData, dimension) {
             },
             plugins: {
                 legend: {
-                    display: false
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        font: {
+                            size: 14
+                        },
+                        padding: 20
+                    }
                 },
                 title: {
                     display: true,
                     text: dimension.charAt(0).toUpperCase() + dimension.slice(1).replace('_', ' '),
                     font: {
-                        size: 16,
+                        size: 20,
                         weight: 'bold'
+                    },
+                    padding: {
+                        top: 10,
+                        bottom: 30
                     }
+                },
+                tooltip: {
+                    bodyFont: {
+                        size: 14
+                    },
+                    titleFont: {
+                        size: 16
+                    }
+                }
+            },
+            elements: {
+                point: {
+                    radius: 4,
+                    hoverRadius: 6
+                },
+                line: {
+                    borderWidth: 3
                 }
             }
         }
