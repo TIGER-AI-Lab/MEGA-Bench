@@ -19,7 +19,7 @@ const modelNameMapping = {
 };
 
 // Dimensions for the radar chart
-const dimensions = ['skills', 'input_format', 'output_format', 'input_num', 'app'];
+// const dimensions = ['skills', 'input_format', 'output_format', 'input_num', 'app'];
 
 // Model order (desired display order)
 const modelOrder = [
@@ -88,23 +88,6 @@ fetch('./static/data/all_model_keywords_stats.json')
         document.getElementById('dimension-select').addEventListener('change', updateChart);
         document.getElementById('model-set-select').addEventListener('change', updateChart);
 
-        // Populate dimension select options
-        const dimensionSelect = document.getElementById('dimension-select');
-        dimensions.forEach(dimension => {
-            const option = document.createElement('option');
-            option.value = dimension;
-            option.textContent = dimension.replace('_', ' ').charAt(0).toUpperCase() + dimension.slice(1);
-            dimensionSelect.appendChild(option);
-        });
-
-        // Populate model set select options
-        const modelSetSelect = document.getElementById('model-set-select');
-        Object.keys(modelSets).forEach(setName => {
-            const option = document.createElement('option');
-            option.value = setName;
-            option.textContent = setName.replace('_', ' ').charAt(0).toUpperCase() + setName.slice(1);
-            modelSetSelect.appendChild(option);
-        });
 
         // Plot the default radar chart (for "skills" and "all" models)
         updateChart();
@@ -183,11 +166,8 @@ function createRadarChart(radarData, dimension) {
             responsive: true,
             scales: {
                 r: {
-                    beginAtZero: true,
-                    min: 0,
-                    max: 1,
+                    beginAtZero: false,
                     ticks: {
-                        stepSize: 0.2,
                         font: {
                             size: 16
                         }

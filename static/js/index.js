@@ -41,7 +41,7 @@ const proprietaryModels = new Set([
 ]);
 
 function loadTableData() {
-  fetch('./static/data/full_results.json')
+  fetch('./static/data/all_summary.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
