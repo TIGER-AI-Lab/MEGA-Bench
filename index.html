@@ -349,46 +349,49 @@
   </section>
 
 <!------------------------------------------------ Radar Plot -------------------------------------------------------------------->
-    <section class="section">
-      <div class="container">
-        <h4 class="title is-3 has-text-centered">
-          Breakdown Model Analysis
-        </h4>
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <div class="field is-grouped is-grouped-centered">
-              <div class="control" style="width: 250px;">
-                <label class="label" for="dimension-select">Comparison Dimension</label>
-                <div class="select is-fullwidth">
-                  <select id="dimension-select">
-                    <option value="skills">Skills</option>
-                    <option value="input_format">Input Format</option>
-                    <option value="output_format">Output Format</option>
-                    <option value="input_num">Input Number</option>
-                    <option value="app">Application</option>
-                  </select>
-                </div>
-              </div>
-              <div class="control" style="width: 250px;">
-                <label class="label" for="model-set-select">Model Set</label>
-                <div class="select is-fullwidth">
-                  <select id="model-set-select">
-                    <option value="all_flagship"> Flagship models</option>
-                    <option value="all_efficiency"> Efficiency models</option>
-                    <option value="all">All models</option>
-                    <option value="prop_flagship">Proprietary Flagship models</option>
-                    <option value="prop_efficiency">Proprietary Efficiency models</option>
-                    <option value="open_source_flagship">Open-source Flagship models</option>
-                    <option value="open_source_efficiency">Open-source Efficiency models</option>
-                  </select>
-                </div>
+  <section class="section">
+    <div class="container">
+      <h4 class="title is-3 has-text-centered">
+        Breakdown Model Analysis
+      </h4>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="field is-grouped is-grouped-centered">
+            <div class="control" style="width: 250px;">
+              <label class="label" for="dimension-select">Comparison Dimension</label>
+              <div class="select is-fullwidth">
+                <select id="dimension-select">
+                  <option value="skills">Skills</option>
+                  <option value="input_format">Input Format</option>
+                  <option value="output_format">Output Format</option>
+                  <option value="input_num">Input Number</option>
+                  <option value="app">Application</option>
+                </select>
               </div>
             </div>
-            <canvas id="radarChart"></canvas>
+            <div class="control" style="width: 250px;">
+              <label class="label" for="model-set-select">Model Set</label>
+              <div class="select is-fullwidth">
+                <select id="model-set-select">
+                  <option value="all_flagship"> Flagship models</option>
+                  <option value="all_efficiency"> Efficiency models</option>
+                  <option value="all">All models</option>
+                  <option value="prop_flagship">Proprietary Flagship models</option>
+                  <option value="prop_efficiency">Proprietary Efficiency models</option>
+                  <option value="open_source_flagship">Open-source Flagship models</option>
+                  <option value="open_source_efficiency">Open-source Efficiency models</option>
+                </select>
+              </div>
+            </div>
           </div>
+          <div class="has-text-centered mt-4">
+            <a href="detailed-model-page.html" class="button is-link">Detailed Per-Model Page</a>
+          </div>
+          <canvas id="radarChart"></canvas>
         </div>
       </div>
-    </section>    
+    </div>
+  </section>   
 
     <!-- RESULTS SECTION -->
     <section class="hero is-light is-small">

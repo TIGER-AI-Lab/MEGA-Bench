@@ -88,9 +88,27 @@ fetch('./static/data/all_model_keywords_stats.json')
         document.getElementById('dimension-select').addEventListener('change', updateChart);
         document.getElementById('model-set-select').addEventListener('change', updateChart);
 
+        // Populate dimension select options
+        const dimensionSelect = document.getElementById('dimension-select');
+        dimensions.forEach(dimension => {
+            const option = document.createElement('option');
+            option.value = dimension;
+            option.textContent = dimension.replace('_', ' ').charAt(0).toUpperCase() + dimension.slice(1);
+            dimensionSelect.appendChild(option);
+        });
+
+        // Populate model set select options
+        const modelSetSelect = document.getElementById('model-set-select');
+        Object.keys(modelSets).forEach(setName => {
+            const option = document.createElement('option');
+            option.value = setName;
+            option.textContent = setName.replace('_', ' ').charAt(0).toUpperCase() + setName.slice(1);
+            modelSetSelect.appendChild(option);
+        });
+
         // Plot the default radar chart (for "skills" and "all" models)
         updateChart();
-    })
+    });
 
 // Function to update the chart based on current selections
 function updateChart() {
@@ -103,7 +121,6 @@ function updateChart() {
 }
 
 
-// Modify this function
 function prepareRadarData(data, dimensionKey, visibleModels) {
     const radarData = {
         labels: [],
@@ -118,6 +135,20 @@ function prepareRadarData(data, dimensionKey, visibleModels) {
 
     radarData.labels = Array.from(dimensionSet).sort();
 
+    // Find the maximum value across all models and fields
+    let maxValue = 0;
+    modelOrder.forEach(modelName => {
+        const dataModelName = modelNameMapping[modelName];
+        const modelData = data[dataModelName]?.[dimensionKey] || {};
+        radarData.labels.forEach(field => {
+            const value = modelData[field]?.average_score || 0;
+            maxValue = Math.max(maxValue, value);
+        });
+    });
+
+    // Normalize function
+    const normalize = (value) => maxValue > 1 ? value / maxValue : value;
+
     modelOrder.forEach(modelName => {
         const dataset = {
             label: modelName,
@@ -125,7 +156,7 @@ function prepareRadarData(data, dimensionKey, visibleModels) {
             fill: true,
             borderColor: modelColorMapping[modelName],
             backgroundColor: modelColorMapping[modelName].replace('0.6', '0.2'),
-            hidden: !visibleModels.includes(modelName)  // Hide if not in visibleModels
+            hidden: !visibleModels.includes(modelName)
         };
 
         const dataModelName = modelNameMapping[modelName];
@@ -133,7 +164,7 @@ function prepareRadarData(data, dimensionKey, visibleModels) {
 
         radarData.labels.forEach(field => {
             const fieldData = modelData[field];
-            dataset.data.push(fieldData?.average_score || 0);
+            dataset.data.push(normalize(fieldData?.average_score || 0));
         });
 
         radarData.datasets.push(dataset);
@@ -152,8 +183,11 @@ function createRadarChart(radarData, dimension) {
             responsive: true,
             scales: {
                 r: {
-                    beginAtZero: false,
+                    beginAtZero: true,
+                    min: 0,
+                    max: 1,
                     ticks: {
+                        stepSize: 0.2,
                         font: {
                             size: 16
                         }
@@ -202,6 +236,7 @@ function createRadarChart(radarData, dimension) {
         }
     });
 }
+
 
 // Modified updateRadarChart function
 function updateRadarChart(radarData, dimension) {
