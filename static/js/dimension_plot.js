@@ -118,6 +118,20 @@ function prepareRadarData(data, dimensionKey, visibleModels) {
 
     radarData.labels = Array.from(dimensionSet).sort();
 
+    // Find the maximum value across all models and fields
+    let maxValue = 0;
+    modelOrder.forEach(modelName => {
+        const dataModelName = modelNameMapping[modelName];
+        const modelData = data[dataModelName]?.[dimensionKey] || {};
+        radarData.labels.forEach(field => {
+            const value = modelData[field]?.average_score || 0;
+            maxValue = Math.max(maxValue, value);
+        });
+    });
+
+    // Normalize function
+    const normalize = (value) => maxValue > 1 ? value / maxValue : value;
+
     modelOrder.forEach(modelName => {
         const dataset = {
             label: modelName,
@@ -133,7 +147,7 @@ function prepareRadarData(data, dimensionKey, visibleModels) {
 
         radarData.labels.forEach(field => {
             const fieldData = modelData[field];
-            dataset.data.push(fieldData?.average_score || 0);
+            dataset.data.push(normalize(fieldData?.average_score || 0));
         });
 
         radarData.datasets.push(dataset);
@@ -152,11 +166,8 @@ function createRadarChart(radarData, dimension) {
             responsive: true,
             scales: {
                 r: {
-                    beginAtZero: true,
-                    min: 0,
-                    max: 1,
+                    beginAtZero: false,
                     ticks: {
-                        stepSize: 0.2,
                         font: {
                             size: 16
                         }
