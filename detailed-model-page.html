@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detailed Model Radar Charts</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -81,16 +82,16 @@
         <div class="container is-max-widescreen">
             <h1 class="title is-2 has-text-centered">Detailed Model Analysis</h1>
             <div class="model-select-container">
-                <div class="model-select-wrapper">
-                    <label class="label" for="model-select-1">Select Model 1</label>
+                <div class="control model-select-wrapper">
+                    <label class="label" for="model-select-1" style="text-align: center;">Target Model </label>
                     <div class="select is-medium">
                         <select id="model-select-1">
                             <!-- Options will be populated dynamically -->
                         </select>
                     </div>
                 </div>
-                <div class="model-select-wrapper">
-                    <label class="label" for="model-select-2">Select Model 2 (Optional)</label>
+                <div class="control model-select-wrapper">
+                    <label class="label" for="model-select-2" style="text-align: center;">Reference Model </label>
                     <div class="select is-medium">
                         <select id="model-select-2">
                             <option value="">None</option>
