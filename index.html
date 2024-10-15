@@ -295,12 +295,12 @@
                 <span style="color: red;">(will be enabled once the data is released)</span> 
               </p>
             </div>
-              <div class="column is-full has-text-centered content">
-                <!-- Flex container to center the chart -->
-                <div class="is-flex is-justify-content-center">
-                  <div id="chartdiv" style="width: 1000px; height: 1000px;"></div>
-                </div>
+            <div class="column is-full has-text-centered content">
+              <!-- Flex container to center the chart -->
+              <div class="is-flex is-justify-content-center">
+                <div id="chartdiv" style="width: 100%; height: 80vh;"></div>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -364,46 +364,57 @@
           <div class="content has-text-centered"> 
             <p> 
               Choose from the five dimensions and pre-defined model set. Click the model name to toggle display/hide it from the radar map. 
-              We also provide a page to show all the details of a single model and compare it with a reference mdoel (Click the "Detailed Model Report" button). 
+              We also provide a page to show all the details of a single model and compare it with a reference model (Click the "Detailed Model Report" button). 
             </p>
-            <div class="has-text-centered mt-4">
+            <div class="has-text-centered mt-4 mb-5">
               <a href="detailed-model-page.html" class="button is-link">Detailed Model Report</a>
             </div>
           </div>
 
-          <div class="field is-grouped is-grouped-centered">
-            <div class="control" style="max-width: 500px;">
-              <label class="label" for="dimension-select" style="text-align: center;">Comparison Dimension</label>
-              <div class="select is-fullwidth">
-                <select id="dimension-select">
-                  <option value="skills">Skills</option>
-                  <option value="input_format">Input Format</option>
-                  <option value="output_format">Output Format</option>
-                  <option value="input_num">Input Number</option>
-                  <option value="app">Application</option>
-                </select>
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label has-text-centered" for="dimension-select">Comparison Dimension</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="dimension-select">
+                      <option value="skills">Skills</option>
+                      <option value="input_format">Input Format</option>
+                      <option value="output_format">Output Format</option>
+                      <option value="input_num">Input Number</option>
+                      <option value="app">Application</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="control" style="max-width: 500px;">
-              <label class="label" for="model-set-select" style="text-align: center;">Pre-defined Model Set</label>
-              <div class="select is-fullwidth">
-                <select id="model-set-select">
-                  <option value="all_flagship"> Flagship models</option>
-                  <option value="all_efficiency"> Efficiency models</option>
-                  <option value="all">All models</option>
-                  <option value="prop_flagship">Proprietary Flagship models</option>
-                  <option value="prop_efficiency">Proprietary Efficiency models</option>
-                  <option value="open_source_flagship">Open-source Flagship models</option>
-                  <option value="open_source_efficiency">Open-source Efficiency models</option>
-                </select>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label has-text-centered" for="model-set-select">Pre-defined Model Set</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="model-set-select">
+                      <option value="all_flagship">Flagship models</option>
+                      <option value="all_efficiency">Efficiency models</option>
+                      <option value="all">All models</option>
+                      <option value="prop_flagship">Proprietary Flagship models</option>
+                      <option value="prop_efficiency">Proprietary Efficiency models</option>
+                      <option value="open_source_flagship">Open-source Flagship models</option>
+                      <option value="open_source_efficiency">Open-source Efficiency models</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <canvas id="radarChart"></canvas>
+          
+          <div id="chart-container" style="width: 100%; height: 80vh; display: flex; justify-content: center; align-items: center;">
+            <canvas id="radarChart" style="max-width: 100%; max-height: 100%;"></canvas>
+          </div>
         </div>
       </div>
     </div>
-  </section>   
+  </section>  
 
     <!-- RESULTS SECTION -->
     <section class="hero is-light is-small">
