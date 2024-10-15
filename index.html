@@ -359,8 +359,18 @@
       </h4>
       <div class="columns is-centered">
         <div class="column is-four-fifths">
+          <div class="content has-text-centered"> 
+            <p> 
+              Choose from the five dimensions and pre-defined model set. Click the model name to toggle display/hide it from the radar map. 
+              We also provide a page to show all the details of a single model and compare it with a reference mdoel (Click the "Detailed Model Report" button). 
+            </p>
+            <div class="has-text-centered mt-4">
+              <a href="detailed-model-page.html" class="button is-link">Detailed Model Report</a>
+            </div>
+          </div>
+
           <div class="field is-grouped is-grouped-centered">
-            <div class="control" style="width: 250px;">
+            <div class="control" style="max-width: 500px;">
               <label class="label" for="dimension-select" style="text-align: center;">Comparison Dimension</label>
               <div class="select is-fullwidth">
                 <select id="dimension-select">
@@ -372,8 +382,8 @@
                 </select>
               </div>
             </div>
-            <div class="control" style="width: 250px;">
-              <label class="label" for="model-set-select" style="text-align: center;">Model Set</label>
+            <div class="control" style="max-width: 500px;">
+              <label class="label" for="model-set-select" style="text-align: center;">Pre-defined Model Set</label>
               <div class="select is-fullwidth">
                 <select id="model-set-select">
                   <option value="all_flagship"> Flagship models</option>
@@ -386,9 +396,6 @@
                 </select>
               </div>
             </div>
-          </div>
-          <div class="has-text-centered mt-4">
-            <a href="detailed-model-page.html" class="button is-link">Detailed Model Report</a>
           </div>
           <canvas id="radarChart"></canvas>
         </div>

@@ -388,6 +388,11 @@ td:hover {
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
 }
 
+#model-set-select {
+  min-width: 300px; /* Adjust this value as needed */
+  width: 100%;
+}
+
 #model-set-select:hover {
   background-color: #e6e6e6;
   border-color: #bbb;
@@ -397,4 +402,26 @@ td:hover {
   outline: none;
   border-color: #4CAF50;
   box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+
+.select select {
+  text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
+}
+
+/* For Firefox */
+.select select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+/* For IE and Edge */
+.select select::-ms-expand {
+  display: none;
+}
+
+.select select option {
+  text-align: center;
 }
