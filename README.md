@@ -11,7 +11,7 @@
 
 We present MEGA-Bench, an evaluation suite that scales multimodal evaluation to over 500 real-world tasks, to address the highly heterogeneous daily use cases of end users. Our objective is to optimize for a set of high-quality data samples that cover a highly diverse and rich set of multimodal tasks, while enabling cost-effective and accurate model evaluation.
 
-![MEGA-Bench Taxonomy Tree](mega-bench-taxonomy_tree.png)
+![MEGA-Bench Taxonomy Tree](resources/mega-bench-taxonomy_tree.png)
 
 Key features of MEGA-Bench:
 
