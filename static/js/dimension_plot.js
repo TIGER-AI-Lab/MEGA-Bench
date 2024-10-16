@@ -1,68 +1,14 @@
 // Model name mapping
-const modelNameMapping = {
-    'GPT-4o (0513)': 'GPT_4o',
-    'Claude-3.5-Sonnet': 'Claude_3.5',
-    'Gemini-1.5-Pro-002': 'Gemini_1.5_pro_002',
-    'Gemini-1.5-Flash-002': 'Gemini_1.5_flash_002',
-    'GPT-4O Mini': 'GPT_4o_mini',
-    'Qwen2-VL-72B': 'Qwen2_VL_72B',
-    'InternVL2-Llama3-76B': 'InternVL2_76B',
-    'LLaVA-OneVision-72B': 'llava_onevision_72B',
-    'Qwen2-VL-7B': 'Qwen2_VL_7B',
-    'Pixtral 12B': 'Pixtral_12B',
-    'InternVL2-8B': 'InternVL2_8B',
-    'Phi-3.5-Vision': 'Phi-3.5-vision',
-    'MiniCPM-V2.6': 'MiniCPM_v2.6',
-    'LLaVA-OneVision-7B': 'llava_onevision_7B',
-    'Llama-3.2-11B': 'Llama_3_2_11B',
-    'Idefics3-8B-Llama3': 'Idefics3',
-};
+import { 
+    modelNameMapping, 
+    inputFormatMapping, 
+    outputFormatMapping, 
+    appMapping, 
+    skillsMapping,
+    modelOrder,
+    modelColorMapping
+} from './mapping.js';
 
-// Dimensions for the radar chart
-// const dimensions = ['skills', 'input_format', 'output_format', 'input_num', 'app'];
-
-// Model order (desired display order)
-const modelOrder = [
-    'GPT-4o (0513)',
-    'Claude-3.5-Sonnet',
-    'Gemini-1.5-Pro-002',
-    'Gemini-1.5-Flash-002',
-    'GPT-4O Mini',
-    'Qwen2-VL-72B',
-    'InternVL2-Llama3-76B',
-    'LLaVA-OneVision-72B',
-    'Qwen2-VL-7B',
-    'Pixtral 12B',
-    'InternVL2-8B',
-    'Phi-3.5-Vision',
-    'MiniCPM-V2.6',
-    'LLaVA-OneVision-7B',
-    'Llama-3.2-11B',
-    'Idefics3-8B-Llama3',
-];
-
-// Define a consistent color mapping for models
-const modelColorMapping = {
-    'GPT-4o (0513)': 'rgba(255, 99, 132, 0.6)',
-    'Claude-3.5-Sonnet': 'rgba(54, 162, 235, 0.6)', 
-    'Gemini-1.5-Pro-002': 'rgba(75, 192, 192, 0.6)',
-    'Gemini-1.5-Flash-002': 'rgba(153, 102, 255, 0.6)', 
-    'GPT-4O Mini': 'rgba(255, 159, 64, 0.6)',
-    'Qwen2-VL-72B': 'rgba(255, 205, 86, 0.6)', 
-    'InternVL2-Llama3-76B': 'rgba(201, 203, 207, 0.6)', 
-    'LLaVA-OneVision-72B': 'rgba(140, 82, 255, 0.6)', 
-    'Qwen2-VL-7B': 'rgba(255, 87, 51, 0.6)', 
-    'Pixtral 12B': 'rgba(220, 220, 220, 0.6)', 
-    'InternVL2-8B': 'rgba(52, 152, 219, 0.6)', 
-    'Phi-3.5-Vision': 'rgba(46, 204, 113, 0.6)', 
-    'MiniCPM-V2.6': 'rgba(230, 126, 34, 0.6)', 
-    'LLaVA-OneVision-7B': 'rgba(231, 76, 60, 0.6)', 
-    'Llama-3.2-11B': 'rgba(52, 73, 94, 0.6)', 
-    'Idefics3-8B-Llama3': 'rgba(241, 196, 15, 0.6)',
-};
-
-// List of models visible by default
-const defaultVisibleModels = ['GPT-4o (0513)', 'Claude-3.5-Sonnet', 'Gemini-1.5-Pro-002'];
 
 const modelSets = {
     all: modelOrder,
@@ -93,6 +39,23 @@ fetch('./static/data/all_model_keywords_stats.json')
         updateChart();
     });
 
+
+
+function getShortLabel(dimension, longLabel) {
+    switch(dimension) {
+        case 'input_format':
+            return inputFormatMapping[longLabel] || longLabel;
+        case 'output_format':
+            return outputFormatMapping[longLabel] || longLabel;
+        case 'app':
+            return appMapping[longLabel] || longLabel;
+        case 'skills':
+            return skillsMapping[longLabel] || longLabel;
+        default:
+            return longLabel;
+    }
+}
+
 // Function to update the chart based on current selections
 function updateChart() {
     const selectedDimension = document.getElementById('dimension-select').value;
@@ -104,27 +67,30 @@ function updateChart() {
 }
 
 
+
 function prepareRadarData(data, dimensionKey, visibleModels) {
     const radarData = {
         labels: [],
         datasets: []
     };
-
+    
     const dimensionSet = new Set();
     Object.keys(data).forEach(model => {
         const dimensionData = data[model]?.[dimensionKey] || {};
         Object.keys(dimensionData).forEach(field => dimensionSet.add(field));
     });
 
-    radarData.labels = Array.from(dimensionSet).sort();
+    // Use getShortLabel when setting labels
+    radarData.labels = Array.from(dimensionSet).sort().map(label => getShortLabel(dimensionKey, label));
 
     // Find the maximum value across all models and fields
     let maxValue = 0;
     modelOrder.forEach(modelName => {
         const dataModelName = modelNameMapping[modelName];
         const modelData = data[dataModelName]?.[dimensionKey] || {};
-        radarData.labels.forEach(field => {
-            const value = modelData[field]?.average_score || 0;
+        radarData.labels.forEach(shortLabel => {
+            const longLabel = Object.keys(modelData).find(key => getShortLabel(dimensionKey, key) === shortLabel);
+            const value = modelData[longLabel]?.average_score || 0;
             maxValue = Math.max(maxValue, value);
         });
     });
@@ -145,8 +111,9 @@ function prepareRadarData(data, dimensionKey, visibleModels) {
         const dataModelName = modelNameMapping[modelName];
         const modelData = data[dataModelName]?.[dimensionKey] || {};
 
-        radarData.labels.forEach(field => {
-            const fieldData = modelData[field];
+        radarData.labels.forEach(shortLabel => {
+            const longLabel = Object.keys(modelData).find(key => getShortLabel(dimensionKey, key) === shortLabel);
+            const fieldData = modelData[longLabel];
             dataset.data.push(normalize(fieldData?.average_score || 0));
         });
 

@@ -1,62 +1,16 @@
 // Model name mapping
-const modelNameMapping = {
-    'GPT-4o (0513)': 'GPT_4o',
-    'Claude-3.5-Sonnet': 'Claude_3.5',
-    'Gemini-1.5-Pro-002': 'Gemini_1.5_pro_002',
-    'Gemini-1.5-Flash-002': 'Gemini_1.5_flash_002',
-    'GPT-4O Mini': 'GPT_4o_mini',
-    'Qwen2-VL-72B': 'Qwen2_VL_72B',
-    'InternVL2-Llama3-76B': 'InternVL2_76B',
-    'LLaVA-OneVision-72B': 'llava_onevision_72B',
-    'Qwen2-VL-7B': 'Qwen2_VL_7B',
-    'Pixtral 12B': 'Pixtral_12B',
-    'InternVL2-8B': 'InternVL2_8B',
-    'Phi-3.5-Vision': 'Phi-3.5-vision',
-    'MiniCPM-V2.6': 'MiniCPM_v2.6',
-    'LLaVA-OneVision-7B': 'llava_onevision_7B',
-    'Llama-3.2-11B': 'Llama_3_2_11B',
-    'Idefics3-8B-Llama3': 'Idefics3',
-};
+import { 
+    modelNameMapping, 
+    inputFormatMapping, 
+    outputFormatMapping, 
+    appMapping, 
+    skillsMapping,
+    modelOrder,
+    modelColorMapping,
+    dimensionTitleMapping
+} from './mapping.js';
 
-// Model order (desired display order)
-const modelOrder = [
-    'GPT-4o (0513)',
-    'Claude-3.5-Sonnet',
-    'Gemini-1.5-Pro-002',
-    'Gemini-1.5-Flash-002',
-    'GPT-4O Mini',
-    'Qwen2-VL-72B',
-    'InternVL2-Llama3-76B',
-    'LLaVA-OneVision-72B',
-    'Qwen2-VL-7B',
-    'Pixtral 12B',
-    'InternVL2-8B',
-    'Phi-3.5-Vision',
-    'MiniCPM-V2.6',
-    'LLaVA-OneVision-7B',
-    'Llama-3.2-11B',
-    'Idefics3-8B-Llama3',
-];
 
-// Define a consistent color mapping for models
-const modelColorMapping = {
-    'GPT-4o (0513)': 'rgba(255, 99, 132, 0.6)',
-    'Claude-3.5-Sonnet': 'rgba(54, 162, 235, 0.6)', 
-    'Gemini-1.5-Pro-002': 'rgba(75, 192, 192, 0.6)',
-    'Gemini-1.5-Flash-002': 'rgba(153, 102, 255, 0.6)', 
-    'GPT-4O Mini': 'rgba(255, 159, 64, 0.6)',
-    'Qwen2-VL-72B': 'rgba(255, 205, 86, 0.6)', 
-    'InternVL2-Llama3-76B': 'rgba(201, 203, 207, 0.6)', 
-    'LLaVA-OneVision-72B': 'rgba(140, 82, 255, 0.6)', 
-    'Qwen2-VL-7B': 'rgba(255, 87, 51, 0.6)', 
-    'Pixtral 12B': 'rgba(220, 220, 220, 0.6)', 
-    'InternVL2-8B': 'rgba(52, 152, 219, 0.6)', 
-    'Phi-3.5-Vision': 'rgba(46, 204, 113, 0.6)', 
-    'MiniCPM-V2.6': 'rgba(230, 126, 34, 0.6)', 
-    'LLaVA-OneVision-7B': 'rgba(231, 76, 60, 0.6)', 
-    'Llama-3.2-11B': 'rgba(52, 73, 94, 0.6)', 
-    'Idefics3-8B-Llama3': 'rgba(241, 196, 15, 0.6)',
-};
 
 // Dimensions for the radar charts
 const dimensions = ['skills', 'input_format', 'output_format', 'input_num', 'app'];
@@ -119,6 +73,21 @@ function updateCharts() {
     });
 }
 
+function getShortLabel(dimension, longLabel) {
+    switch(dimension) {
+        case 'input_format':
+            return inputFormatMapping[longLabel] || longLabel;
+        case 'output_format':
+            return outputFormatMapping[longLabel] || longLabel;
+        case 'app':
+            return appMapping[longLabel] || longLabel;
+        case 'skills':
+            return skillsMapping[longLabel] || longLabel;
+        default:
+            return longLabel;
+    }
+}
+
 function prepareRadarData(data, modelName1, modelName2, dimensionKey) {
     const radarData = {
         labels: [],
@@ -128,15 +97,19 @@ function prepareRadarData(data, modelName1, modelName2, dimensionKey) {
     const dataModelName1 = modelNameMapping[modelName1];
     const modelData1 = data[dataModelName1]?.[dimensionKey] || {};
 
-    radarData.labels = Object.keys(modelData1).sort();
+    // Use getShortLabel when setting labels
+    radarData.labels = Object.keys(modelData1).sort().map(label => getShortLabel(dimensionKey, label));
 
     // Normalize the data to 0-1 range if necessary
-    const maxValue1 = Math.max(...radarData.labels.map(field => modelData1[field]?.average_score || 0));
+    const maxValue1 = Math.max(...Object.values(modelData1).map(field => field?.average_score || 0));
     const normalizeValue = (value, maxValue) => maxValue > 1 ? value / maxValue : value;
 
     const dataset1 = {
         label: modelName1,
-        data: radarData.labels.map(field => normalizeValue(modelData1[field]?.average_score || 0, maxValue1)),
+        data: radarData.labels.map(shortLabel => {
+            const longLabel = Object.keys(modelData1).find(key => getShortLabel(dimensionKey, key) === shortLabel);
+            return normalizeValue(modelData1[longLabel]?.average_score || 0, maxValue1);
+        }),
         fill: true,
         borderColor: modelColorMapping[modelName1],
         backgroundColor: modelColorMapping[modelName1].replace('0.6', '0.2')
@@ -147,11 +120,14 @@ function prepareRadarData(data, modelName1, modelName2, dimensionKey) {
     if (modelName2 && modelName2 !== "") {
         const dataModelName2 = modelNameMapping[modelName2];
         const modelData2 = data[dataModelName2]?.[dimensionKey] || {};
-        const maxValue2 = Math.max(...radarData.labels.map(field => modelData2[field]?.average_score || 0));
+        const maxValue2 = Math.max(...Object.values(modelData2).map(field => field?.average_score || 0));
 
         const dataset2 = {
             label: modelName2,
-            data: radarData.labels.map(field => normalizeValue(modelData2[field]?.average_score || 0, maxValue2)),
+            data: radarData.labels.map(shortLabel => {
+                const longLabel = Object.keys(modelData2).find(key => getShortLabel(dimensionKey, key) === shortLabel);
+                return normalizeValue(modelData2[longLabel]?.average_score || 0, maxValue2);
+            }),
             fill: true,
             borderColor: modelColorMapping[modelName2],
             backgroundColor: modelColorMapping[modelName2].replace('0.6', '0.2')
@@ -219,7 +195,7 @@ function createRadarChart(canvas, radarData, dimension) {
                 },
                 title: {
                     display: true,
-                    text: dimension.charAt(0).toUpperCase() + dimension.slice(1).replace('_', ' '),
+                    text: dimensionTitleMapping[dimension] || dimension.charAt(0).toUpperCase() + dimension.slice(1).replace('_', ' '),
                     font: {
                         size: 20,
                         weight: 'bold'
