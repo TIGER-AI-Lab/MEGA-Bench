@@ -2,10 +2,11 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2410.10563-b31b1b.svg)](https://arxiv.org/abs/2410.10563)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://tiger-ai-lab.github.io/MEGA-Bench/)
+[![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench)
 
 ## 🔔 News
 
-**[2024-10-14]: Paper released on arXiv. Data and evaluation code will be released soon.**
+**🔥[2024-10-14]: Paper released on arXiv. Data and evaluation code will be released soon.**
 
 ## Introduction
 
@@ -25,7 +26,9 @@ Unlike existing benchmarks that unify problems into standard multi-choice questi
 
 ## Dataset
 
-[Dataset information and access instructions will be added once released]
+The MEGA-Bench dataset is now available on the Hugging Face. You can access it at:
+
+[MEGA-Bench](https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench)
 
 ## Evaluation
 
