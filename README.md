@@ -45,7 +45,7 @@ Since the Hugging Face Datasets viewer does not support visualizing large rows w
 
 ```bash
 wget https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench/resolve/main/data.zip?download=true -O data.zip
-unzip data.zip -d megabench/data
+unzip data.zip -d megabench
 ```
 
 ## Evaluation
