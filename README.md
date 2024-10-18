@@ -13,12 +13,14 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Dataset](#dataset)
-3. [Evaluation](#evaluation)
+2. [Setup](#setup)
+   - [Dataset Download](#dataset-download)
    - [Environment Setup](#environment-setup)
-   - [Run the Evaluation Pipeline](#run-evaluation)
-4. [Contact](#contact)
-5. [Citation](#citation)
+3. [Evaluation](#evaluation)
+   - [Proprietary Models](#proprietary-models-gpt-claude)
+   - [Open-source Models](#open-source-models-qwen2vl-internvl2)
+   - [Detailed explanation of command line arguments](#detailed-explanation-of-command-line-arguments)
+4. [Contact and Citation](#contact-and-citation)
 
 ## Introduction
 
@@ -36,7 +38,9 @@ Key features of MEGA-Bench:
 
 Unlike existing benchmarks that unify problems into standard multi-choice questions, MEGA-Bench embraces the diversity of real-world tasks and their output formats. This allows for a more comprehensive evaluation of vision-language models across various dimensions.
 
-## Dataset
+## Setup
+
+### Dataset download
 
 The MEGA-Bench dataset is now available on Hugging Face:
 
@@ -49,8 +53,6 @@ wget https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench/resolve/main/data.zip?
 unzip data.zip -d megabench
 ```
 
-## Evaluation
-
 ### Environment Setup
 
 First, set up the environment with the following commands. The packages are mainly for the evaluation metrics used in MEGA-Bench.
@@ -61,11 +63,14 @@ conda activate megabench
 pip install -r requirements.txt
 ```
 
-### Run Evaluation
+
+## Evaluation
 
 **📌 Note:** Due to slight reorganization of the prompt for uploading to Hugging Face Datasets, the evaluation results from this repository may differ slightly from those reported in the paper. However, the overall performance trend and capability report should remain consistent.
 
 In the initial release, we provide evaluation pipelines for four types of models: GPT, Claude, Qwen2VL, and InternVL2. See `megabench/models/model_type.py` for details on the model types. We will add code for more models in the future.
+
+### Proprietary Models (GPT, Claude)
 
 To run with GPT or Claude, set up the OpenAI or Anthropic API key:
 
@@ -74,7 +79,7 @@ export OPENAI_API_KEY=<your_openai_api_key>
 export ANTHROPIC_API_KEY=<your_anthropic_api_key>
 ```
 
-Example commands for running evaluation with GPT-4o (0513) or Claude-3.5-Sonnet on the Core subset, using multiprocessing with 2 subprocesses:
+Example commands for running evaluation with GPT-4o (0513) or Claude-3.5-Sonnet on the **Core subset**, using multiprocessing with 2 subprocesses:
 
 ```bash
 cd megabench
@@ -86,21 +91,31 @@ python main.py --model_type GPT_4O_0513 --output_file results/GPT-4o-0513/all_qu
 python main.py --model_type CLAUDE_3_5_SONNET --output_file results/Claude-3.5-Sonnet/all_query_responses.json --print_response --dataset_subset_name core --multiprocess --processes 2
 ```
 
+To run with the Open-ended subset, set ```--dataset_subset_name open```. The evaluation processor will evaluate all tasks in the response output file. **If you only want to evaluate the Core subset, you should set different output file paths for Core and Open-ended subsets.**
+
+To evaluate the Open-ended subset, you need to set up the OpenAI API key first.
+
+
+### Open-source Models (Qwen2VL, InternVL2)
+
 To run with Qwen2VL or InternVL2, first install the latest [vllm](https://github.com/vllm-project/vllm).
 
-Example commands for running evaluation with Qwen2VL or InternVL2 on the Core subset, using multiprocessing with 2 subprocesses:
+Example commands for running evaluation with Qwen2VL or InternVL2 on the **Core subset**, using multiprocessing with 2 subprocesses:
 
 ```bash
 cd megabench
 
 # InternVL2-8B
-CUDA_VISIBLE_DEVICES=0,1,2,3 python3 main.py --model_type INTERNVL2_8B --output_file results/InternVL2_8B/all_query_responses.json --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
+CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --model_type INTERNVL2_8B --output_file results/InternVL2_8B/all_query_responses.json --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
 
 # Qwen2VL-7B
-CUDA_VISIBLE_DEVICES=0,1,2,3 python3 main.py --model_type QWEN2_VL_7B --output_file results/Qwen2_VL_7B/all_query_responses.json --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
+CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --model_type QWEN2_VL_7B --output_file results/Qwen2_VL_7B/all_query_responses.json --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
 ```
 
-Detailed definition of the command line arguments:
+
+### Detailed explanation of command line arguments
+
+The launch script ``main.py`` has the following arguments:
 
 | Argument | Description | Default |
 |----------|-------------|---------|
@@ -120,14 +135,13 @@ Detailed definition of the command line arguments:
 | `--dataset_name` | Name of the dataset | "TIGER-Lab/MEGA-Bench" |
 | `--dataset_subset_name` | Subset of the dataset to use | "core" |
 
-## Contact
+
+## Contact and Citation
 
 For any questions or concerns, please contact:
 
 - Jiacheng Chen: jcchen.work@gmail.com
 - Wenhu Chen: wenhuchen@uwaterloo.ca
-
-## Citation
 
 If you find this work useful for your research, please consider citing our paper:
 
