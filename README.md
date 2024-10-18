@@ -3,6 +3,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2410.10563-b31b1b.svg)](https://arxiv.org/abs/2410.10563)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://tiger-ai-lab.github.io/MEGA-Bench/)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench)
+[![Leaderboard](https://img.shields.io/badge/🤗HuggingFace-Space-blue)](https://huggingface.co/spaces/TIGER-Lab/MEGA-Bench)
 
 ## 🔔 News
 
