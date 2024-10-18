@@ -109,7 +109,7 @@ Detailed definition of the command line arguments:
 | `--gpu_utils` | GPU memory utilization (0.0 to 1.0, for vllm models) | None |
 | `--output_file` | Path for query responses output | None |
 | `--output_score_filename` | Filename for evaluation scores | "data_with_scores.json" |
-| `--task_name` | Name of a specific task to process | None |
+| `--task_name` | Name of a specific task to process, if specified, the pipeline will run only a single task | None |
 | `--force_regenerate` | Force regeneration of answers | False |
 | `--query_only` | Perform only the model query, without evaluation | False |
 | `--evaluation_only` | Perform only the evaluation step | False |
