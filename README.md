@@ -6,7 +6,20 @@
 
 ## 🔔 News
 
-**🔥[2024-10-14]: Paper released on arXiv. Data and evaluation code will be released soon.**
+**🔥[2024-10-18]: Data and evaluation code are available. We will keep adding the evaluation pipeline for more models.**
+
+**📄[2024-10-14]: Paper released on arXiv.**
+
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Dataset](#dataset)
+3. [Evaluation](#evaluation)
+   [Environment Setup](#environment-setup)
+   [Run the Evaluation Pipeline](#run-evaluation)
+4. [Contact](#contact)
+5. [Citation](#citation)
+
 
 ## Introduction
 
@@ -30,9 +43,83 @@ The MEGA-Bench dataset is now available on the Hugging Face. You can access it a
 
 [MEGA-Bench](https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench)
 
+
+Since the Hugging Face Datasets viewer does not support visualizing large rows with many images, we chose to only keep the file paths of images/videos in HF datasets. Please download the data, unzip it and set up the data path properly following the commands below:
+
+```bash
+wget https://huggingface.co/datasets/TIGER-Lab/MEGA-Bench/resolve/main/data.zip?download=true -O data.zip
+unzip data.zip -d megabench/data
+```
+
+
 ## Evaluation
 
-[Evaluation code and instructions will be added once released]
+### Environment Setup
+
+Please first setup the environment with the following command. The packages are mainly for the evaluation metrics used in MEGA-Bench.
+
+```bash
+conda create -n megabench  python=3.12
+conda activate megabench
+pip install -r requirements.txt
+```
+
+### Run Evaluation
+
+**📌 Note:** Since we slightly reorganized the prompt for uploading to Hugging Face Datasets, the evaluation results from this repository could be slightly different from the results reported in the paper. But the overall performance trend and capability report should be the same.
+
+In the initial release, we provide the evaluation pipeline for four types of models: GPT, Claude, Qwen2VL, and InternVL2. Please see the file `megabench/models/model_type.py` for the details of the model types. We will add the code for more models in the future.
+
+To run with GPT or Claude, please set up the OpenAI or Anthropic API key properly:
+
+```bash
+export OPENAI_API_KEY=<your_openai_api_key>
+export ANTHROPIC_API_KEY=<your_anthropic_api_key>
+```
+
+Example command for running evaluation with GPT-4o (0513) or Claude-3.5-Sonnet on the Core subset, using multiprocessing with 2 subprocesses:
+
+```bash
+cd megabench
+
+# GPT-4o (0513)
+python main.py --model_type GPT_4O_0513 --output_file results/GPT-4o-0513/all_query_responses.json --print_response --dataset_subset_name core  --multiprocess --processes 2
+
+# Claude-3.5-Sonnet
+python main.py --model_type CLAUDE_3_5_SONNET --output_file results/Claude-3.5-Sonnet/all_query_responses.json --print_response --dataset_subset_name core  --multiprocess --processes 2
+```
+
+To run with Qwen2VL or InternVL2, please first install the latest [vllm](https://github.com/vllm-project/vllm).
+
+Example command for running evaluation with Qwen2VL or InternVL2 on the Core subset, using multiprocessing with 2 subprocesses:
+
+```bash
+cd megabench
+
+# InternVL2-8B
+CUDA_VISIBLE_DEVICES=0,1,2,3 python3 main.py --model_type INTERNVL2_8B --output_file results/InternVL2_8B/all_query_responses.json --ngpus 4  --gpu_utils 0.9  --dataset_subset_name core  
+
+# Qwen2VL-7B
+CUDA_VISIBLE_DEVICES=0,1,2,3 python3 main.py --model_type QWEN2_VL_7B --output_file result/Qwen2_VL_7B/all_query_responses.json  --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
+```
+
+Detailed defintion of the command line arguments:
+- `--model_type`: Type of model to use (default: "GPT_4O_MINI", see `megabench/models/model_type.py` for more details)
+- `--model_path`: Custom model path when running open-source models locally (overrides model_type if specified)
+- `--ngpus`: Number of GPUs to use, used for vllm models
+- `--gpu_utils`: GPU memory utilization (0.0 to 1.0), used for vllm models
+- `--output_file`: Path for query responses output
+- `--output_score_filename`: Filename for evaluation scores (default: "data_with_scores.json")
+- `--task_name`: Name of a specific task to process (processes all if not specified)
+- `--force_regenerate`: Force regeneration of answers. By default, we will skip the query step if the answers of the task are already generated and there is no update on the dataset.
+- `--query_only`: Perform only the model query, without evaluation
+- `--evaluation_only`: Perform only the evaluation step, assmuming the model responses are already generated and saved in the output file
+- `--multiprocess`: Enable multiprocessing, only used for API-based proprietary models
+- `--processes`: Number of processes for multiprocessing (default: 2)
+- `--print_response`: Print model's response, helpful for debugging
+- `--dataset_name`: Name of the dataset (default: "TIGER-Lab/MEGA-Bench")
+- `--dataset_subset_name`: Subset of the dataset to use (default: "core"), options are: core, open, core_single_image, open_single_image
+
 
 ## Contact
 
