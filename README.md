@@ -106,12 +106,20 @@ Example commands for running evaluation with Qwen2VL or InternVL2 on the **Core 
 cd megabench
 
 # InternVL2-8B
-CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --model_type INTERNVL2_8B --output_file results/InternVL2_8B/all_query_responses.json --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
+python main.py --model_type INTERNVL2_8B \
+   --output_file results/InternVL2_8B/all_query_responses.json \
+   --print_response --ngpus 4 --gpu_utils 0.9 \
+   --dataset_name TIGER-Lab/MEGA-Bench \
+   --dataset_subset_name core
 
 # Qwen2VL-7B
-CUDA_VISIBLE_DEVICES=0,1,2,3 python main.py --model_type QWEN2_VL_7B --output_file results/Qwen2_VL_7B/all_query_responses.json --print_response --ngpus 4 --gpu_utils 0.9 --dataset_subset_name core
+python main.py --model_type QWEN2_VL_7B \
+   --output_file results/Qwen2_VL_7B/all_query_responses.json \
+   --print_response --ngpus 4 --gpu_utils 0.9 \
+   --dataset_name TIGER-Lab/MEGA-Bench \
+   --dataset_subset_name core
 ```
-
+If you want to evaluate on the open set, change it to ``--dataset_subset_name open``.
 
 ### Detailed explanation of command line arguments
 
