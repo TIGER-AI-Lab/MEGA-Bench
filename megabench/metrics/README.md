@@ -1,4 +1,4 @@
-# Vision-BIGbench metrics
+# MEGA-Bench metrics
 
 Each task's metrics are specified in `metrics.json` and follow the schema outlined below:
 
