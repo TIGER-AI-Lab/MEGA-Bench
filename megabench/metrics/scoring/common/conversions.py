@@ -9,15 +9,14 @@ from numbers import Number
 
 def freeze_structure(obj):
     """Freeze a structure and make it hashable."""
-    match obj:
-        case dict():
-            return frozenset((k, freeze_structure(v)) for k, v in obj.items())
-        case list() | tuple():
-            return tuple(freeze_structure(item) for item in obj)
-        case set():
-            return frozenset(obj)
-        case _:
-            return obj
+    if isinstance(obj, dict):
+        return frozenset((k, freeze_structure(v)) for k, v in obj.items())
+    elif isinstance(obj, (list, tuple)):
+        return tuple(freeze_structure(item) for item in obj)
+    elif isinstance(obj, set):
+        return frozenset(obj)
+    else:
+        return obj
 
 
 def cast_to_set(object) -> set:
