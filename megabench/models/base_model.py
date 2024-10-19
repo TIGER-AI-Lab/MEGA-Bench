@@ -9,6 +9,7 @@ import logging
 import tempfile
 from utils import is_video_file
 import re
+from typing import Union, List, Dict
 
 
 class BaseModel(abc.ABC):
@@ -21,7 +22,7 @@ class BaseModel(abc.ABC):
         max_side=1000,
         print_response=False,
         max_num_image=None,
-        system_message: str | None = None,
+        system_message: Union[str, None] = None,
         total_demo_video_frames=4,
         **kwargs,
     ):
@@ -56,7 +57,7 @@ class BaseModel(abc.ABC):
             return self.prompts["example_response_cot"]
         return self.prompts["example_response"]
 
-    def prepare_system_message(self) -> list[dict[str, str]]:
+    def prepare_system_message(self) -> List[Dict[str, str]]:
         if self.system_message:
             return [{"role": "system", "content": self.system_message}]
         else:
@@ -165,19 +166,18 @@ class BaseModel(abc.ABC):
         # If not set up, determine the sampling based on the video fps
         video_sampling = self.query_data.get("video_sampling", "fps")
 
-        match video_sampling:
-            case "max":
-                if fps >= 10:
-                    sampling_gap = max(math.ceil(fps / 5), sampling_gap_maxframe)
-                else:
-                    sampling_gap = sampling_gap_maxframe
-            case "fps":
-                sampling_gap_fps = (
-                    math.ceil(frame_count / self.demo_video_frames)
-                    if is_demo
-                    else math.ceil(fps)
-                )
-                sampling_gap = max(sampling_gap_fps, sampling_gap_maxframe)
+        if video_sampling == "max":
+            if fps >= 10:
+                sampling_gap = max(math.ceil(fps / 5), sampling_gap_maxframe)
+            else:
+                sampling_gap = sampling_gap_maxframe
+        elif video_sampling == "fps":
+            sampling_gap_fps = (
+                math.ceil(frame_count / self.demo_video_frames)
+                if is_demo
+                else math.ceil(fps)
+            )
+            sampling_gap = max(sampling_gap_fps, sampling_gap_maxframe)
 
         frame_number = 0
         images = []

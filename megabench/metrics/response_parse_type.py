@@ -21,17 +21,16 @@ class ResponseParseType(Enum):
 
     @cached_property
     def class_impl(self):
-        match self:
-            case ResponseParseType.ANSWER_STR:
-                return AnswerStrParse
-            case ResponseParseType.ASCII_ANSWER_STR:
-                return AsciiAnswerStrParse
-            case ResponseParseType.VERBATIM_ANSWER_STR:
-                return VerbatimAnswerStrParse
-            case ResponseParseType.DUMMY:
-                return DummyParse
-            case _:
-                return JsonParse
+        if self == ResponseParseType.ANSWER_STR:
+            return AnswerStrParse
+        elif self == ResponseParseType.ASCII_ANSWER_STR:
+            return AsciiAnswerStrParse
+        elif self == ResponseParseType.VERBATIM_ANSWER_STR:
+            return VerbatimAnswerStrParse
+        elif self == ResponseParseType.DUMMY:
+            return DummyParse
+        else:
+            return JsonParse
 
     def is_single_field_parser(self):
         return self in [

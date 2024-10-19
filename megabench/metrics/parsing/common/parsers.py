@@ -2,7 +2,7 @@ import ast
 import json
 import re
 import regex  # Supports the non-standard ?R regex operator
-
+from typing import List
 from .utils import extract_code_block_content, extract_answer_at_beginning_of_line
 
 
@@ -113,7 +113,7 @@ def parse_nested_str_list(input_string):
         return input_string
 
 
-def parse_syllable_ranges(input_str: str) -> list[list[int]]:
+def parse_syllable_ranges(input_str: str) -> List[List[int]]:
     """Convert a bunch of syllable ranges into a list of intervals.
 
     Examples:
