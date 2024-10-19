@@ -61,6 +61,7 @@ First, set up the environment with the following commands. The packages are main
 conda create -n megabench python=3.12
 conda activate megabench
 pip install -r requirements.txt
+python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"
 ```
 
 
