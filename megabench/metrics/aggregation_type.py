@@ -17,13 +17,12 @@ class AggregationType(Enum):
 
     @cached_property
     def class_impl(self):
-        match self:
-            case self.MEAN:
-                return MeanAggregation
-            case self.MIN:
-                return MinAggregation
-            case _:
-                return UnsupportedAggregation
+        if self == self.MEAN:
+            return MeanAggregation
+        elif self == self.MIN:
+            return MinAggregation
+        else:
+            return UnsupportedAggregation
 
     def aggregate(self, scores, weights):
         """Aggregate the field scores."""
