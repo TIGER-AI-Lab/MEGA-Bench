@@ -474,73 +474,66 @@ class EvaluationProcessor:
         correct_value = evaluate_as_string(correct_value)
 
         if self.sanity_check_eval:
-            match metric:
-                case MetricType.SYMBOLIC_PLANNING_TEST:
-                    should_skip = query_idx == 0
-                case MetricType.PROGRAM_JUDGE:
-                    should_skip = query_idx != 0
-                case _:
-                    should_skip = correct_value == ""
+            if metric == MetricType.SYMBOLIC_PLANNING_TEST:
+                should_skip = query_idx == 0
+            elif metric == MetricType.PROGRAM_JUDGE:
+                should_skip = query_idx != 0
+            else:
+                should_skip = correct_value == ""
         else:
             should_skip = False
         if should_skip:
             query["scores"]["field"][field] = 1
-            match metric:
-                case (
-                    MetricType.CONSTRAINED_GENERATION
-                    | MetricType.XML_NORM_POINT_IN_BBOX
-                    | GPT4OJudgeScore()
-                ):
-                    query["scores"]["info"][
-                        field
-                    ] = "Metric skipped because no ground truth was provided."
+            if metric in [MetricType.CONSTRAINED_GENERATION, MetricType.XML_NORM_POINT_IN_BBOX, GPT4OJudgeScore()]:
+                query["scores"]["info"][
+                    field
+                ] = "Metric skipped because no ground truth was provided."
             return
 
-        match metric:
-            case MetricType.UNSUPPORTED:
-                self.console_logger.warning(
-                    f"The metric for {field} in task {task_name} is not supported"
-                )
-                self.file_logger.error(
-                    f'The metric for {field} in task {task_name}: "{field_score_function_table[field]}" is not supported'
-                )
-            case MetricType.SYMBOLIC_PLANNING_TEST:
-                query["scores"]["field"][field] = metric.match(
-                    response_obj.get(field),
-                    eval_context,
-                    task_info,
-                )
-            case MetricType.PROGRAM_JUDGE:
-                query["scores"]["field"][field] = metric.match(
-                    response_obj.get(field), eval_context, task_info
-                )
-            case MetricType.CONSTRAINED_GENERATION:
-                score, eval_info = metric.match(response_obj, eval_context)
-                query["scores"]["field"][field] = score
-                query["scores"]["info"][field] = eval_info
-            case MetricType.XML_NORM_POINT_IN_BBOX:
-                score, eval_info = metric.match(response_obj.get(field), eval_context)
-                query["scores"]["field"][field] = score
-                query["scores"]["info"][field] = eval_info
-            case GPT4OJudgeScore():
-                response_info = (
-                    response_obj.get(field)
-                    if isinstance(response_obj, dict)
-                    else response_obj
-                )
-                score, eval_info = metric.match(
-                    response_info,
-                    correct_answer,
-                    query["images"],
-                    query["query_text"],
-                    eval_context,
-                )
-                query["scores"]["field"][field] = score
-                query["scores"]["info"][field] = eval_info
-            case _:
-                query["scores"]["field"][field] = metric.match(
-                    response_obj.get(field), correct_value
-                )
+        if metric == MetricType.UNSUPPORTED:
+            self.console_logger.warning(
+                f"The metric for {field} in task {task_name} is not supported"
+            )
+            self.file_logger.error(
+                f'The metric for {field} in task {task_name}: "{field_score_function_table[field]}" is not supported'
+            )
+        elif metric == MetricType.SYMBOLIC_PLANNING_TEST:
+            query["scores"]["field"][field] = metric.match(
+                response_obj.get(field),
+                eval_context,
+                task_info,
+            )
+        elif metric == MetricType.PROGRAM_JUDGE:
+            query["scores"]["field"][field] = metric.match(
+                response_obj.get(field), eval_context, task_info
+            )
+        elif metric == MetricType.CONSTRAINED_GENERATION:
+            score, eval_info = metric.match(response_obj, eval_context)
+            query["scores"]["field"][field] = score
+            query["scores"]["info"][field] = eval_info
+        elif metric == MetricType.XML_NORM_POINT_IN_BBOX:
+            score, eval_info = metric.match(response_obj.get(field), eval_context)
+            query["scores"]["field"][field] = score
+            query["scores"]["info"][field] = eval_info
+        else metric == GPT4OJudgeScore():
+            response_info = (
+                response_obj.get(field)
+                if isinstance(response_obj, dict)
+                else response_obj
+            )
+            score, eval_info = metric.match(
+                response_info,
+                correct_answer,
+                query["images"],
+                query["query_text"],
+                eval_context,
+            )
+            query["scores"]["field"][field] = score
+            query["scores"]["info"][field] = eval_info
+        else:
+            query["scores"]["field"][field] = metric.match(
+                response_obj.get(field), correct_value
+            )
         if self.sanity_check_eval and query["scores"]["field"][field] != 1:
             if (
                 metric == MetricType.POSITIVE_INT_MATCH
