@@ -99,7 +99,11 @@ To evaluate the Open-ended subset, you need to set up the OpenAI API key first.
 
 ### Open-source Models (Qwen2VL, InternVL2)
 
-To run with Qwen2VL or InternVL2, first install the latest [vllm](https://github.com/vllm-project/vllm).
+To run with Qwen2VL or InternVL2, first install the latest [vllm](https://github.com/vllm-project/vllm):
+
+```bash
+pip install vllm -U
+```
 
 Example commands for running evaluation with Qwen2VL or InternVL2 on the **Core subset**, using multiprocessing with 2 subprocesses:
 
