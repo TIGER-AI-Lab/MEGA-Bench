@@ -258,7 +258,7 @@ function createChart(hierarchicalData) {
 
     setUpCenter(root);
 
-    // setupLeafNodeClick(series)
+    setupLeafNodeClick(series)
 
     series.data.setAll([hierarchicalData]);
 
@@ -272,9 +272,7 @@ function setupLeafNodeClick(series) {
         if (dataItem && dataItem.get("children").length === 0) {
             // This is a leaf node
             var path = buildPath(dataItem);
-
-            // @TODO: Jiacheng; change to the actual url
-            var url = `https://github.com/woodfrog/megabench-eval-mock/tree/master/taxonomy_example/${path}`;
+            var url = `https://github.com/TIGER-AI-Lab/MEGA-Bench-task-examples/tree/main/task_examples/${path}`;
             window.open(url, "_blank");
         }
     });
