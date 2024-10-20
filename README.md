@@ -40,6 +40,17 @@ Unlike existing benchmarks that unify problems into standard multi-choice questi
 
 ## Setup
 
+Clone the repository by:
+
+```bash
+# Clone the repository with the task examples
+git clone https://github.com/TIGER-AI-Lab/MEGA-Bench.git
+# Or skip the task examples host by Git LFS
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/TIGER-AI-Lab/MEGA-Bench.git
+
+cd MEGA-Bench
+```
+
 ### Dataset download
 
 The MEGA-Bench dataset is now available on Hugging Face:
