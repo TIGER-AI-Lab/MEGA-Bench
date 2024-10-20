@@ -272,7 +272,7 @@ function setupLeafNodeClick(series) {
         if (dataItem && dataItem.get("children").length === 0) {
             // This is a leaf node
             var path = buildPath(dataItem);
-            var url = `https://github.com/TIGER-AI-Lab/MEGA-Bench-task-examples/tree/main/task_examples/${path}`;
+            var url = `https://github.com/TIGER-AI-Lab/MEGA-Bench/tree/main/task_examples/${path}`;
             window.open(url, "_blank");
         }
     });
