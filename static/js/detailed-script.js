@@ -44,6 +44,12 @@ fetch('./static/data/all_model_keywords_stats.json')
         modelSelect1.addEventListener('change', updateCharts);
         modelSelect2.addEventListener('change', updateCharts);
 
+        // Update the "Back to Main Chart" button href
+        const backButton = document.querySelector('a.button.is-link');
+        if (backButton) {
+            backButton.href = 'index.html#radar-charts';
+        }
+
         // Initial chart creation
         updateCharts();
     });
