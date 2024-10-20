@@ -29,16 +29,15 @@ def cast_to_set(object) -> set:
 
 def cast_to_dict(object) -> dict:
     """Try to cast an object as a dict."""
-    match object:
-        case dict():
-            return {key: cast_to_dict(val) for key, val in object.items()}
-        case str():
-            extract_json_attempt = parse_json(object)
-            if extract_json_attempt:
-                return extract_json_attempt
-            return object
-        case _:
-            return object
+    if isintance(object, dict):
+        return {key: cast_to_dict(val) for key, val in object.items()}
+    elif isintance(object, str):
+        extract_json_attempt = parse_json(object)
+        if extract_json_attempt:
+            return extract_json_attempt
+        return object
+    else:
+        return object
 
 
 def str_to_iterable(func, iterable_str):
@@ -51,18 +50,17 @@ def str_to_iterable(func, iterable_str):
         return func()
 
     is_in_iterable = True
-    match iterable_str[0]:
-        case "(":
-            if not iterable_str.endswith(")"):
-                return func()
-        case "{":
-            if not iterable_str.endswith("}"):
-                return func()
-        case "[":
-            if not iterable_str.endswith("]"):
-                return func()
-        case _:
-            is_in_iterable = False
+    if iterable_str[0] == "(":
+        if not iterable_str.endswith(")"):
+            return func()
+    elif iterable_str[0] == "{":
+        if not iterable_str.endswith("}"):
+            return func()
+    elif iterable_str[0] == "[":
+        if not iterable_str.endswith("]"):
+            return func()
+    else:
+        is_in_iterable = False
 
     # We may have a nested object, so try to use eval first
     try:
