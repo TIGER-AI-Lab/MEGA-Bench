@@ -5,6 +5,7 @@ from matplotlib import font_manager
 from PIL import Image, ImageDraw, ImageFont
 from metrics.parsing.common.parsers import parse_json
 from numbers import Number
+from typing import Tuple, Union
 
 
 def freeze_structure(obj):
@@ -137,7 +138,7 @@ def str_to_coords(coord_list, dim=2) -> list:
     return new_coords
 
 
-def parse_point_2d_from_xml(xml_string) -> tuple[float, float] | None:
+def parse_point_2d_from_xml(xml_string) -> Union[Tuple[float, float], None]:
     """Parse an (x, y) point from XML formatted like this: <point>x, y</point>"""
     if not isinstance(xml_string, str):
         return None

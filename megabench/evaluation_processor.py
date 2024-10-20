@@ -515,7 +515,7 @@ class EvaluationProcessor:
             score, eval_info = metric.match(response_obj.get(field), eval_context)
             query["scores"]["field"][field] = score
             query["scores"]["info"][field] = eval_info
-        elif metric == GPT4OJudgeScore():
+        elif metric == MetricType.GPT_4O_AS_JUDGE:
             response_info = (
                 response_obj.get(field)
                 if isinstance(response_obj, dict)
