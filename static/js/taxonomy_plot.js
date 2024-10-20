@@ -118,6 +118,7 @@ function buildHierarchy(data) {
                 }
                 childNode = { 
                     name: levelName, 
+                    originalName: levelName.replace(/\s+/g, '_'), // Store original name
                     children: [],
                     color: i === 0 ? baseColor : lightenColor(baseColor, (i) * 8)
                 };
@@ -265,24 +266,40 @@ function createChart(hierarchicalData) {
 
 }
 
-// function setupLeafNodeClick(series) {
-//     series.slices.template.events.on("click", function(ev) {
-//       var dataItem = ev.target.dataItem;
-//       if (dataItem && dataItem.get("children").length === 0) {
-//         // This is a leaf node
-//         window.open("", "_blank");  // probably add link to each task (an html page)
-//       }
-//     });
-  
-//     // Change cursor to pointer for leaf nodes
-//     series.slices.template.adapters.add("cursorOverStyle", function(cursorOverStyle, target) {
-//       var dataItem = target.dataItem;
-//       if (dataItem && dataItem.get("children").length === 0) {
-//         return "pointer";
-//       }
-//       return cursorOverStyle;
-//     });
-//   }
+function setupLeafNodeClick(series) {
+    series.slices.template.events.on("click", function(ev) {
+        var dataItem = ev.target.dataItem;
+        if (dataItem && dataItem.get("children").length === 0) {
+            // This is a leaf node
+            var path = buildPath(dataItem);
+
+            // @TODO: Jiacheng; change to the actual url
+            var url = `https://github.com/woodfrog/megabench-eval-mock/tree/master/taxonomy_example/${path}`;
+            window.open(url, "_blank");
+        }
+    });
+
+    // Change cursor to pointer for leaf nodes
+    series.slices.template.adapters.add("cursorOverStyle", function(cursorOverStyle, target) {
+        var dataItem = target.dataItem;
+        if (dataItem && dataItem.get("children").length === 0) {
+            return "pointer";
+        }
+        return cursorOverStyle;
+    });
+}
+
+function buildPath(dataItem) {
+    var path = [];
+    var currentItem = dataItem;
+    
+    while (currentItem && currentItem.get("depth") > 0) {
+        path.unshift(currentItem.dataContext.originalName || currentItem.get("category"));
+        currentItem = currentItem.get("parent");
+    }
+    
+    return path.join('/');
+}
 
 
 function customBreakWords(text, maxLength) {
