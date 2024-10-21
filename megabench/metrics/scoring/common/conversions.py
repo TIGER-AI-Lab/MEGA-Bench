@@ -30,9 +30,9 @@ def cast_to_set(object) -> set:
 
 def cast_to_dict(object) -> dict:
     """Try to cast an object as a dict."""
-    if isintance(object, dict):
+    if isinstance(object, dict):
         return {key: cast_to_dict(val) for key, val in object.items()}
-    elif isintance(object, str):
+    elif isinstance(object, str):
         extract_json_attempt = parse_json(object)
         if extract_json_attempt:
             return extract_json_attempt

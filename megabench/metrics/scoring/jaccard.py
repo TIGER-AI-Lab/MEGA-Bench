@@ -59,6 +59,7 @@ class JaccardCaseInsensitive:
                 new_tgt = tuple(
                     [
                         item.lower()
+                        .replace(" ", "")
                         .replace("-", "")
                         .replace("\n", "")
                         .replace("\t", "")
