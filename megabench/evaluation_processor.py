@@ -4,7 +4,6 @@ from typing import Any, Dict
 import logging
 import pathlib
 from metrics import MetricType, AggregationType, ResponseParseType
-from metrics.scoring.gpt_4o_as_judge import GPT4OJudgeScore
 from metrics.parsing.common.utils import evaluate_as_string
 import os
 import ast
@@ -44,12 +43,14 @@ class EvaluationProcessor:
 
         self.scoring_functions = {}
         for task in hf_data:
-            self.scoring_functions[task["task_name"]] = ast.literal_eval(task["task_samples"][0]["metric_info"])
-        
+            self.scoring_functions[task["task_name"]] = ast.literal_eval(
+                task["task_samples"][0]["metric_info"]
+            )
+
         self.organized_hf_data = {}
         for task in hf_data:
             self.organized_hf_data[task["task_name"]] = task["task_samples"]
-    
+
     def _get_eval_context(self, task_name, query):
         query_index = query["task_idx"]
         eval_context = self.organized_hf_data[task_name][query_index]["eval_context"]
@@ -82,7 +83,7 @@ class EvaluationProcessor:
                     for query_idx, query in enumerate(task["query_response"]):
                         existing_query = existing_task["query_response"][query_idx]
                         query["scores"] = existing_query.get("scores", {})
-    
+
     def _determine_eval_style(self, task):
         metric_info = self.scoring_functions[task["task_name"]]
         all_task_metrics = list(metric_info["field_score_function"].values())
@@ -474,20 +475,26 @@ class EvaluationProcessor:
         correct_value = evaluate_as_string(correct_value)
 
         if self.sanity_check_eval:
-            if metric == MetricType.SYMBOLIC_PLANNING_TEST:
-                should_skip = query_idx == 0
-            elif metric == MetricType.PROGRAM_JUDGE:
-                should_skip = query_idx != 0
+            if metric == MetricType.PROGRAM_JUDGE:
+                # Some programming tasks are evaluated with test cases,
+                # there is no ground truth code provided
+                # The answer of the 1-shot demonstration examples are all tested
+                should_skip = True
             else:
                 should_skip = correct_value == ""
         else:
             should_skip = False
+
         if should_skip:
             query["scores"]["field"][field] = 1
-            if metric in [MetricType.CONSTRAINED_GENERATION, MetricType.XML_NORM_POINT_IN_BBOX, GPT4OJudgeScore()]:
+            if metric in [
+                MetricType.CONSTRAINED_GENERATION,
+                MetricType.XML_NORM_POINT_IN_BBOX,
+                MetricType.GPT_4O_AS_JUDGE,
+            ]:
                 query["scores"]["info"][
                     field
-                ] = "Metric skipped because no ground truth was provided."
+                ] = "Metric skipped because no ground truth was provided for the task."
             return
 
         if metric == MetricType.UNSUPPORTED:
@@ -534,6 +541,7 @@ class EvaluationProcessor:
             query["scores"]["field"][field] = metric.match(
                 response_obj.get(field), correct_value
             )
+
         if self.sanity_check_eval and query["scores"]["field"][field] != 1:
             if (
                 metric == MetricType.POSITIVE_INT_MATCH
@@ -543,7 +551,7 @@ class EvaluationProcessor:
                 return
             score = query["scores"]["field"][field]
             self.file_logger.error(
-                f"Example did not get a score of 1: {task_name=}, {field=}, {query['index']=}, {score=}"
+                f"Example did not get a score of 1: {task_name=}, {field=}, {query['task_idx']=}, {score=}"
             )
 
     def _save_json_safe(self, file_path: str, data: Any) -> None:

@@ -58,7 +58,7 @@ class TaskProcessor:
                 f"The number of saved queries does not match the new query number, re-run the query..."
             )
             return True
-        
+
         if response["global_description"] != query_data["global_description"]:
             logging.debug(
                 f'Global description changed. {response["global_description"]=}, {query_data["global_description"]=}'
@@ -69,7 +69,7 @@ class TaskProcessor:
                 f'Global images changed. {response["global_images"]=}, {query_data["global_images"]=}'
             )
             return True
-        
+
         response_examples = [
             {"image_paths": ex["images"], "query_text": ex["query_text"]}
             for ex in response["query_response"]
@@ -96,9 +96,7 @@ class TaskProcessor:
 
     def update_ground_truth_inplace(self, response, query_data) -> bool:
         needs_to_be_updated = False
-        for resp_ex, query_ex in zip(
-            response["query_response"], query_data["queries"]
-        ):
+        for resp_ex, query_ex in zip(response["query_response"], query_data["queries"]):
             correct_answer = query_ex["query_answer"]
             correct_answer_str = str(query_ex["query_answer"])
             resp_answer_str = str(resp_ex["correct_answer"])
@@ -150,17 +148,13 @@ class TaskProcessor:
                     return True
         return False
 
-    def prepare_response_data(
-        self, task_name, query_data, query_response
-    ):
+    def prepare_response_data(self, task_name, query_data, query_response):
         global_description = query_data["global_description"]
         global_images = query_data["global_images"]
         example_info = query_data["example_info"]
         queries = query_data["queries"]
 
-        updated_query_response = self.update_query_response(
-            query_response, queries
-        )
+        updated_query_response = self.update_query_response(query_response, queries)
 
         return {
             "task_name": task_name,
@@ -199,8 +193,13 @@ class TaskProcessor:
                 **self.model_kwargs,
             )
 
-        task_name = task_item['task_name']
-        query_data = self.construct_query_data(task_item)
+        task_name = task_item["task_name"]
+        include_metrics = (
+            True
+            if self.model_type == ModelType.GROUND_TRUTH_ORACLE_SANITY_CHECK
+            else False
+        )
+        query_data = self.construct_query_data(task_item, include_metrics)
 
         logging.info(f"Processing {task_name}...")
 
@@ -226,12 +225,14 @@ class TaskProcessor:
 
         if single_task_name:
             logging.info(f"Processing single task: {single_task_name}")
-            tasks_to_process = [item for item in data if item['task_name'] == single_task_name]
+            tasks_to_process = [
+                item for item in data if item["task_name"] == single_task_name
+            ]
             if not tasks_to_process:
                 logging.error(f"Task '{single_task_name}' not found in dataset.")
         else:
             tasks_to_process = data
-        
+
         # Load the model outside of the multiprocessing context if running locally
         # otherwise, load the model inside each task's process to facilitate MP
         if "KEY" in self.model_type.value[2]:
@@ -270,24 +271,32 @@ class TaskProcessor:
         )
         self.write_all_query_responses(all_query_responses)
 
-    def construct_query_data(self, task_item):
-        task_name = task_item['task_name']
-        query_samples = task_item.get('task_samples', [])
+    def construct_query_data(self, task_item, include_metrics=False):
+        task_name = task_item["task_name"]
+        query_samples = task_item.get("task_samples", [])
 
         # Extract global information and example_info from the first sample
         first_sample = query_samples[0]
-        global_description = first_sample.get('task_description', '')
-        global_images = first_sample.get('global_media', [])
-        example_text = first_sample.get('example_text', '')
-        example_media = first_sample.get('example_media', [])
+        global_description = first_sample.get("task_description", "")
+        global_images = first_sample.get("global_media", [])
+        example_text = first_sample.get("example_text", "")
+        example_media = first_sample.get("example_media", [])
+        if include_metrics:
+            metric_info = first_sample.get("metric_info", {})
 
         # Verify that task-wise global information and example_info are the same for all samples
         for query in query_samples[1:]:
-            if (query.get('task_description', '') != global_description or
-                query.get('global_media', []) != global_images or
-                query.get('example_text', '') != example_text or
-                query.get('example_media', []) != example_media):
-                raise ValueError("Global information or example info is not consistent across all samples")
+            if (
+                query.get("task_description", "") != global_description
+                or query.get("global_media", []) != global_images
+                or query.get("example_text", "") != example_text
+                or query.get("example_media", []) != example_media
+            ):
+                raise ValueError(
+                    "Global information or example info is not consistent across all samples"
+                )
+            elif include_metrics and query.get("metric_info", {}) != metric_info:
+                raise ValueError("Metric info is not consistent across all samples")
 
         if isinstance(global_images, str):
             global_images = ast.literal_eval(global_images)
@@ -295,30 +304,34 @@ class TaskProcessor:
             example_media = ast.literal_eval(example_media)
 
         query_data = {
-            'task_name': task_name,
-            'global_description': global_description,
-            'global_images': global_images,
-            'queries': [],
-            'example_info': {
-                'image_paths': example_media,
-                'example_text': example_text,
-            }
+            "task_name": task_name,
+            "global_description": global_description,
+            "global_images": global_images,
+            "queries": [],
+            "example_info": {
+                "image_paths": example_media,
+                "example_text": example_text,
+            },
         }
+        if include_metrics:
+            query_data["metric_info"] = ast.literal_eval(metric_info)
 
         for query_idx, query in enumerate(query_samples):
-            query_text = query.get('query_text', '')
-            query_media = query.get('query_media', [])
-            query_answer = ast.literal_eval(query.get('answer', ''))
-            global_idx = query.get('id', '')
+            query_text = query.get("query_text", "")
+            query_media = query.get("query_media", [])
+            query_answer = ast.literal_eval(query.get("answer", ""))
+            global_idx = query.get("id", "")
             if isinstance(query_media, str):
                 query_media = ast.literal_eval(query_media)
 
-            query_data['queries'].append({
-                "global_idx": global_idx,
-                "task_idx": query_idx,
-                'image_paths': query_media,
-                'query_text': query_text,
-                'query_answer': query_answer,
-            })
-        
+            query_data["queries"].append(
+                {
+                    "global_idx": global_idx,
+                    "task_idx": query_idx,
+                    "image_paths": query_media,
+                    "query_text": query_text,
+                    "query_answer": query_answer,
+                }
+            )
+
         return query_data

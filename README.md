@@ -137,6 +137,21 @@ python main.py --model_type QWEN2_VL_7B \
 ```
 If you want to evaluate on the open set, change it to ``--dataset_subset_name open``.
 
+
+### Ground truth sanity check
+
+Run the ground-truth sanity check with the following command:
+```bash
+python main.py \
+   --model_type GROUND_TRUTH_ORACLE_SANITY_CHECK \
+   --output_file results/Ground_truth_oracle_sanity_check/all_query_responses.json \
+   --force_regenerate \
+   --multiprocess --processes 48 \
+   --dataset_name TIGER-Lab/MEGA-Bench \
+   --dataset_subset_name core
+```
+This should produce full scores for the Core tasks, which helps verify the validity of the metric implementations.
+
 ### Detailed explanation of command line arguments
 
 The launch script ``main.py`` has the following arguments:
