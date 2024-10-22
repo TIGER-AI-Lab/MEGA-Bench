@@ -18,8 +18,10 @@ class ModelClassContainer:
 class ModelClass(ModelClassContainer, Enum):
     OpenAI = ("models.OpenAI", "OpenAI")
     Claude = ("models.Claude", "Claude")
+    Gemini = ("models.Gemini", "Gemini")
     Qwen2VL = ("models.Qwen2VL", "Qwen2VL")
     InternVL = ("models.InternVL", "InternVL")
+    LlavaOV = ("models.LlavaOV", "LlavaOV")
     GroundTruthOracle = ("models.GroundTruthOracle", "GroundTruthOracle")
 
 
@@ -57,6 +59,30 @@ class ModelType(Enum):
         "ANTHROPIC_API_KEY",
         ModelClass.Claude,
     )
+    GEMINI_FLASH = (
+        "gemini_flash",
+        "gemini-1.5-flash-001",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+    )
+    GEMINI_FLASH_002 = (
+        "gemini_flash",
+        "gemini-1.5-flash-002",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+    )
+    GEMINI_PRO = (
+        "gemini_pro",
+        "gemini-1.5-pro-001",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+    )
+    GEMINI_PRO_002 = (
+        "gemini_pro",
+        "gemini-1.5-pro-002",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+    )
     QWEN2_VL_72B = (
         "Qwen2_VL_72B",
         "Qwen/Qwen2-VL-72B-Instruct",
@@ -72,6 +98,18 @@ class ModelType(Enum):
         ModelClass.InternVL,
     )
     INTERNVL2_8B = ("InternVL2-8B", "OpenGVLab/InternVL2-8B", "", ModelClass.InternVL)
+    LLAVA_ONEVISION_72B = (
+        "Llava_OneVision_72B",
+        "lmms-lab/llava-onevision-qwen2-72b-ov-chat",
+        "",
+        ModelClass.LlavaOV,
+    )
+    LLAVA_ONEVISION_7B = (
+        "Llava_OneVision_7B",
+        "lmms-lab/llava-onevision-qwen2-7b-ov",
+        "",
+        ModelClass.LlavaOV,
+    )
     GROUND_TRUTH_ORACLE_SANITY_CHECK = (
         "Ground-Truth-Oracle_Sanity-Check",
         "",
@@ -131,6 +169,22 @@ MAX_IMAGES_PER_API_CALL = {
         "max_num_image": 64,
         "total_demo_video_frames": 8,
     },
+    ModelType.GEMINI_PRO: {
+        "max_num_image": 128,
+        "total_demo_video_frames": 16,
+    },
+    ModelType.GEMINI_PRO_002: {
+        "max_num_image": 128,
+        "total_demo_video_frames": 16,
+    },
+    ModelType.GEMINI_FLASH: {
+        "max_num_image": 128,
+        "total_demo_video_frames": 16,
+    },
+    ModelType.GEMINI_FLASH_002: {
+        "max_num_image": 128,
+        "total_demo_video_frames": 16,
+    },
     ModelType.QWEN2_VL_7B: {
         "max_num_image": 18,
         "total_demo_video_frames": 2,
@@ -150,6 +204,14 @@ MAX_IMAGES_PER_API_CALL = {
     ModelType.INTERNVL2_8B: {
         "max_num_image": 18,
         "total_demo_video_frames": 2,
+    },
+    ModelType.LLAVA_ONEVISION_72B: {
+        "max_num_image": 28,
+        "total_demo_video_frames": 4,
+    },
+    ModelType.LLAVA_ONEVISION_7B: {
+        "max_num_image": 20,
+        "total_demo_video_frames": 4,
     },
     ModelType.GROUND_TRUTH_ORACLE_SANITY_CHECK: {
         "max_num_image": 64,

@@ -80,15 +80,16 @@ python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"
 
 **📌 Note:** Due to slight reorganization of the prompt for uploading to Hugging Face Datasets, the evaluation results from this repository may differ slightly from those reported in the paper. However, the overall performance trend and capability report should remain consistent.
 
-In the initial release, we provide evaluation pipelines for four types of models: GPT, Claude, Qwen2VL, and InternVL2. See `megabench/models/model_type.py` for details on the model types. We will add code for more models in the future.
+The current repo provides evaluation pipelines for six types of models: GPT, Claude, Gemini, Qwen2VL, InternVL2, and Llava-OneVision. See `megabench/models/model_type.py` for details on the model types. We will add code for more models in the future.
 
-### Proprietary Models (GPT, Claude)
+### Proprietary Models (GPT, Claude, Gemini)
 
 To run with GPT or Claude, set up the OpenAI or Anthropic API key:
 
 ```bash
 export OPENAI_API_KEY=<your_openai_api_key>
 export ANTHROPIC_API_KEY=<your_anthropic_api_key>
+export GOOGLE_API_KEY=<your_gemini_api_key>
 ```
 
 Example commands for running evaluation with GPT-4o (0513) or Claude-3.5-Sonnet on the **Core subset**, using multiprocessing with 2 subprocesses:
@@ -101,6 +102,9 @@ python main.py --model_type GPT_4O_0513 --output_file results/GPT-4o-0513/all_qu
 
 # Claude-3.5-Sonnet
 python main.py --model_type CLAUDE_3_5_SONNET --output_file results/Claude-3.5-Sonnet/all_query_responses.json --print_response --dataset_subset_name core --multiprocess --processes 2
+
+# Gemini-1.5-Pro-002
+python main.py --model_type GEMINI_PRO_002 --output_file results/Gemini-1.5-Pro-002/all_query_responses.json --print_response --dataset_subset_name core --multiprocess --processes 2 
 ```
 
 To run with the Open-ended subset, set ```--dataset_subset_name open```. The evaluation processor will evaluate all tasks in the response output file. **If you only want to evaluate the Core subset, you should set different output file paths for Core and Open-ended subsets.**
@@ -108,7 +112,7 @@ To run with the Open-ended subset, set ```--dataset_subset_name open```. The eva
 To evaluate the Open-ended subset, you need to set up the OpenAI API key first.
 
 
-### Open-source Models (Qwen2VL, InternVL2)
+### Open-source Models (Qwen2VL, InternVL2, Llava-OneVision)
 
 To run with Qwen2VL or InternVL2, first install the latest [vllm](https://github.com/vllm-project/vllm):
 
@@ -116,7 +120,7 @@ To run with Qwen2VL or InternVL2, first install the latest [vllm](https://github
 pip install vllm -U
 ```
 
-Example commands for running evaluation with Qwen2VL or InternVL2 on the **Core subset**, using multiprocessing with 2 subprocesses:
+Example commands for running evaluation with Qwen2VL or InternVL2 on the **Core subset**:
 
 ```bash
 cd megabench
@@ -135,6 +139,15 @@ python main.py --model_type QWEN2_VL_7B \
    --dataset_name TIGER-Lab/MEGA-Bench \
    --dataset_subset_name core
 ```
+
+To run with Llava-OneVision, first install the [llava-next] repositary (https://github.com/LLaVA-VL/LLaVA-NeXT) (We found the version supported by vllm got much lower performance than the official one). Then run the following command:
+
+```bash
+python main.py --model_type LLAVA_ONEVISION_7B \
+   --output_file results/Llava_OneVision_7B/all_query_responses.json \
+   --print_response --dataset_subset_name core
+```
+
 If you want to evaluate on the open set, change it to ``--dataset_subset_name open``.
 
 
