@@ -51,12 +51,6 @@ class BaseModel(abc.ABC):
         with open(file_path, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    @property
-    def example_response_prompt(self):
-        if self.use_cot:
-            return self.prompts["example_response_cot"]
-        return self.prompts["example_response"]
-
     def prepare_system_message(self) -> List[Dict[str, str]]:
         if self.system_message:
             return [{"role": "system", "content": self.system_message}]

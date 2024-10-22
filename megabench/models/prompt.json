@@ -1,15 +1,4 @@
 {
-    "demonstration_intro": "Demonstration example(s) of the task:",
-    "demonstration_intro_no_media": "Demonstration example(s) of the task without concrete image, providing the expected output format:", 
-    "demonstration_instruction": "Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.",
-    "demonstration_instruction_no_media": "Answer the new question below, following the same output format of the demonstration example(s). Do not output additional contents that violate the specified format.",
-    "demonstration_instruction_cot": "Answer the new question below. The last part of your response should be of the following format: \"Answer: <YOUR ANSWER>\" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.",
-    "demonstration_instruction_cot_no_media": "Answer the new question below. The last part of your response should be of the following format: \"Answer: <YOUR ANSWER>\" (without angle brackets) where YOUR ANSWER is your answer, following the same output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.",
-    "example_intro": "Example {example_i}:",
-    "example_question": "Example Question: {question}",
-    "example_response": "Example Response: {response}",
-    "example_response_cot": "Example Response:\n[PLEASE OUTPUT YOUR REASONING]\nAnswer: {response}",
-    "query_question": "Question: {question}",
     "video_start": "<video frames start>",
     "video_end": "<video frames end>"
 }
