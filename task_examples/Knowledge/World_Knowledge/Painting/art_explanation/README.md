@@ -1,4 +1,4 @@
-# Task: art_explanation
+# Task: Art explanation
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ This picture is like that! It's made by someone who saw the night in his own spe
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 217
-- **Eval Context**: {}
+- **Sample ID**: 217
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge;Painting
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images come from various websites. Questions were created by a human annotator.

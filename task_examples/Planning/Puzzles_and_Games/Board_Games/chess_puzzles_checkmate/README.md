@@ -1,4 +1,4 @@
-# Task: chess_puzzles_checkmate
+# Task: Chess puzzles checkmate
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: ['23. Qc5+ Qb8 24. Rxd8#']
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5738
-- **Eval Context**: {}
+- **Sample ID**: 5738
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games;Board_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: User Interface Screenshots
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'move_sequences': 'set_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'move_sequences': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from [Lichess](Lichess.org), and the questions and answers are adapted to match strings

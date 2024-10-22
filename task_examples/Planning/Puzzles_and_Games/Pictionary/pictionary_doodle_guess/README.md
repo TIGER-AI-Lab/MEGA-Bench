@@ -1,4 +1,4 @@
-# Task: pictionary_doodle_guess
+# Task: Pictionary doodle guess
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: The Eiffel Tower
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 6319
-- **Eval Context**: {}
+- **Sample ID**: 6319
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games;Pictionary
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from [website](https://quickdraw.withgoogle.com/data), and the questions and answers are adapted to match strings

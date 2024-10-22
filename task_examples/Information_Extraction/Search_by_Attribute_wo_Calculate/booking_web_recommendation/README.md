@@ -1,4 +1,4 @@
-# Task: booking_web_recommendation
+# Task: Booking web recommendation
 
 ## Task Description:
 
@@ -28,6 +28,12 @@ Given a set of screenshots taken from a booking website, each query will ask abo
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: 10:00 pm - 2:00 am (next day) Weekdays
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -38,15 +44,16 @@ Answer: ["Mcdonald's", "Lewis Babies Cookies and More", "Primo Burgers"]
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3561
-- **Eval Context**: {}
+- **Sample ID**: 3561
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Search_by_Attribute_wo_Calculate
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: User Interface Screenshots
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'restaurants': 'jaccard_index_case_insensitive'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'restaurants': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images and labels come from the SEED-Bench dataset. Some images are from [Yelp](https://www.yelp.com/). Questions and annotations were adapted by a human annotator.

@@ -1,4 +1,4 @@
-# Task: iq_test_open_ended
+# Task: Iq test open ended
 
 ## Task Description:
 
@@ -34,15 +34,16 @@ Therefore, the answer is E.
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 667
-- **Eval Context**: {}
+- **Sample ID**: 667
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and answers are collected from website

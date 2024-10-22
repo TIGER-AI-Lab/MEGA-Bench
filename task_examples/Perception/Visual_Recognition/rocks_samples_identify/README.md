@@ -1,4 +1,4 @@
-# Task: rocks_samples_identify
+# Task: Rocks samples identify
 
 ## Task Description:
 
@@ -24,15 +24,16 @@ Answer: 千枚岩/Phyllite
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4524
-- **Eval Context**: {}
+- **Sample ID**: 4524
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Visual_Recognition
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images, questions, and answers were collected from the Web by the annotator

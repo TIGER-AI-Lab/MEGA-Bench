@@ -1,4 +1,4 @@
-# Task: MMSoc_Memotion
+# Task: Mmsoc memotion
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: {'humor': '1', 'sarcasm': '0', 'offensive': '0', 'motivational': '0', 's
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5034
-- **Eval Context**: {}
+- **Sample ID**: 5034
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture;safety_and_norm
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'humor': 'exact_str_match', 'sarcasm': 'exact_str_match', 'offensive': 'exact_str_match', 'motivational': 'exact_str_match', 'sentiment': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'humor': 0.2, 'sarcasm': 0.2, 'offensive': 0.2, 'motivational': 0.2, 'sentiment': 0.2}}
   - **Response Parse Function**: json
+- **Source Description**: Images and labels come from the MMSoc benchmark. Questions and answers were adapted by a human annotator.

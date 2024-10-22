@@ -1,4 +1,4 @@
-# Task: paper_review_writing
+# Task: Paper review writing
 
 ## Task Description:
 
@@ -88,15 +88,16 @@ Would be great to have some justification and explanation of this setting.
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 738
-- **Eval Context**: {}
+- **Sample ID**: 738
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Metrics;Paper_Review
-- **App**: Metrics
+- **Application**: Metrics
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from OpenReview's public paper reviews

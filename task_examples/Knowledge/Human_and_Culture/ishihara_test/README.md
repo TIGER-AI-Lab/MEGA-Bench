@@ -1,4 +1,4 @@
-# Task: ishihara_test
+# Task: Ishihara test
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'protanopia': '["5"]', 'deuteranopia': '[""]', 'tritanopia': '["5"]', '
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3206
-- **Eval Context**: {}
+- **Sample ID**: 3206
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'protanopia': 'set_precision', 'deuteranopia': 'set_precision', 'tritanopia': 'set_precision', 'normal_vision': 'set_precision'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'protanopia': 2, 'deuteranopia': 1, 'tritanopia': 1, 'normal_vision': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images come from various websites. Questions and annotations were created by a human annotator.

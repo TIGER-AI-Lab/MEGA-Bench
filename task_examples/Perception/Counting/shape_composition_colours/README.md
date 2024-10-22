@@ -1,4 +1,4 @@
-# Task: shape_composition_colours
+# Task: Shape composition colours
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'red': '2', 'orange': '2', 'yellow': '2', 'green': '3', 'blue': '4', 'p
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5569
-- **Eval Context**: {}
+- **Sample ID**: 5569
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Counting
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'red': 'positive_int_match', 'orange': 'positive_int_match', 'yellow': 'positive_int_match', 'green': 'positive_int_match', 'blue': 'positive_int_match', 'purple': 'positive_int_match', 'gray': 'positive_int_match', 'black': 'positive_int_match', 'pink': 'positive_int_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'red': 1, 'orange': 1, 'yellow': 1, 'green': 1, 'blue': 1, 'purple': 1, 'gray': 1, 'black': 1, 'pink': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images were created by the annotator using Canva. Questions and answers were created by the annotator

@@ -1,4 +1,4 @@
-# Task: vln_identify_robot
+# Task: Vln identify robot
 
 ## Task Description:
 
@@ -45,6 +45,12 @@ Response with "robot i", meaning the robot at i-th image in the image list.
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: You're starting in a bathroom stall, facing a window. Turn around behind you and walk into the hallway. Take one step, right, into the hallway and stop in front of the double french doors that look into a seating area with a fireplace. You're done.
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -55,15 +61,16 @@ Answer: robot 1
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2505
-- **Eval Context**: {}
+- **Sample ID**: 2505
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning;Navigation
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Photographs
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from RxR dataset, the question and answer are adapted to select the robot that should execute the instruction

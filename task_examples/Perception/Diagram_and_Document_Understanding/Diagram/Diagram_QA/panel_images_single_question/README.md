@@ -1,4 +1,4 @@
-# Task: panel_images_single_question
+# Task: Panel images single question
 
 ## Task Description:
 
@@ -21,15 +21,16 @@ Answer: yes
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4992
-- **Eval Context**: {}
+- **Sample ID**: 4992
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Diagram;Diagram_QA
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'output': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'output': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Panel images were collected from . Questions and answers were designed by the annotator

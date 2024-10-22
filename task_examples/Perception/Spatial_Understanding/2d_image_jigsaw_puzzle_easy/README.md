@@ -1,4 +1,4 @@
-# Task: 2d_image_jigsaw_puzzle_easy
+# Task: 2d image jigsaw puzzle easy
 
 ## Task Description:
 
@@ -24,15 +24,16 @@ Answer: {1: 'B', 2: 'A', 3: 'C'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2548
-- **Eval Context**: {}
+- **Sample ID**: 2548
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Spatial_Understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'dict_exact_str_match_agg_recall'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images created by playing the online Jigsaw simulator and taking screenshots

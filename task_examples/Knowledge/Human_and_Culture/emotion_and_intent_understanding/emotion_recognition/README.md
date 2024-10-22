@@ -1,4 +1,4 @@
-# Task: emotion_recognition
+# Task: Emotion recognition
 
 ## Task Description:
 
@@ -32,15 +32,16 @@ Answer: anger
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 689
-- **Eval Context**: {}
+- **Sample ID**: 689
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture;emotion_and_intent_understanding
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'emotion': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'emotion': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Videos and labels come from the CAER dataset. Questions and answers were adapted by a human annotator.

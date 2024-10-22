@@ -1,4 +1,4 @@
-# Task: ocr_open_ended_qa
+# Task: Ocr open ended qa
 
 ## Task Description:
 
@@ -35,15 +35,16 @@ The weights appear to have been underlined for emphasis. The handwriting for 'Ca
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 246
-- **Eval Context**: {}
+- **Sample ID**: 246
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Object_and_Scene_Understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images collected from the Internet. Questions and answers made up by the annotator for the open-ended output format

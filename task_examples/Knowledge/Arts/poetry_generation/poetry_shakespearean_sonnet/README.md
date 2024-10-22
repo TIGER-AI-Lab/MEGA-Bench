@@ -1,4 +1,4 @@
-# Task: poetry_shakespearean_sonnet
+# Task: Poetry shakespearean sonnet
 
 ## Task Description:
 
@@ -16,17 +16,22 @@ No title is needed.
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+![Image](0.png)
 
 
-## Additional Task Information:
 
-- **ID**: 5155
-- **Eval Context**: {'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]', 'syllables': '[10][10][10][10] [10][10][10][10] [10][10][10][10] [10][10]', 'rhyming_scheme': 'abab cdcd efef gg', 'poetry_meter': 'iambic'}
+## Additional Information:
+
+- **Sample ID**: 5155
+- **Eval Context (for this query sample)**: {'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]', 'syllables': '[10][10][10][10] [10][10][10][10] [10][10][10][10] [10][10]', 'rhyming_scheme': 'abab cdcd efef gg', 'poetry_meter': 'iambic'}
 - **Taxonomy Tree Path**: Knowledge;Arts;poetry_generation
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'##poem': 'constrained_generation'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'##poem': 1}}
   - **Response Parse Function**: dummy
+- **Source Description**: Images come from various websites. Questions and evaluation constraints were created by a human annotator.

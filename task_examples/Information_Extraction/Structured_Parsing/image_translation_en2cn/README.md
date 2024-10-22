@@ -1,4 +1,4 @@
-# Task: image_translation_en2cn
+# Task: Image translation en2cn
 
 ## Task Description:
 
@@ -26,15 +26,16 @@ Answer: 图像适配器。我们在由图像编码器生成的视觉标记表示
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3653
-- **Eval Context**: {}
+- **Sample ID**: 3653
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Structured_Parsing
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gleu_cn'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected from various sources, including academic papers, news articles, shopping receipts, etc. The annotations are obtained by GPT-4o translation followed by a human check.

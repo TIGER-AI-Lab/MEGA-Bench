@@ -1,4 +1,4 @@
-# Task: graph_connectivity
+# Task: Graph connectivity
 
 ## Task Description:
 
@@ -28,15 +28,16 @@ Answer: {'node': 'true', 'graph': '6'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1740
-- **Eval Context**: {}
+- **Sample ID**: 1740
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Mathematics;Graph_Theory
-- **App**: Mathematics
+- **Application**: Mathematics
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'node': 'exact_str_match', 'graph': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'node': 1, 'graph': 3}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from IsoBench, and the questions and answers are adapted by human annotator

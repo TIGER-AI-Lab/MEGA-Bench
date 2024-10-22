@@ -1,4 +1,4 @@
-# Task: multi_lingual_manual_explanation_scooter_French
+# Task: Multi lingual manual explanation scooter french
 
 ## Task Description:
 
@@ -24,6 +24,12 @@ Répondez aux questions en français en fonction du contenu de l’image du manu
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: Je monte sur la trottinette, j’appuie sur l’interrupteur, mais la trottinette ne bouge pas. La batterie est pleine et il n’y a pas de panne. Quelle pourrait être la raison ?
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -38,15 +44,16 @@ Example Response: Answer: Oui, la trottinette est équipée d’un éclairage LE
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 863
-- **Eval Context**: {}
+- **Sample ID**: 863
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Detailed_Manual_Understanding
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Screenshots taken from user manual located at [https://fcc.report/FCC-ID/2A33E5LCHG11U/6288539.pdf](https://fcc.report/FCC-ID/2A33E5LCHG11U/6288539.pdf). Questions and answers created by human annnotator.

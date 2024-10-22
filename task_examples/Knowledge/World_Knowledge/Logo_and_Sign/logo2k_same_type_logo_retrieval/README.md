@@ -1,4 +1,4 @@
-# Task: logo2k_same_type_logo_retrieval
+# Task: Logo2k same type logo retrieval
 
 ## Task Description:
 
@@ -28,15 +28,16 @@ Answer: {'logos of the same category': '[2, 3]', 'category name': 'Cosmetics'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 292
-- **Eval Context**: {}
+- **Sample ID**: 292
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge;Logo_and_Sign
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'logos of the same category': 'set_equality', 'category name': 'exact_str_match_case_insensitive'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'logos of the same category': 1, 'category name': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images come from the Logo2K+ dataset dataset and various websites. Questions were created by a human annotator.

@@ -1,4 +1,4 @@
-# Task: code_translation_hard
+# Task: Code translation hard
 
 ## Task Description:
 
@@ -164,15 +164,16 @@ if __name__ == "__main__":
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2534
-- **Eval Context**: {'test_case': [{'input': ['6 11 3', '1 2 3 5', '1 3 8 4', '2 4 4 6', '3 1 8 6', '1 3 10 8', '2 3 2 8', '3 4 5 3', '3 5 10 7', '3 3 2 3', '4 6 10 12', '5 6 10 6', '3 4 5 2 5 100', '1 2', '2 1', '1 17'], 'expected': '8\n8\n1'}, {'input': ['4 4 1', '2 4 6 8', '1 2 3 5', '2 3 4 6', '3 4 2 4', '4 1 7 9', '4 12 15 20', '2 8'], 'expected': '4'}]}
+- **Sample ID**: 2534
+- **Eval Context (for this query sample)**: {'test_case': [{'input': ['6 11 3', '1 2 3 5', '1 3 8 4', '2 4 4 6', '3 1 8 6', '1 3 10 8', '2 3 2 8', '3 4 5 3', '3 5 10 7', '3 3 2 3', '4 6 10 12', '5 6 10 6', '3 4 5 2 5 100', '1 2', '2 1', '1 17'], 'expected': '8\n8\n1'}, {'input': ['4 4 1', '2 4 6 8', '1 2 3 5', '2 3 4 6', '3 4 2 4', '4 1 7 9', '4 12 15 20', '2 8'], 'expected': '4'}]}
 - **Taxonomy Tree Path**: Coding;Code_Translation
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'program_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and test cases are collected from [Pintia](https://pintia.cn)

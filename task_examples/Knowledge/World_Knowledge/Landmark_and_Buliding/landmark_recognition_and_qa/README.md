@@ -1,4 +1,4 @@
-# Task: landmark_recognition_and_qa
+# Task: Landmark recognition and qa
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'landmark name': 'St. Lawrence Hall', 'city': 'Toronto', 'country': 'Ca
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1459
-- **Eval Context**: {}
+- **Sample ID**: 1459
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge;Landmark_and_Buliding
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'landmark name': 'near_str_match', 'city': 'multi_ref_phrase', 'country': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'landmark name': 1, 'city': 1, 'country': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images and labels come from the Landmark v2 dataset. Questions and answers were adapted by a human annotator.

@@ -1,4 +1,4 @@
-# Task: photo_sharing_image_retrieval
+# Task: Photo sharing image retrieval
 
 ## Task Description:
 
@@ -38,6 +38,33 @@ During a dialogue between two users, a user shares a photo during the conversati
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: [{'message': 'What are you up too?', 'user_id': 1},
+ {'message': 'Just relaxing at home and you?', 'user_id': 0},
+ {'message': "Just finishing up some laundry I didn't get to yesterday!",
+  'user_id': 1},
+ {'message': 'Nice!', 'user_id': 0},
+ {'message': 'yes! one of those boring adult chores.', 'user_id': 1},
+ {'message': 'I actually got to spend some time with my dad recently which was nice',
+  'user_id': 0},
+ {'message': 'Oh how nice! What did you guys do??', 'user_id': 1},
+ {'message': 'We took him to get a much needed haircut haha', 'user_id': 0},
+ {'message': 'Quarantine do a number on his hair hahaha', 'user_id': 1},
+ {'message': 'exactly', 'user_id': 0},
+ {'message': "Well I'm sure it looks great!", 'user_id': 1},
+ {'message': '[SHARE PHOTO]', 'user_id': 0},
+ {'message': 'This was where we got it', 'user_id': 0},
+ {'message': 'can you see?', 'user_id': 0},
+ {'message': 'Oh did you do it yourself?!', 'user_id': 1},
+ {'message': 'Yes! looks good!', 'user_id': 1},
+ {'message': 'Haha yep! It was fun', 'user_id': 0},
+ {'message': 'Well I have to run, but good catching up', 'user_id': 0},
+ {'message': 'Yes same to you! Hope to talk soon!', 'user_id': 1},
+ {'message': 'bye!', 'user_id': 0}]
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -70,15 +97,16 @@ Answer: 1
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1489
-- **Eval Context**: {}
+- **Sample ID**: 1489
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Diagram
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'index': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'index': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were from the PhotoChat dataset. Questions and answers are designed by the annotator

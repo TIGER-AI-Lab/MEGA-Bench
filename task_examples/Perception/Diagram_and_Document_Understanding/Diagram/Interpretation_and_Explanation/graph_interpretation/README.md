@@ -1,4 +1,4 @@
-# Task: graph_interpretation
+# Task: Graph interpretation
 
 ## Task Description:
 
@@ -29,15 +29,16 @@ This graph is trying to explain the non-ideal behavior of real gases and their p
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 560
-- **Eval Context**: {}
+- **Sample ID**: 560
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Diagram;Interpretation_and_Explanation
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: The images of line/dot graphs are collected from the Internet, and the annotator created the question and open-ended reference answer

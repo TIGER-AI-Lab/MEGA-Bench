@@ -1,4 +1,4 @@
-# Task: multi_lingual_manual_explanation_scooter_Spanish
+# Task: Multi lingual manual explanation scooter spanish
 
 ## Task Description:
 
@@ -24,6 +24,12 @@ Según el contenido de las imágenes del manual de usuario proporcionado, respon
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: Cuando me subo al scooter y presiono el interruptor, no se mueve, la batería está llena y no tiene fallos, ¿qué podría estar ocurriendo?
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -38,15 +44,16 @@ Example Response: Answer: Sí, el scooter está equipado con iluminación LED y 
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 877
-- **Eval Context**: {}
+- **Sample ID**: 877
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Detailed_Manual_Understanding
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Screenshots taken from user manual located at [https://fcc.report/FCC-ID/2A33E5LCHG11U/6288539.pdf](https://fcc.report/FCC-ID/2A33E5LCHG11U/6288539.pdf). Questions and answers created by human annnotator.

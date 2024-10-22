@@ -1,4 +1,4 @@
-# Task: visual_correspondance_in_two_images
+# Task: Visual correspondance in two images
 
 ## Task Description:
 
@@ -24,15 +24,16 @@ Answer: {'Ref1': 'C', 'Ref2': 'A'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3084
-- **Eval Context**: {}
+- **Sample ID**: 3084
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Spatial_Understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'dict_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images are from BLINK. Annotator manually added one more reference point per sample and designed structured answers

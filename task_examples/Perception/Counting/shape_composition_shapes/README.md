@@ -1,4 +1,4 @@
-# Task: shape_composition_shapes
+# Task: Shape composition shapes
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'circle': '2', 'triangle': '3', 'square': '4', 'heart': '0', 'star': '2
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5555
-- **Eval Context**: {}
+- **Sample ID**: 5555
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Counting
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'circle': 'positive_int_match', 'triangle': 'positive_int_match', 'square': 'positive_int_match', 'heart': 'positive_int_match', 'star': 'positive_int_match', 'pentagon': 'positive_int_match', 'hexagon': 'positive_int_match', 'octagon': 'positive_int_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'circle': 1, 'triangle': 1, 'square': 1, 'heart': 1, 'star': 1, 'pentagon': 1, 'hexagon': 1, 'octagon': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images were made by the annotator using Canva. Questions and answers were created by the annotator

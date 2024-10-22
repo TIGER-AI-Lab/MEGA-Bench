@@ -1,4 +1,4 @@
-# Task: ball_cup_swap_3
+# Task: Ball cup swap 3
 
 ## Task Description:
 
@@ -42,15 +42,16 @@ Answer: 1
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5953
-- **Eval Context**: {}
+- **Sample ID**: 5953
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'final_position': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'final_position': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Screenshots taken from video and edited together using images found online, and the questions and answers are adapted to match strings

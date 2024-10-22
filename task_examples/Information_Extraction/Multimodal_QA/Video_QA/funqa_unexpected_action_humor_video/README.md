@@ -1,4 +1,4 @@
-# Task: funqa_unexpected_action_humor_video
+# Task: Funqa unexpected action humor video
 
 ## Task Description:
 
@@ -21,15 +21,16 @@ Example Response: Answer: The dog pulled the snake towards itself, making it jum
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 30
-- **Eval Context**: {}
+- **Sample ID**: 30
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Multimodal_QA;Video_QA
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Videos
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Videos and annotations were adapted from the FunQA benchmark by the human annotator into being an open-ended question.

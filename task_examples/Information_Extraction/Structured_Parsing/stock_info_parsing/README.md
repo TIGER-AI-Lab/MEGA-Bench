@@ -1,4 +1,4 @@
-# Task: stock_info_parsing
+# Task: Stock info parsing
 
 ## Task Description:
 
@@ -42,15 +42,16 @@ Answer: {'name': 'Intel Corporation (INTC)', 'previous': '20.69', 'open': '20.50
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2012
-- **Eval Context**: {}
+- **Sample ID**: 2012
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Structured_Parsing
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: User Interface Screenshots
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'name': 'simple_str_match', 'previous': 'simple_str_match', 'bid': 'simple_str_match', 'target': 'simple_str_match', 'open': 'simple_str_match', 'ask': 'simple_str_match', 'day': 'simple_str_match', 'week': 'simple_str_match', 'volume': 'simple_str_match', 'avg': 'simple_str_match', 'cap': 'simple_str_match', 'beta': 'simple_str_match', 'EPS': 'simple_str_match', 'earning': 'simple_str_match', 'yield': 'simple_str_match', 'Ex': 'simple_str_match', 'PE': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'name': 1, 'previous': 1, 'bid': 1, 'target': 1, 'open': 1, 'ask': 1, 'day': 1, 'week': 1, 'volume': 1, 'avg': 1, 'cap': 1, 'beta': 1, 'EPS': 1, 'earning': 1, 'yield': 1, 'Ex': 1, 'PE': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Screenshots were taken by the human annotator on [Yahoo Finance](https://finance.yahoo.com/). Questions and answers were created by the annotator.

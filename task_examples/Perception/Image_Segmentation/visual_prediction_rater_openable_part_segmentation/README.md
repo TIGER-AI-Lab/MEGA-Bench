@@ -1,4 +1,4 @@
-# Task: visual_prediction_rater_openable_part_segmentation
+# Task: Visual prediction rater openable part segmentation
 
 ## Task Description:
 
@@ -30,15 +30,16 @@ Answer: 1, 2, 3
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4720
-- **Eval Context**: {}
+- **Sample ID**: 4720
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Image_Segmentation
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'order': 'sequence_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'order': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected using screenshots from arXiv papers' qualitative results. Questions and answers were created by the annotator

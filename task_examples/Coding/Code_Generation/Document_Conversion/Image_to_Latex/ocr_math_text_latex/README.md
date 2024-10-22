@@ -1,4 +1,4 @@
-# Task: ocr_math_text_latex
+# Task: Ocr math text latex
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: Another line of works propose to modify the diffusion trajectory through
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 6037
-- **Eval Context**: {}
+- **Sample ID**: 6037
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Coding;Code_Generation;Document_Conversion;Image_to_Latex
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'output': 'text_with_latex_expr_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'output': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data are collected from website, and the question and answer are designed by human annotator to match text with \LaTeX

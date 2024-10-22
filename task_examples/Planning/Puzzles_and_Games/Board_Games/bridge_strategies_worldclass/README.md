@@ -1,4 +1,4 @@
-# Task: bridge_strategies_worldclass
+# Task: Bridge strategies worldclass
 
 ## Task Description:
 
@@ -33,15 +33,16 @@ will still have an entry to get to the good diamonds.
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 807
-- **Eval Context**: {}
+- **Sample ID**: 807
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games;Board_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'response': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'response': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and answer are collected from Bridge Master 2000

@@ -1,4 +1,4 @@
-# Task: code_programming_test_advanced
+# Task: Code programming test advanced
 
 ## Task Description:
 
@@ -67,15 +67,16 @@ if __name__ == "__main__":
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 173
-- **Eval Context**: {'test_case': [{'input': ['6 110 1 10'], 'expected': '2'}, {'input': ['1 ab 1 2'], 'expected': 'Impossible'}]}
+- **Sample ID**: 173
+- **Eval Context (for this query sample)**: {'test_case': [{'input': ['6 110 1 10'], 'expected': '2'}, {'input': ['1 ab 1 2'], 'expected': 'Impossible'}]}
 - **Taxonomy Tree Path**: Coding;Code_Generation;Programming_Problems
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'program_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and test cases are collected from [Pintia](https://pintia.cn)

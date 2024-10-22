@@ -1,4 +1,4 @@
-# Task: poetry_acrostic
+# Task: Poetry acrostic
 
 ## Task Description:
 
@@ -10,17 +10,26 @@ Please write an acrostic poem about the attached image, using the letters in the
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+![Image](0.png)
+
+```
+Question: Word: hamster
+```
 
 
-## Additional Task Information:
 
-- **ID**: 5080
-- **Eval Context**: {'acrostic': 'hamster', 'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]'}
+## Additional Information:
+
+- **Sample ID**: 5080
+- **Eval Context (for this query sample)**: {'acrostic': 'hamster', 'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]'}
 - **Taxonomy Tree Path**: Knowledge;Arts;poetry_generation
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'##poem': 'constrained_generation'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'##poem': 1}}
   - **Response Parse Function**: dummy
+- **Source Description**: Images come from various websites. Questions and evaluation constraints were created by a human annotator.

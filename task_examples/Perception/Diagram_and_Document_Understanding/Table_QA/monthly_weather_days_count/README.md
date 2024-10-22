@@ -1,4 +1,4 @@
-# Task: monthly_weather_days_count
+# Task: Monthly weather days count
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'sunny': '21', 'rainy': '10', 'snowy': '0'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3112
-- **Eval Context**: {}
+- **Sample ID**: 3112
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Table_QA
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: User Interface Screenshots
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'sunny': 'exact_str_match', 'rainy': 'exact_str_match', 'snowy': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'sunny': 1, 'rainy': 1, 'snowy': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images were collected from the Microsoft Weather by taking screenshots. Questions and answers were designed by the annotator.

@@ -1,4 +1,4 @@
-# Task: planning_screenshot_grippers
+# Task: Planning screenshot grippers
 
 ## Task Description:
 
@@ -40,15 +40,16 @@ Answer: (pick robot1 ball1 room1 lgripper1)
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4072
-- **Eval Context**: {'task_pddl': '(define (problem gripper-2-2-2)\n(:domain gripper-strips)\n(:objects robot1 robot2 - robot\nrgripper1 lgripper1 rgripper2 lgripper2 - gripper\nroom1 room2 - room\nball1 ball2 - object)\n(:init\n(at-robby robot1 room1)\n(free robot1 rgripper1)\n(free robot1 lgripper1)\n(at-robby robot2 room1)\n(free robot2 rgripper2)\n(free robot2 lgripper2)\n(at ball1 room1)\n(at ball2 room1)\n)\n(:goal\n(and\n(at ball1 room1)\n(at ball2 room1)\n)\n)\n)', 'gt_plan': '', 'domain_pddl': '(define (domain gripper-strips)\n (:requirements :strips :typing) \n (:types room object robot gripper)\n (:predicates (at-robby ?r - robot ?x - room)\n \t      (at ?o - object ?x - room)\n\t      (free ?r - robot ?g - gripper)\n\t      (carry ?r - robot ?o - object ?g - gripper))\n\n   (:action move\n       :parameters  (?r - robot ?from ?to - room)\n       :precondition (and  (at-robby ?r ?from))\n       :effect (and  (at-robby ?r ?to)\n\t\t     (not (at-robby ?r ?from))))\n\n   (:action pick\n       :parameters (?r - robot ?obj - object ?room - room ?g - gripper)\n       :precondition  (and  (at ?obj ?room) (at-robby ?r ?room) (free ?r ?g))\n       :effect (and (carry ?r ?obj ?g)\n\t\t    (not (at ?obj ?room)) \n\t\t    (not (free ?r ?g))))\n\n   (:action drop\n       :parameters (?r - robot ?obj - object ?room - room ?g - gripper)\n       :precondition  (and  (carry ?r ?obj ?g) (at-robby ?r ?room))\n       :effect (and (at ?obj ?room)\n\t\t    (free ?r ?g)\n\t\t    (not (carry ?r ?obj ?g)))))'}
+- **Sample ID**: 4072
+- **Eval Context (for this query sample)**: {'task_pddl': '(define (problem gripper-2-2-2)\n(:domain gripper-strips)\n(:objects robot1 robot2 - robot\nrgripper1 lgripper1 rgripper2 lgripper2 - gripper\nroom1 room2 - room\nball1 ball2 - object)\n(:init\n(at-robby robot1 room1)\n(free robot1 rgripper1)\n(free robot1 lgripper1)\n(at-robby robot2 room1)\n(free robot2 rgripper2)\n(free robot2 lgripper2)\n(at ball1 room1)\n(at ball2 room1)\n)\n(:goal\n(and\n(at ball1 room1)\n(at ball2 room1)\n)\n)\n)', 'gt_plan': '', 'domain_pddl': '(define (domain gripper-strips)\n (:requirements :strips :typing) \n (:types room object robot gripper)\n (:predicates (at-robby ?r - robot ?x - room)\n \t      (at ?o - object ?x - room)\n\t      (free ?r - robot ?g - gripper)\n\t      (carry ?r - robot ?o - object ?g - gripper))\n\n   (:action move\n       :parameters  (?r - robot ?from ?to - room)\n       :precondition (and  (at-robby ?r ?from))\n       :effect (and  (at-robby ?r ?to)\n\t\t     (not (at-robby ?r ?from))))\n\n   (:action pick\n       :parameters (?r - robot ?obj - object ?room - room ?g - gripper)\n       :precondition  (and  (at ?obj ?room) (at-robby ?r ?room) (free ?r ?g))\n       :effect (and (carry ?r ?obj ?g)\n\t\t    (not (at ?obj ?room)) \n\t\t    (not (free ?r ?g))))\n\n   (:action drop\n       :parameters (?r - robot ?obj - object ?room - room ?g - gripper)\n       :precondition  (and  (carry ?r ?obj ?g) (at-robby ?r ?room))\n       :effect (and (at ?obj ?room)\n\t\t    (free ?r ?g)\n\t\t    (not (carry ?r ?obj ?g)))))'}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning;Symbolic_Planning
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'plan': 'symbolic_planning_test'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'plan': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from website, and the questions and answers are adapted to match the transitions from init state to goal state

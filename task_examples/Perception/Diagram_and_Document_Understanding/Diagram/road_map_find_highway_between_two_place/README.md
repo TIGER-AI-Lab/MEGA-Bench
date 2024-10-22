@@ -1,4 +1,4 @@
-# Task: road_map_find_highway_between_two_place
+# Task: Road map find highway between two place
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: 2
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4631
-- **Eval Context**: {}
+- **Sample ID**: 4631
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Diagram
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'highway': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'highway': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: The road map images were collected from Seed-Bencn and the Internet. Questions and answers are designed by the annotator

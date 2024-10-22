@@ -1,4 +1,4 @@
-# Task: table_understanding_fetaqa
+# Task: Table understanding fetaqa
 
 ## Task Description:
 
@@ -19,15 +19,16 @@ Example Response: Answer: Thompson prevailed in the 1982 Illinois gubernatorial 
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 989
-- **Eval Context**: {}
+- **Sample ID**: 989
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Table_QA
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data were collected and converted from FetaQA

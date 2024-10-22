@@ -1,4 +1,4 @@
-# Task: crossword_mini_5x5
+# Task: Crossword mini 5x5
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'across': {'1': 'SCOTT', '6': 'PADRE', '7': 'ADDON', '8': 'YELLS', '9':
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 6135
-- **Eval Context**: {}
+- **Sample ID**: 6135
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'across': 'dict_exact_str_match_agg_recall', 'down': 'dict_exact_str_match_agg_recall'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'across': 1, 'down': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from website, and the questions and answers are adapted to match strings

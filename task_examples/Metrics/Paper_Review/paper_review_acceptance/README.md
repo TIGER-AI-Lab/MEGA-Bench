@@ -1,4 +1,4 @@
-# Task: paper_review_acceptance
+# Task: Paper review acceptance
 
 ## Task Description:
 
@@ -38,15 +38,16 @@ Answer: accept
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2157
-- **Eval Context**: {}
+- **Sample ID**: 2157
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Metrics;Paper_Review
-- **App**: Metrics
+- **Application**: Metrics
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from OpenReview's public paper reviews

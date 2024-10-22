@@ -1,4 +1,4 @@
-# Task: av_vehicle_multiview_counting
+# Task: Av vehicle multiview counting
 
 ## Task Description:
 
@@ -32,15 +32,16 @@ Answer: 5
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1799
-- **Eval Context**: {}
+- **Sample ID**: 1799
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Counting
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: numerical_data
 - **Metric Info**:
   - **Field Score Function**: {'vehicles': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'vehicles': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected from the nuScenes dataset. The annotator designed the questions and implemented a script to generate the answers from the raw annotation

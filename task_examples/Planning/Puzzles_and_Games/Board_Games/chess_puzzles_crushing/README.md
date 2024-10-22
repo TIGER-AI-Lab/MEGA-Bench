@@ -1,4 +1,4 @@
-# Task: chess_puzzles_crushing
+# Task: Chess puzzles crushing
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: 12... Bxc2+ 13. Kxc2 Rxe1
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5724
-- **Eval Context**: {}
+- **Sample ID**: 5724
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games;Board_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: User Interface Screenshots
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'puzzle_solution': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'puzzle_solution': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from [Lichess](Lichess.org), and the questions and answers are adapted to match strings

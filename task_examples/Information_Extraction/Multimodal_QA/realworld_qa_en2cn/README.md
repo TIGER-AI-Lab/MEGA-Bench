@@ -1,4 +1,4 @@
-# Task: realworld_qa_en2cn
+# Task: Realworld qa en2cn
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: 右
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3662
-- **Eval Context**: {}
+- **Sample ID**: 3662
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Multimodal_QA
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Photographs
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'output': 'multi_ref_phrase'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'output': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images and annotations were adapted from the RealWorldQA benchmark by the human annotator into an open-ended question. The translation requirement was added by the human annotator.

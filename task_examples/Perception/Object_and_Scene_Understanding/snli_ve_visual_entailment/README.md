@@ -1,4 +1,4 @@
-# Task: snli_ve_visual_entailment
+# Task: Snli ve visual entailment
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: contradiction
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 868
-- **Eval Context**: {}
+- **Sample ID**: 868
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Object_and_Scene_Understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data are collected and converted from SNLI-VE dataset

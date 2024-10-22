@@ -1,4 +1,4 @@
-# Task: newspaper_page_parse_and_count
+# Task: Newspaper page parse and count
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'number of columns': '7', 'number of human pictures': '2', 'number of a
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1564
-- **Eval Context**: {}
+- **Sample ID**: 1564
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Compound_Search_and_Calculate
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'number of columns': 'exact_str_match', 'number of human pictures': 'exact_str_match', 'number of ads sections': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'number of columns': 1, 'number of human pictures': 1, 'number of ads sections': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from the Newspaper Navigation Dataset. Questions and answers were created by the annotator.

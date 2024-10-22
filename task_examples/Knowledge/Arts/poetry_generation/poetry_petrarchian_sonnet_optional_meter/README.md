@@ -1,4 +1,4 @@
-# Task: poetry_petrarchian_sonnet_optional_meter
+# Task: Poetry petrarchian sonnet optional meter
 
 ## Task Description:
 
@@ -14,17 +14,22 @@ No title is needed.
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+![Image](0.png)
 
 
-## Additional Task Information:
 
-- **ID**: 5125
-- **Eval Context**: {'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]', 'syllables': '[10,12][10,12][10,12][10,12] [10,12][10,12][10,12][10,12] [10,12][10,12][10,12][10,12][10,12][10,12]', 'rhyming_scheme': 'abba abba cdcdcd'}
+## Additional Information:
+
+- **Sample ID**: 5125
+- **Eval Context (for this query sample)**: {'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]', 'syllables': '[10,12][10,12][10,12][10,12] [10,12][10,12][10,12][10,12] [10,12][10,12][10,12][10,12][10,12][10,12]', 'rhyming_scheme': 'abba abba cdcdcd'}
 - **Taxonomy Tree Path**: Knowledge;Arts;poetry_generation
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'##poem': 'constrained_generation'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'##poem': 1}}
   - **Response Parse Function**: dummy
+- **Source Description**: Images come from various websites. Questions and evaluation constraints were created by a human annotator.

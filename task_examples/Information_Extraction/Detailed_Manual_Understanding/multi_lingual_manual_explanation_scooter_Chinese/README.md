@@ -1,4 +1,4 @@
-# Task: multi_lingual_manual_explanation_scooter_Chinese
+# Task: Multi lingual manual explanation scooter chinese
 
 ## Task Description:
 
@@ -24,6 +24,12 @@
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: 我站上滑板车，按下开关后滑板车不动，电是满的并且车没有故障，什么情况？
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -37,15 +43,16 @@ Example Response: Answer: 是的，滑板车配有LED照明功能，您可以通
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 891
-- **Eval Context**: {}
+- **Sample ID**: 891
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Detailed_Manual_Understanding
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Screenshots taken from user manual located at [https://fcc.report/FCC-ID/2A33E5LCHG11U/6288539.pdf](https://fcc.report/FCC-ID/2A33E5LCHG11U/6288539.pdf). Questions and answers created by human annnotator.

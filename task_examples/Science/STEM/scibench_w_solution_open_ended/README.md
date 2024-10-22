@@ -1,4 +1,4 @@
-# Task: scibench_w_solution_open_ended
+# Task: Scibench w solution open ended
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Example Response: {'Answer': '72', 'Solution': "Next, we treat projectile motion
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 337
-- **Eval Context**: {}
+- **Sample ID**: 337
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Science;STEM
-- **App**: Science
+- **Application**: Science
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'general_single_numerical_match', 'Solution': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1, 'Solution': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from Scibench, and the answers are open-ended

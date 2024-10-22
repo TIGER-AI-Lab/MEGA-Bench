@@ -1,4 +1,4 @@
-# Task: weather_map_climate_type_temperature_parsing
+# Task: Weather map climate type temperature parsing
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: {'weather': 'sunny', 'temperature': '75 Fahrenheit'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3126
-- **Eval Context**: {}
+- **Sample ID**: 3126
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Structured_Parsing
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'weather': 'exact_str_match', 'temperature': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'weather': 1, 'temperature': 1}}
   - **Response Parse Function**: json
+- **Source Description**: One of the examples comes from the SEED-Bench 2 Plus benchmark . The rest of the images were collected from various online websites. Questions and annotations were adapted by a human annotator.

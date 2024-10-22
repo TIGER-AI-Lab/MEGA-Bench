@@ -1,4 +1,4 @@
-# Task: logical_reasoning_find_odd_one_out
+# Task: Logical reasoning find odd one out
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'Answer': "{'rows': 5, 'columns': 6}", 'Index': '[4, 4]'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2630
-- **Eval Context**: {}
+- **Sample ID**: 2630
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'dict_equality', 'Index': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1, 'Index': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from [website](https://brightside.me/articles/test-try-to-find-the-odd-one-out-in-less-than-10-seconds-801866/), and the questions and answers are adapted to match strings

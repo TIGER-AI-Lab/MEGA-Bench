@@ -1,4 +1,4 @@
-# Task: bridge_strategies_advanced
+# Task: Bridge strategies advanced
 
 ## Task Description:
 
@@ -37,15 +37,16 @@ Notice, however, South will go down if he draws even 1 round of trump at the sta
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 793
-- **Eval Context**: {}
+- **Sample ID**: 793
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games;Board_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: User Interface Screenshots
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'response': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'response': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and answer are collected from Bridge Master 2000

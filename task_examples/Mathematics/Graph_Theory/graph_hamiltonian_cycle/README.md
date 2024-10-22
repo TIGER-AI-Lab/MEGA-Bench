@@ -1,4 +1,4 @@
-# Task: graph_hamiltonian_cycle
+# Task: Graph hamiltonian cycle
 
 ## Task Description:
 
@@ -32,15 +32,16 @@ Answer: {'Count': '4', 'Indices': '1,4,5,6'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 306
-- **Eval Context**: {}
+- **Sample ID**: 306
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Mathematics;Graph_Theory
-- **App**: Mathematics
+- **Application**: Mathematics
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Count': 'exact_str_match', 'Indices': 'set_precision'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Count': 1, 'Indices': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from [Visual Graph Arena Dataset](https://vga.csail.mit.edu/) by human annotator, and the questions and answers are adapted to match set precision

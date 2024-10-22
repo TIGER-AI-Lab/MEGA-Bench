@@ -1,4 +1,4 @@
-# Task: cheapest_flight_identification
+# Task: Cheapest flight identification
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: DL 5819 and DL 5233
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1550
-- **Eval Context**: {}
+- **Sample ID**: 1550
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Compound_Search_and_Calculate
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: User Interface Screenshots
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Screenshots were taken by the human annotator on [Google Flights](https://www.google.com/travel/flights). Questions and answers were created by the annotator.

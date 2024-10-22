@@ -1,4 +1,4 @@
-# Task: poetry_acrostic_alliteration
+# Task: Poetry acrostic alliteration
 
 ## Task Description:
 
@@ -14,17 +14,26 @@ No title is needed.
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+![Image](0.png)
+
+```
+Question: Word: hamster
+```
 
 
-## Additional Task Information:
 
-- **ID**: 5065
-- **Eval Context**: {'acrostic_alliteration': 'hamster', 'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]'}
+## Additional Information:
+
+- **Sample ID**: 5065
+- **Eval Context (for this query sample)**: {'acrostic_alliteration': 'hamster', 'contain': '[hamster, paw, tail, whisker, seed, rodent, scurry, fur]'}
 - **Taxonomy Tree Path**: Knowledge;Arts;poetry_generation
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'##poem': 'constrained_generation'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'##poem': 1}}
   - **Response Parse Function**: dummy
+- **Source Description**: Images come from various websites. Questions and evaluation constraints were created by a human annotator.

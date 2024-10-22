@@ -1,4 +1,4 @@
-# Task: av_multicamera_tracking_predict_bbox
+# Task: Av multicamera tracking predict bbox
 
 ## Task Description:
 
@@ -28,15 +28,16 @@ Answer: [(0.66, 0.52, 0.92, 0.71), (0.16, 0.54, 0.25, 0.62), (0.30, 0.55, 0.35, 
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1300
-- **Eval Context**: {}
+- **Sample ID**: 1300
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Visual_Recognition
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: numerical_data
 - **Metric Info**:
   - **Field Score Function**: {'bbox sequence': 'nbbox_iou_sequence'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'bbox sequence': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected from the nuScenes dataset. The annotator designed the questions and implemented a script to generate the answers from the raw annotation

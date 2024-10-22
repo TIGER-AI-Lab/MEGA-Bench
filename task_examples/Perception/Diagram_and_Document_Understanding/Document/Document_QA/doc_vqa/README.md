@@ -1,4 +1,4 @@
-# Task: doc_vqa
+# Task: Doc vqa
 
 ## Task Description:
 
@@ -25,15 +25,16 @@ Example Response: Answer: The purpose of the Confirmation Statement is to confir
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 362
-- **Eval Context**: {}
+- **Sample ID**: 362
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Document;Document_QA
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and open-ended QA pairs were converted from DocMatix

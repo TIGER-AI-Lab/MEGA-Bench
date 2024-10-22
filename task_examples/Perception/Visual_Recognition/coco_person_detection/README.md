@@ -1,4 +1,4 @@
-# Task: coco_person_detection
+# Task: Coco person detection
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'number of person': '5', 'bounding boxes': '[(0.0,0.22,0.25,0.94), (0.2
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1124
-- **Eval Context**: {}
+- **Sample ID**: 1124
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Visual_Recognition
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: numerical_data
 - **Metric Info**:
   - **Field Score Function**: {'number of person': 'exact_str_match', 'bounding boxes': 'nbbox_iou_tuple'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'number of person': 1, 'bounding boxes': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images were from MS-COCO. Questions and answers were re-designed by the annotator and adapted with a script

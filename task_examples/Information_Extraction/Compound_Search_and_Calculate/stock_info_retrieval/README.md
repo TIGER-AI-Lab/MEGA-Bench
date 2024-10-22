@@ -1,4 +1,4 @@
-# Task: stock_info_retrieval
+# Task: Stock info retrieval
 
 ## Task Description:
 
@@ -28,6 +28,12 @@ Given a set of screenshots from an interactive stock market chart and related de
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: Find the company with an Open Price greater than 100.
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -38,15 +44,16 @@ Answer: ['Tesla, Inc. (TSLA)']
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1272
-- **Eval Context**: {}
+- **Sample ID**: 1272
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Compound_Search_and_Calculate
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: User Interface Screenshots
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'set_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Screenshots were taken by the human annotator on [Yahoo Finance](https://finance.yahoo.com/). Questions and answers were created by the annotator.

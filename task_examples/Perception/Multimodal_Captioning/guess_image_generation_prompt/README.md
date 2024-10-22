@@ -1,4 +1,4 @@
-# Task: guess_image_generation_prompt
+# Task: Guess image generation prompt
 
 ## Task Description:
 
@@ -20,15 +20,16 @@ Example Response: Answer: Cyberpunk Cityscape at Night: A neon-lit futuristic ci
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 634
-- **Eval Context**: {}
+- **Sample ID**: 634
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Multimodal_Captioning
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Examples were collected from various online text-to-image generation demos

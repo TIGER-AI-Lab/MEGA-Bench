@@ -1,4 +1,4 @@
-# Task: humor_explanation
+# Task: Humor explanation
 
 ## Task Description:
 
@@ -21,15 +21,16 @@ Example Response: Answer: A lab scientist usually sees them as separate from the
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 15
-- **Eval Context**: {}
+- **Sample ID**: 15
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture;emotion_and_intent_understanding
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'explanation': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'explanation': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images and labels come from a Humor Understanding benchmark derived from the New Yorker Caption Contest. Questions were created by a human annotator.

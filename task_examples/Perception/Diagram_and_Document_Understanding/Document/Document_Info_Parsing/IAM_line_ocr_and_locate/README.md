@@ -1,4 +1,4 @@
-# Task: IAM_line_ocr_and_locate
+# Task: Iam line ocr and locate
 
 ## Task Description:
 
@@ -25,15 +25,16 @@ Answer: {'typed text': 'put|down|a|resolution|on|the|subject', 'line index': '5'
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1913
-- **Eval Context**: {}
+- **Sample ID**: 1913
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Document;Document_Info_Parsing
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'typed text': 'normalized_similarity_damerau_levenshtein', 'line index': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'typed text': 1, 'line index': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images were collected from the IAM handwritten database. Questions and answers were re-designed by the annotator

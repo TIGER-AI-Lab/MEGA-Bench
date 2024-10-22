@@ -1,4 +1,4 @@
-# Task: medical_blood_vessels_recognition
+# Task: Medical blood vessels recognition
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: {'Type': 'MRI', 'Answer': 'ascending aorta'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2419
-- **Eval Context**: {}
+- **Sample ID**: 2419
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Science;Life_Sciences;Medical
-- **App**: Science
+- **Application**: Science
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Type': 'exact_str_match', 'Answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Type': 1, 'Answer': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from GMAI-MMBench, and the questions and answers are adapted to match strings

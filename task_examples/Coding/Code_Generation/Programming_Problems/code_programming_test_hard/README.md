@@ -1,4 +1,4 @@
-# Task: code_programming_test_hard
+# Task: Code programming test hard
 
 ## Task Description:
 
@@ -46,15 +46,16 @@ if __name__ == "__main__":
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 590
-- **Eval Context**: {'test_case': {'input': ['00100 6 4', '00000 4 99999', '00100 1 12309', '68237 6 -1', '33218 3 00000', '99999 5 68237', '12309 2 33218'], 'expected': '00000 4 33218\n33218 3 12309\n12309 2 00100\n00100 1 99999\n99999 5 68237\n68237 6 -1'}}
+- **Sample ID**: 590
+- **Eval Context (for this query sample)**: {'test_case': {'input': ['00100 6 4', '00000 4 99999', '00100 1 12309', '68237 6 -1', '33218 3 00000', '99999 5 68237', '12309 2 33218'], 'expected': '00000 4 33218\n33218 3 12309\n12309 2 00100\n00100 1 99999\n99999 5 68237\n68237 6 -1'}}
 - **Taxonomy Tree Path**: Coding;Code_Generation;Programming_Problems
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Output': 'program_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Output': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data and test cases are collected from [Pintia](https://pintia.cn)

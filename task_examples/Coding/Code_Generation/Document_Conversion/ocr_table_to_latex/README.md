@@ -1,4 +1,4 @@
-# Task: ocr_table_to_latex
+# Task: Ocr table to latex
 
 ## Task Description:
 
@@ -34,15 +34,16 @@ George  & UCSB     & Male   & 54kg   & 172cm  \\ \hline
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5981
-- **Eval Context**: {}
+- **Sample ID**: 5981
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Coding;Code_Generation;Document_Conversion
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'output': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'output': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data are collected from website, and the question and answer are designed by human annotator

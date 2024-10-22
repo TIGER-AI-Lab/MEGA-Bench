@@ -1,4 +1,4 @@
-# Task: visual_prediction_rater_panoptic_segmentation
+# Task: Visual prediction rater panoptic segmentation
 
 ## Task Description:
 
@@ -31,15 +31,16 @@ Answer: 1, 3, 2
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4792
-- **Eval Context**: {}
+- **Sample ID**: 4792
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Image_Segmentation
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'choice': 'sequence_accuracy_case_insensitive'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'choice': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected using screenshots from qualitative results from the arXiv papers. Questions and answers were created by the annotator

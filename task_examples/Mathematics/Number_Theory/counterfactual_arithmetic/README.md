@@ -1,4 +1,4 @@
-# Task: counterfactual_arithmetic
+# Task: Counterfactual arithmetic
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: 100
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 5527
-- **Eval Context**: {}
+- **Sample ID**: 5527
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Mathematics;Number_Theory
-- **App**: Mathematics
+- **Application**: Mathematics
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: numerical_data
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from screenshots by human annotator

@@ -1,4 +1,4 @@
-# Task: GUI_Act_Mobile_tap
+# Task: Gui act mobile tap
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: <point>0.500, 0.972</point>
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4617
-- **Eval Context**: {'bounding_boxes': ['(0.631, 0.762, 0.744, 0.819)', '(0.069, 0.865, 0.842, 0.915)']}
+- **Sample ID**: 4617
+- **Eval Context (for this query sample)**: {'bounding_boxes': ['(0.631, 0.762, 0.744, 0.819)', '(0.069, 0.865, 0.842, 0.915)']}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning;GUI_Operation
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: User Interface Screenshots
 - **Output Format**: numerical_data
 - **Metric Info**:
   - **Field Score Function**: {'Position': 'xml_norm_point_in_bbox'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Position': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from application screenshots by human annotator, and the questions and answers bounding boxes are annotated by human annotator

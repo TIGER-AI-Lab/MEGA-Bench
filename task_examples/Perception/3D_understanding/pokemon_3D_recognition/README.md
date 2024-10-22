@@ -1,4 +1,4 @@
-# Task: pokemon_3D_recognition
+# Task: Pokemon 3d recognition
 
 ## Task Description:
 
@@ -32,15 +32,16 @@ Answer: {'nickname': 'Altaria', 'cp': '1491', 'location': '3-1-3'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4495
-- **Eval Context**: {}
+- **Sample ID**: 4495
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;3D_understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: 3D Models and Aerial Imagery
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'nickname': 'exact_str_match', 'cp': 'exact_str_match', 'location': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'nickname': 1, 'cp': 1, 'location': 2}}
   - **Response Parse Function**: json
+- **Source Description**: Images were created by the annotator from the Pokemon Go game. Questions and answers were designed by the annotator

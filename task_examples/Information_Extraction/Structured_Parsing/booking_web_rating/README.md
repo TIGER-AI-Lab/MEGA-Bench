@@ -1,4 +1,4 @@
-# Task: booking_web_rating
+# Task: Booking web rating
 
 ## Task Description:
 
@@ -38,6 +38,12 @@ Given a set of screenshots taken from a booking website, each query will ask abo
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: Mr & Mrs Creo's You Buy We Fry
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -48,15 +54,16 @@ Answer: {'number of reviews': '118', 'rating score': '3.0 stars'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4298
-- **Eval Context**: {}
+- **Sample ID**: 4298
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Structured_Parsing
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: User Interface Screenshots
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'number of reviews': 'exact_str_match', 'rating score': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'number of reviews': 1, 'rating score': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images and labels come from the SEED-Bench dataset. Some images are from [Yelp](https://www.yelp.com/). Questions and annotations were adapted by a human annotator.

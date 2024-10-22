@@ -1,4 +1,4 @@
-# Task: relative_reflectance_of_different_regions
+# Task: Relative reflectance of different regions
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: ['C', 'A', 'B']
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3988
-- **Eval Context**: {}
+- **Sample ID**: 3988
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Physical_Understanding;Lighting_and_Shading
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'sequence_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images come from BLINK, the annotator added one more point per image and converted the task into a reflectance sorting task

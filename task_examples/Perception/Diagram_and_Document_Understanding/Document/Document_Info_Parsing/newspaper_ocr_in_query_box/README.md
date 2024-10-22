@@ -1,4 +1,4 @@
-# Task: newspaper_ocr_in_query_box
+# Task: Newspaper ocr in query box
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: BOYD AND HAMILTON BACK FROM SERVICE IN FRANCE
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1238
-- **Eval Context**: {}
+- **Sample ID**: 1238
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Document;Document_Info_Parsing
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'section title': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'section title': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected from The Newspaper Navigator Dataset. Questions and answers were adapted by the annotator into simple string answer format.

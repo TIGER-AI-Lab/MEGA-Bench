@@ -1,4 +1,4 @@
-# Task: generated_video_artifacts
+# Task: Generated video artifacts
 
 ## Task Description:
 
@@ -20,15 +20,16 @@ Example Response: Answer: First of all, this video is animated, unlike the video
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 589
-- **Eval Context**: {}
+- **Sample ID**: 589
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Metrics;Generated_Video_Eval
-- **App**: Metrics
+- **Application**: Metrics
 - **Input Format**: Videos
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Videos were collected by running various text-to-video diffusion models online. Open-ended reference answers were written by the annotator manually

@@ -1,4 +1,4 @@
-# Task: visual_dialog_image_guessing
+# Task: Visual dialog image guessing
 
 ## Task Description:
 
@@ -40,6 +40,12 @@ Given a dialogue that discusses an image, each dialogue consists of ten question
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: [ [ "is this in a park", "yes, i believe it is" ], [ "are there others around", "no, she is alone" ], [ "does she have a collection bucket", "no" ], [ "is her hair long", "yes, pretty long" ], [ "is she wearing a dress", "i don't think so, hard to tell" ], [ "does she have shoes on", "yes, flip flops" ], [ "is there grass nearby", "yes, everywhere" ], [ "is it a sunny day", "yes" ], [ "are there trees", "in the background there are trees" ], [ "is the guitar new", "i don't think so" ] ]
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -50,15 +56,16 @@ Answer: 1
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 395
-- **Eval Context**: {}
+- **Sample ID**: 395
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Object_and_Scene_Understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'image id': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'image id': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images are collected from Visual Dialog dataset. Questions and answers are designed by the annotator

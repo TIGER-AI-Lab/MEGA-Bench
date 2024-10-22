@@ -1,4 +1,4 @@
-# Task: chinese_idiom_recognition
+# Task: Chinese idiom recognition
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: 守株待兔
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3734
-- **Eval Context**: {}
+- **Sample ID**: 3734
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images come from various websites. Questions and answers were created by a human annotator.

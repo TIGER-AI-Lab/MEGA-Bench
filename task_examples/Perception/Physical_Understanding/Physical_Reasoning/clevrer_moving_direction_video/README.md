@@ -1,4 +1,4 @@
-# Task: clevrer_moving_direction_video
+# Task: Clevrer moving direction video
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: down right
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 819
-- **Eval Context**: {}
+- **Sample ID**: 819
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Physical_Understanding;Physical_Reasoning
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Videos
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'multi_ref_phrase'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Video data are collected from MVBench. Questions and answers are adapted for the contextual formatted output format

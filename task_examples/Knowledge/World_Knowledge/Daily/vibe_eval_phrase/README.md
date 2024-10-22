@@ -1,4 +1,4 @@
-# Task: vibe_eval_phrase
+# Task: Vibe eval phrase
 
 ## Task Description:
 
@@ -19,15 +19,16 @@ Example Response: Answer: Based on the image, this dish appears to be a type of 
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 88
-- **Eval Context**: {}
+- **Sample ID**: 88
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge;Daily
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images and labels come from the Vibe-Eval dataset~\cite{padlewski2024vibe}. Questions were created by a human annotator.

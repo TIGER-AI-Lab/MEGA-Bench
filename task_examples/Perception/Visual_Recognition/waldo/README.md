@@ -1,4 +1,4 @@
-# Task: waldo
+# Task: Waldo
 
 ## Task Description:
 
@@ -25,15 +25,16 @@ Answer: {'waldo': '(0.165, 0.709, 0.176, 0.740)', 'wenda': '(0.319, 0.828, 0.329
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4186
-- **Eval Context**: {}
+- **Sample ID**: 4186
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Visual_Recognition
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'bounding_boxes': 'dict_nbbox_iou_tuple_agg_jaccard'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'bounding_boxes': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images and annotations were collected and created by the annotator using various resources on the Web

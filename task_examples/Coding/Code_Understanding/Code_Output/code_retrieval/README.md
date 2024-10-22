@@ -1,4 +1,4 @@
-# Task: code_retrieval
+# Task: Code retrieval
 
 ## Task Description:
 
@@ -489,15 +489,16 @@ Answer: Segment-2
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3319
-- **Eval Context**: {}
+- **Sample ID**: 3319
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Coding;Code_Understanding;Code_Output
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from SGP-Bench, and the question and answer are adapted to match string

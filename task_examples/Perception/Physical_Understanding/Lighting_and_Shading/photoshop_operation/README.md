@@ -1,4 +1,4 @@
-# Task: photoshop_operation
+# Task: Photoshop operation
 
 ## Task Description:
 
@@ -24,15 +24,16 @@ Answer: ['lower brightness', 'lower contrast']
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4354
-- **Eval Context**: {}
+- **Sample ID**: 4354
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Physical_Understanding;Lighting_and_Shading
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'jaccard_index'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images are collected from the Web, questions and answers designed by annotator

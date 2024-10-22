@@ -1,4 +1,4 @@
-# Task: topological_sort
+# Task: Topological sort
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: [0->1->2->4->3,0->1->2->3->4]
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2844
-- **Eval Context**: {}
+- **Sample ID**: 2844
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Mathematics;Graph_Theory
-- **App**: Mathematics
+- **Application**: Mathematics
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'set_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from screenshots by human annotator

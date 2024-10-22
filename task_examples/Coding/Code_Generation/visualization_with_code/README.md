@@ -1,4 +1,4 @@
-# Task: visualization_with_code
+# Task: Visualization with code
 
 ## Task Description:
 
@@ -35,15 +35,16 @@ plt.show()
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 653
-- **Eval Context**: {}
+- **Sample ID**: 653
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Coding;Code_Generation
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data are collected from website, and the question and answer are designed by human annotator

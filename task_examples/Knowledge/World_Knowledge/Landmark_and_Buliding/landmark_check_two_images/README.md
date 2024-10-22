@@ -1,4 +1,4 @@
-# Task: landmark_check_two_images
+# Task: Landmark check two images
 
 ## Task Description:
 
@@ -24,15 +24,16 @@ Answer: {'same landmark': 'yes', 'same style': 'no', 'same country': 'yes'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1955
-- **Eval Context**: {}
+- **Sample ID**: 1955
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge;Landmark_and_Buliding
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'same landmark': 'exact_str_match_case_insensitive', 'same style': 'exact_str_match_case_insensitive', 'same country': 'exact_str_match_case_insensitive'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'same landmark': 1, 'same style': 1, 'same country': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Images and labels come from the Landmark v2 dataset. Questions and answers were adapted by a human annotator.

@@ -1,4 +1,4 @@
-# Task: table2latex_complex
+# Task: Table2latex complex
 
 ## Task Description:
 
@@ -32,15 +32,16 @@ Example Response: Answer: \begin{table}[h!]
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 164
-- **Eval Context**: {}
+- **Sample ID**: 164
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Coding;Code_Generation;Document_Conversion
-- **App**: Coding
+- **Application**: Coding
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from SGP-Bench, and the question and answer are adapted for LLM Judge

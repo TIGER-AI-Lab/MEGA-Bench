@@ -1,4 +1,4 @@
-# Task: geometry_reasoning_overlapped_circle
+# Task: Geometry reasoning overlapped circle
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: {'Answer': 'Yes', 'Position': 'Left'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2346
-- **Eval Context**: {}
+- **Sample ID**: 2346
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Mathematics;Geometry
-- **App**: Mathematics
+- **Application**: Mathematics
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'exact_str_match', 'Position': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1, 'Position': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from Vision language models are blind, and the questions and answers are adapted by human annotator

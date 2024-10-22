@@ -1,4 +1,4 @@
-# Task: planning_screenshot_blocksworld
+# Task: Planning screenshot blocksworld
 
 ## Task Description:
 
@@ -40,15 +40,16 @@ Answer: (unstack b1 b3)
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3777
-- **Eval Context**: {'task_pddl': '(define (problem BW-rand-3)\n(:domain blocksworld-4ops)\n(:objects b1 b2 b3 )\n(:init\n(arm-empty)\n(on-table b1)\n(on b2 b3)\n(on b3 b1)\n(clear b2)\n)\n(:goal\n(and\n(on b2 b3)\n(on b3 b1))\n)\n)', 'gt_plan': '', 'domain_pddl': '(define (domain blocksworld-4ops)\n  (:requirements :strips)\n(:predicates (clear ?x)\n             (on-table ?x)\n             (arm-empty)\n             (holding ?x)\n             (on ?x ?y))\n\n(:action pickup\n  :parameters (?ob)\n  :precondition (and (clear ?ob) (on-table ?ob) (arm-empty))\n  :effect (and (holding ?ob) (not (clear ?ob)) (not (on-table ?ob)) \n               (not (arm-empty))))\n\n(:action putdown\n  :parameters  (?ob)\n  :precondition (holding ?ob)\n  :effect (and (clear ?ob) (arm-empty) (on-table ?ob) \n               (not (holding ?ob))))\n\n(:action stack\n  :parameters  (?ob ?underob)\n  :precondition (and (clear ?underob) (holding ?ob))\n  :effect (and (arm-empty) (clear ?ob) (on ?ob ?underob)\n               (not (clear ?underob)) (not (holding ?ob))))\n\n(:action unstack\n  :parameters  (?ob ?underob)\n  :precondition (and (on ?ob ?underob) (clear ?ob) (arm-empty))\n  :effect (and (holding ?ob) (clear ?underob)\n               (not (on ?ob ?underob)) (not (clear ?ob)) (not (arm-empty)))))'}
+- **Sample ID**: 3777
+- **Eval Context (for this query sample)**: {'task_pddl': '(define (problem BW-rand-3)\n(:domain blocksworld-4ops)\n(:objects b1 b2 b3 )\n(:init\n(arm-empty)\n(on-table b1)\n(on b2 b3)\n(on b3 b1)\n(clear b2)\n)\n(:goal\n(and\n(on b2 b3)\n(on b3 b1))\n)\n)', 'gt_plan': '', 'domain_pddl': '(define (domain blocksworld-4ops)\n  (:requirements :strips)\n(:predicates (clear ?x)\n             (on-table ?x)\n             (arm-empty)\n             (holding ?x)\n             (on ?x ?y))\n\n(:action pickup\n  :parameters (?ob)\n  :precondition (and (clear ?ob) (on-table ?ob) (arm-empty))\n  :effect (and (holding ?ob) (not (clear ?ob)) (not (on-table ?ob)) \n               (not (arm-empty))))\n\n(:action putdown\n  :parameters  (?ob)\n  :precondition (holding ?ob)\n  :effect (and (clear ?ob) (arm-empty) (on-table ?ob) \n               (not (holding ?ob))))\n\n(:action stack\n  :parameters  (?ob ?underob)\n  :precondition (and (clear ?underob) (holding ?ob))\n  :effect (and (arm-empty) (clear ?ob) (on ?ob ?underob)\n               (not (clear ?underob)) (not (holding ?ob))))\n\n(:action unstack\n  :parameters  (?ob ?underob)\n  :precondition (and (on ?ob ?underob) (clear ?ob) (arm-empty))\n  :effect (and (holding ?ob) (clear ?underob)\n               (not (on ?ob ?underob)) (not (clear ?ob)) (not (arm-empty)))))'}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning;Symbolic_Planning
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'plan': 'symbolic_planning_test'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'plan': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from website, and the questions and answers are adapted to match the transitions from init state to goal state

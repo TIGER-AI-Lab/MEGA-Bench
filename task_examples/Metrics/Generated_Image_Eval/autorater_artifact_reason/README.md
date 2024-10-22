@@ -1,4 +1,4 @@
-# Task: autorater_artifact_reason
+# Task: Autorater artifact reason
 
 ## Task Description:
 
@@ -8,17 +8,22 @@ Please tell me why this image contains artifacts? Please answer with the followi
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+![Image](Figure1.png)
 
 
-## Additional Task Information:
 
-- **ID**: 5681
-- **Eval Context**: {'contain1': '[beer, glass]', 'contain2': '[is, are]'}
+## Additional Information:
+
+- **Sample ID**: 5681
+- **Eval Context (for this query sample)**: {'contain1': '[beer, glass]', 'contain2': '[is, are]'}
 - **Taxonomy Tree Path**: Metrics;Generated_Image_Eval
-- **App**: Metrics
+- **Application**: Metrics
 - **Input Format**: Photographs
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'##answer': 'constrained_generation'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'##answer': 1}}
   - **Response Parse Function**: dummy
+- **Source Description**: Images were collected from ImagenHub. The annotator created open-ended reference answer manually

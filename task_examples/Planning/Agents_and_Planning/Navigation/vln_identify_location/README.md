@@ -1,4 +1,4 @@
-# Task: vln_identify_location
+# Task: Vln identify location
 
 ## Task Description:
 
@@ -33,15 +33,16 @@ Answer: {'next sentence': 'Slightly turn right and move towards the single white
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2773
-- **Eval Context**: {}
+- **Sample ID**: 2773
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning;Navigation
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'next sentence': 'exact_str_match', 'level': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'next sentence': 10, 'level': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from RxR dataset, the question and answer are adapted by human annotator

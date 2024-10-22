@@ -1,4 +1,4 @@
-# Task: electrocardiogram
+# Task: Electrocardiogram
 
 ## Task Description:
 
@@ -20,15 +20,16 @@ Example Response: Answer: 0, first degree atrioventricular block
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 696
-- **Eval Context**: {}
+- **Sample ID**: 696
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Science;Life_Sciences;Medical
-- **App**: Science
+- **Application**: Science
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from MMMU, and the answers are open-ended

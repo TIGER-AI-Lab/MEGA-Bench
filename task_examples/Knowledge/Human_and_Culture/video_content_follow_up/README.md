@@ -1,4 +1,4 @@
-# Task: video_content_follow_up
+# Task: Video content follow up
 
 ## Task Description:
 
@@ -36,15 +36,16 @@ Example Response: Answer: Here are some thoughts for potential topics to cover i
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 504
-- **Eval Context**: {}
+- **Sample ID**: 504
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Videos
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Videos taken from [YouTube](https://www.youtube.com/). Questions and answers created by human annnotator.

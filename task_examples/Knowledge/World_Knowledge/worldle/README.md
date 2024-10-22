@@ -1,4 +1,4 @@
-# Task: worldle
+# Task: Worldle
 
 ## Task Description:
 
@@ -26,15 +26,16 @@ Answer: {'country': 'Belgium', 'province_or_state': 'Hainaut', 'municipality': '
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 2978
-- **Eval Context**: {}
+- **Sample ID**: 2978
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;World_Knowledge
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'country': 'exact_str_match', 'province_or_state': 'exact_str_match', 'municipality': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'country': 1, 'province_or_state': 2, 'municipality': 2, 'proximity': 5}}
   - **Response Parse Function**: json
+- **Source Description**: Images and labels are taken from  [Worldle Daily](https://worldledaily.com/), a free Geoguessr alternative. Questions and answers are created by a human annotator.

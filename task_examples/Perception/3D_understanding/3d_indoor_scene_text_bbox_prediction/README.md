@@ -1,4 +1,4 @@
-# Task: 3d_indoor_scene_text_bbox_prediction
+# Task: 3d indoor scene text bbox prediction
 
 ## Task Description:
 
@@ -10,6 +10,12 @@ The given image is a 2D projection of a 3D scene with color. The task is to find
 
 ## The 1-shot Example for Task Demonstration:
 
+## Example Query:
+
+```
+Question: A white cabinet in the corner of the room. in the direction from the door and from the inside. it will be on the left, there is a small brown table on the left side of the cabinet and a smaller table on the right side of the cabinet.
+```
+
 ```
 Demonstration example(s) of the task:
 Example 1:
@@ -20,15 +26,16 @@ Answer: (0.64, 0.21, 0.75, 0.31)
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1040
-- **Eval Context**: {}
+- **Sample ID**: 1040
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;3D_understanding
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: 3D Models and Aerial Imagery
 - **Output Format**: numerical_data
 - **Metric Info**:
   - **Field Score Function**: {'bounding boxes': 'nbbox_iou_single'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'bounding boxes': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: The data is adapted from Multi3DRefer. Questions and answers were designed by the annotator and dataset annotation.

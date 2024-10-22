@@ -1,4 +1,4 @@
-# Task: handwritten_math_expression_extraction
+# Task: Handwritten math expression extraction
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: ( 2 ) 2 N a O H + C u S O _4 = N a _2 S O _ 4 + C u ( O H )_2 \downarrow
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1843
-- **Eval Context**: {}
+- **Sample ID**: 1843
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Visual_Recognition
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Text-Based Images and Documents
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'latex_expr_equality'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data were collected from HME100K

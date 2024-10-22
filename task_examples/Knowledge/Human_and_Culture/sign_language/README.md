@@ -1,4 +1,4 @@
-# Task: sign_language
+# Task: Sign language
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: again
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3098
-- **Eval Context**: {}
+- **Sample ID**: 3098
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Videos
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'multi_ref_phrase'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Videos come from Dr. Bill Vicars' ``Signs'' YouTube channel. Questions and annotations were created by a human annotator.

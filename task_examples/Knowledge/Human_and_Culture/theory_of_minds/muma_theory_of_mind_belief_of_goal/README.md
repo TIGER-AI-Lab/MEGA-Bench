@@ -1,4 +1,4 @@
-# Task: muma_theory_of_mind_belief_of_goal
+# Task: Muma theory of mind belief of goal
 
 ## Task Description:
 
@@ -65,15 +65,16 @@ Answer: When giving information, Kevin believed that there was a remote control 
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 982
-- **Eval Context**: {}
+- **Sample ID**: 982
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Human_and_Culture;theory_of_minds
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Videos
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images and labels come from the MuMA-ToM dataset . Questions and answers were adapted by a human annotator.

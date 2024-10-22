@@ -1,4 +1,4 @@
-# Task: ascii_art_30
+# Task: Ascii art 30
 
 ## Task Description:
 
@@ -31,15 +31,16 @@ Example Response: Answer:         ----=
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1
-- **Eval Context**: {}
+- **Sample ID**: 1
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Knowledge;Arts
-- **App**: Knowledge
+- **Application**: Knowledge
 - **Input Format**: Photographs
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'ascii art': 'ascii_art_gpt4o_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'ascii art': 1}}
   - **Response Parse Function**: ascii_answer_string
+- **Source Description**: Images come from various websites. Reference ASCII art images were created using the [ASCII Art Archive's ``Image to ASCII Art'' tool](https://www.asciiart.eu/image-to-ascii).

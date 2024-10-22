@@ -1,4 +1,4 @@
-# Task: GUI_Act_Web_Multi
+# Task: Gui act web multi
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: {'Action': 'hover', 'Position Box': '<box>0.734, 0.292, 0.792, 0.328</bo
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3720
-- **Eval Context**: {}
+- **Sample ID**: 3720
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning;GUI_Operation
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: User Interface Screenshots
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'Action': 'exact_str_match', 'Position Box': 'xml_nbbox_iou_single'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Action': 1, 'Position Box': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from webpage screenshots by human annotator, and the questions and answers bounding boxes are annotated by human annotator

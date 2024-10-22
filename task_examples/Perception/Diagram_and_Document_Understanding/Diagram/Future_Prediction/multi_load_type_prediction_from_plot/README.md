@@ -1,4 +1,4 @@
-# Task: multi_load_type_prediction_from_plot
+# Task: Multi load type prediction from plot
 
 ## Task Description:
 
@@ -39,15 +39,16 @@ Answer: HUFL, HULL, LUFL, LULL, MUFL, MULL
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 117
-- **Eval Context**: {}
+- **Sample ID**: 117
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Diagram_and_Document_Understanding;Diagram;Future_Prediction
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: multiple_choice
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'sequence_accuracy_case_insensitive'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: The temporal data were collected from Informer and AutoFormer. The annotator re-processed the data to design a more specific task

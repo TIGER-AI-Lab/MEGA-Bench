@@ -1,4 +1,4 @@
-# Task: chess_find_legal_moves
+# Task: Chess find legal moves
 
 ## Task Description:
 
@@ -23,15 +23,16 @@ Answer: {'fen': 'r2q1rk1/1b3pp1/p4b1p/np1N4/8/1B3N2/PP3PPP/2RQR1K1 w - - 0 1', '
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 4510
-- **Eval Context**: {}
+- **Sample ID**: 4510
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games;Board_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: User Interface Screenshots
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'fen': 'exact_str_match', 'legal_moves': 'chess_move_list_jaccard_index'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'fen': 1, 'legal_moves': 1}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from game positions of games in the 2024 FIDE Candidates tournament, and the questions and answers are adapted to match strings

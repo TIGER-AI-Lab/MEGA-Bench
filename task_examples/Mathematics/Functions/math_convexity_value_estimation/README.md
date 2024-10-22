@@ -1,4 +1,4 @@
-# Task: math_convexity_value_estimation
+# Task: Math convexity value estimation
 
 ## Task Description:
 
@@ -28,15 +28,16 @@ Answer: {'convexity': 'convex', 'value': '46'}
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1025
-- **Eval Context**: {}
+- **Sample ID**: 1025
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Mathematics;Functions
-- **App**: Mathematics
+- **Application**: Mathematics
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: structured_output
 - **Metric Info**:
   - **Field Score Function**: {'convexity': 'exact_str_match', 'value': 'number_rel_diff_ratio'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'convexity': 1, 'value': 3}}
   - **Response Parse Function**: json
+- **Source Description**: Data collected from IsoBench, and the questions and answers are adapted by human annotator

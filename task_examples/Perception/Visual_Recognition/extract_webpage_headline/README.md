@@ -1,4 +1,4 @@
-# Task: extract_webpage_headline
+# Task: Extract webpage headline
 
 ## Task Description:
 
@@ -22,15 +22,16 @@ Answer: Discover, Appreciate, & Understand the Animal World!
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 3865
-- **Eval Context**: {}
+- **Sample ID**: 3865
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Perception;Visual_Recognition
-- **App**: Perception
+- **Application**: Perception
 - **Input Format**: User Interface Screenshots
 - **Output Format**: contextual_formatted_text
 - **Metric Info**:
   - **Field Score Function**: {'Answer': 'simple_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'Answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Images were collected from VisualWebBench. Questions and answers were adapted by the annotator

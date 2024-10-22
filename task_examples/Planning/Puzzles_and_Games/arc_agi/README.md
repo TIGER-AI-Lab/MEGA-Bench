@@ -1,4 +1,4 @@
-# Task: arc_agi
+# Task: Arc agi
 
 ## Task Description:
 
@@ -40,15 +40,16 @@ Answer: 33333333333
 Answer the new question below. The last part of your response should be of the following format: "Answer: <YOUR ANSWER>" (without angle brackets) where YOUR ANSWER is your answer, following the same task logic and output format of the demonstration example(s). For your answer, do not output additional contents that violate the specified format. Think step by step before answering.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 1068
-- **Eval Context**: {}
+- **Sample ID**: 1068
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Puzzles_and_Games
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Diagrams and Data Visualizations
 - **Output Format**: exact_text
 - **Metric Info**:
   - **Field Score Function**: {'answer': 'exact_str_match'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'answer': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from [https://arcprize.org/play](https://arcprize.org/play) and the task is adapted from Intelligence, the question and answer are adapted into a grid of digits by human annotator

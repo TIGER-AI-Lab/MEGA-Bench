@@ -1,4 +1,4 @@
-# Task: wikihow_complex_task_completion
+# Task: Wikihow complex task completion
 
 ## Task Description:
 
@@ -55,15 +55,16 @@ Part 2. Replanting the Tubers
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 551
-- **Eval Context**: {}
+- **Sample ID**: 551
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Planning;Agents_and_Planning
-- **App**: Planning
+- **Application**: Planning
 - **Input Format**: Artistic and Creative Content
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: Data collected from website, and the questions and answers are designed by human annotator

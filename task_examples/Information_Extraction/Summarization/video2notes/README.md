@@ -1,4 +1,4 @@
-# Task: video2notes
+# Task: Video2notes
 
 ## Task Description:
 
@@ -74,15 +74,16 @@ Fill the final space with the fourth window.
 Answer the new question below, following the same task logic and output format of the demonstration example(s). Do not output additional contents that violate the specified format.
 ```
 
-## Additional Task Information:
+## Additional Information:
 
-- **ID**: 378
-- **Eval Context**: {}
+- **Sample ID**: 378
+- **Eval Context (for this query sample)**: {}
 - **Taxonomy Tree Path**: Information_Extraction;Summarization
-- **App**: Information_Extraction
+- **Application**: Information_Extraction
 - **Input Format**: Videos
 - **Output Format**: open_ended_output
 - **Metric Info**:
   - **Field Score Function**: {'reference': 'gpt_4o_as_judge'}
   - **Aggregation**: {'function': 'mean', 'field_weights': {'reference': 1}}
   - **Response Parse Function**: answer_string
+- **Source Description**: [WikiHow](https://www.wikihow.com/Main-Page) or [YouTube](https://www.youtube.com/). Questions and answers created by human annnotator.
