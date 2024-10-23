@@ -19,6 +19,7 @@
 3. [Evaluation](#evaluation)
    - [Proprietary Models](#proprietary-models-gpt-claude)
    - [Open-source Models](#open-source-models-qwen2vl-internvl2)
+   - [Ground truth sanity check](#ground-truth-sanity-check)
    - [Detailed explanation of command line arguments](#detailed-explanation-of-command-line-arguments)
 4. [Contact and Citation](#contact-and-citation)
 
