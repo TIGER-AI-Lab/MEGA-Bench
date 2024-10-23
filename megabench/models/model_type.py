@@ -22,6 +22,8 @@ class ModelClass(ModelClassContainer, Enum):
     Qwen2VL = ("models.Qwen2VL", "Qwen2VL")
     InternVL = ("models.InternVL", "InternVL")
     LlavaOV = ("models.LlavaOV", "LlavaOV")
+    Pixtral = ("models.Pixtral", "Pixtral")
+    Phi3v = ("models.Phi3v", "Phi3v")
     GroundTruthOracle = ("models.GroundTruthOracle", "GroundTruthOracle")
 
 
@@ -109,6 +111,18 @@ class ModelType(Enum):
         "lmms-lab/llava-onevision-qwen2-7b-ov",
         "",
         ModelClass.LlavaOV,
+    )
+    PIXTRAL_12B = (
+        "Pixtral-12B",
+        "mistralai/Pixtral-12B-2409",
+        "",
+        ModelClass.Pixtral,
+    )
+    PHI_3_5_VISION = (
+        "Phi_3_5_vision",
+        "microsoft/Phi-3.5-vision-instruct",
+        "",
+        ModelClass.Phi3v,
     )
     GROUND_TRUTH_ORACLE_SANITY_CHECK = (
         "Ground-Truth-Oracle_Sanity-Check",
@@ -212,6 +226,14 @@ MAX_IMAGES_PER_API_CALL = {
     ModelType.LLAVA_ONEVISION_7B: {
         "max_num_image": 20,
         "total_demo_video_frames": 4,
+    },
+    ModelType.PIXTRAL_12B: {
+        "max_num_image": 48,
+        "total_demo_video_frames": 6,
+    },
+    ModelType.PHI_3_5_VISION: {
+        "max_num_image": 16,
+        "total_demo_video_frames": 2,
     },
     ModelType.GROUND_TRUTH_ORACLE_SANITY_CHECK: {
         "max_num_image": 64,

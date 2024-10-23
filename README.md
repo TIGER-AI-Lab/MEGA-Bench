@@ -80,7 +80,24 @@ python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"
 
 **📌 Note:** Due to slight reorganization of the prompt for uploading to Hugging Face Datasets, the evaluation results from this repository may differ slightly from those reported in the paper. However, the overall performance trend and capability report should remain consistent.
 
-The current repo provides evaluation pipelines for six types of models: GPT, Claude, Gemini, Qwen2VL, InternVL2, and Llava-OneVision. See `megabench/models/model_type.py` for details on the model types. We will add code for more models in the future.
+The table below lists information about supported models in this repository. See `megabench/models/model_type.py` for the full list. We will add code for more models in the future.
+
+| Model Name | Type name for command line | Dependency |
+|------------|------------------|--------------|
+| GPT-4o | GPT_4O_0513, GPT_4O_0806 | OpenAI API |
+| GPT-4o-mini | GPT_4O_MINI | OpenAI API |
+| Claude 3 Haiku | CLAUDE_3_HAIKU | Anthropic API |
+| Claude 3.5 Sonnet | CLAUDE_3_5_SONNET | Anthropic API |
+| Gemini 1.5 Pro | GEMINI_PRO, GEMINI_PRO_002 | Google API |
+| Gemini 1.5 Flash | GEMINI_FLASH, GEMINI_FLASH_002 | Google API |
+| Qwen2-VL-72B | QWEN2_VL_72B | vLLM |
+| Qwen2-VL-7B | QWEN2_VL_7B | vLLM |
+| InternVL2-Llama3-76B | INTERNVL2_LLAMA3_76B | vLLM |
+| InternVL2-8B | INTERNVL2_8B | vLLM |
+| Llava-OneVision-72B | LLAVA_ONEVISION_72B | HF Transformers |
+| Llava-OneVision-7B | LLAVA_ONEVISION_7B | HF Transformers |
+| Pixtral-12B | PIXTRAL_12B | vLLM |
+| Phi-3.5-vision | PHI_3_5_VISION | HF Transformers |
 
 ### Proprietary Models (GPT, Claude, Gemini)
 
