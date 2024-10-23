@@ -1,4 +1,5 @@
 from metrics.scoring.jaccard import Jaccard
+from metrics.scoring.common.conversions import cast_to_dict
 
 
 class DictJaccardAggJaccard:
@@ -12,6 +13,7 @@ class DictJaccardAggJaccard:
     @classmethod
     def match(cls, responses, targets) -> float:
         """Return the aggregated Jaccard index between targets and responses."""
+        responses = cast_to_dict(responses)
         if not isinstance(responses, dict):
             return 0
 
