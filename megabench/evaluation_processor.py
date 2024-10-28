@@ -294,10 +294,7 @@ class EvaluationProcessor:
                             query_question=query_question,
                             is_single_line_ans=is_single_line_ans,
                         )
-                        if isinstance(
-                            correct_answer[answer_key], dict
-                        ) and not isinstance(response_obj[answer_key], dict):
-                            res_parsing_pass = False
+                        assert isinstance(response_obj[answer_key], str), "Single-field parsing results must be string"
                     else:
                         # Structural output (using JSON parser or other specified parsing func) or dummy parse (return all)
                         response_obj = parser.parse(response)

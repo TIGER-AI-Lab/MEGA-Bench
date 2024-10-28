@@ -1,5 +1,5 @@
 from metrics.scoring.set_equality import SetEquality
-
+from metrics.scoring.common.conversions import cast_to_dict
 
 class DictSetEqualityAggJaccard:
     """Calculates the average set equality across the dict.
@@ -12,6 +12,8 @@ class DictSetEqualityAggJaccard:
     @classmethod
     def match(cls, responses, targets) -> float:
         """Return the aggregated Jaccard index between targets and responses."""
+        responses = cast_to_dict(responses)
+        targets = cast_to_dict(targets)
         if not isinstance(responses, dict):
             return 0
 

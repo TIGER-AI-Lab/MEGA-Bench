@@ -14,6 +14,7 @@ class DictJaccardAggJaccard:
     def match(cls, responses, targets) -> float:
         """Return the aggregated Jaccard index between targets and responses."""
         responses = cast_to_dict(responses)
+        targets = cast_to_dict(targets)
         if not isinstance(responses, dict):
             return 0
 

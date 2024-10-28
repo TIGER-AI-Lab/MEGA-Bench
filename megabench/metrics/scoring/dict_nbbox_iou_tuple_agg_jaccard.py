@@ -1,4 +1,5 @@
 from metrics.scoring.nbbox_iou import NbboxIouTuple
+from metrics.scoring.common.conversions import cast_to_dict
 
 
 class DictNbboxIouTupleAggJaccard:
@@ -12,6 +13,8 @@ class DictNbboxIouTupleAggJaccard:
     @classmethod
     def match(cls, responses, targets) -> float:
         """Return the aggregated Jaccard index between targets and responses."""
+        responses = cast_to_dict(responses)
+        targets = cast_to_dict(targets)
         if not isinstance(responses, dict):
             return 0
         all_keys = set(responses) | set(targets)
