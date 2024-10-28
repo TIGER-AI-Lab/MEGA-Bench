@@ -441,33 +441,33 @@
             <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
             <div class="content has-text-justified">
               <p>
-                We evaluate various models including LLMs and LMMs.
-                In each type, we consider both closed- and open-source models.
-                Our evaluation is conducted under a zero-shot setting to assess the capability of models to generate accurate answers without fine-tuning or few-shot demonstrations on our benchmark.
-                For all models, we use the default prompt provided by each model for multi-choice or open QA, if available.
-                If models do not provide prompts for task types in MMMU, we conduct prompt engineering on the validation set and use the most effective prompt for the later zero-shot experiment.
+                Please see our full leaderboard with detailed breakdown results at 
+                <a href="https://huggingface.co/spaces/TIGER-Lab/MEGA-Bench">MEGA-Bench HF Spaces</a>. Below is a preview of the leaderboard with only the summary scores.
               </p>
             </div>
             <br>
-            <div class="model-labels-container">
-              <span class="leaderboard-label proprietary">Proprietary</span>
-              <span class="leaderboard-label open_source">Open-Source</span>
-            </div>
-            <br>
             <div class="content has-text-centered">
-              <!-- <p>
-                Click to expand detailed results.
-              </p> -->
+              <button id="toggleTable" class="button is-link">
+                <span>Show Leaderboard Summary</span>
+                <span class="icon">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </button>
             </div>
-            <div class="leaderboard-container">
+            <div class="leaderboard-container" style="display: none;">
+              <div class="model-labels-container">
+                <span class="leaderboard-label proprietary">Proprietary</span>
+                <span class="leaderboard-label open_source">Open-Source</span>
+              </div>
+              <br>
               <div class="table-wrapper">
                 <table id="mmmu-table">
                   <thead>
                     <tr>
                       <th class="sortable" data-sort="string">Model Name</th>
+                      <th class="sortable overall-score" data-sort="number">Overall</th>
                       <th class="sortable" data-sort="number">Core</th>
                       <th class="sortable" data-sort="number">Open-ended</th>
-                      <th class="sortable overall-score" data-sort="number">Overall</th>
                     </tr>
                   </thead>
                   <tbody>

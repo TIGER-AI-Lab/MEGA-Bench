@@ -15,6 +15,23 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function() {
   loadTableData();
   window.addEventListener('resize', adjustNameColumnWidth);
+
+  const toggleButton = document.getElementById('toggleTable');
+  const leaderboardContainer = document.querySelector('.leaderboard-container');
+  const buttonText = toggleButton.querySelector('span:not(.icon)');
+  const buttonIcon = toggleButton.querySelector('.fas');
+
+  toggleButton.addEventListener('click', function() {
+    const isHidden = leaderboardContainer.style.display === 'none';
+    
+    // Toggle the table visibility
+    leaderboardContainer.style.display = isHidden ? 'block' : 'none';
+    
+    // Update button text and icon
+    buttonText.textContent = isHidden ? 'Hide Leaderboard Summary' : 'Show Leaderboard Summary';
+    buttonIcon.classList.toggle('fa-chevron-up');
+    buttonIcon.classList.toggle('fa-chevron-down');
+  });
 });
 
 var mapping = {
@@ -54,22 +71,22 @@ function loadTableData() {
       // Prepare data for styling
       const overallScores = prepareScoresForStyling(Object.values(data).map(model => model.overall_score));
       const coreScores = prepareScoresForStyling(Object.values(data).map(model => 
-        Math.max(model.core_noncot.micro_mean_score, model.core_cot.micro_mean_score)
+        Math.max(model.core_noncot.macro_mean_score, model.core_cot.macro_mean_score)
       ));
-      const openScores = prepareScoresForStyling(Object.values(data).map(model => model.open.micro_mean_score));
+      const openScores = prepareScoresForStyling(Object.values(data).map(model => model.open.macro_mean_score));
 
       Object.entries(data).forEach(([modelKey, modelData], index) => {
         const modelName = mapping[modelKey] || modelKey;
         const tr = document.createElement('tr');
         tr.classList.add(getModelTypeClass(modelName));
         
-        const coreScore = Math.max(modelData.core_noncot.micro_mean_score, modelData.core_cot.micro_mean_score).toFixed(4);
+        const coreScore = Math.max(modelData.core_noncot.macro_mean_score, modelData.core_cot.macro_mean_score).toFixed(4);
         
         tr.innerHTML = `
           <td>${modelName}</td>
+          <td class="overall-score">${applyStyle(modelData.overall_score.toFixed(4), overallScores[index])}</td>
           <td class="core-score">${applyStyle(coreScore, coreScores[index])}</td>
           <td class="open-score">${applyStyle(modelData.open.macro_mean_score.toFixed(4), openScores[index])}</td>
-          <td class="overall-score">${applyStyle(modelData.overall_score.toFixed(4), overallScores[index])}</td>
         `;
         tbody.appendChild(tr);
       });
