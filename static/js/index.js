@@ -68,7 +68,7 @@ function loadTableData() {
         tr.innerHTML = `
           <td>${modelName}</td>
           <td class="core-score">${applyStyle(coreScore, coreScores[index])}</td>
-          <td class="open-score">${applyStyle(modelData.open.micro_mean_score.toFixed(4), openScores[index])}</td>
+          <td class="open-score">${applyStyle(modelData.open.macro_mean_score.toFixed(4), openScores[index])}</td>
           <td class="overall-score">${applyStyle(modelData.overall_score.toFixed(4), overallScores[index])}</td>
         `;
         tbody.appendChild(tr);
