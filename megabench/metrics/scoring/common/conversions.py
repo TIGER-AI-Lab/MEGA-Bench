@@ -78,6 +78,8 @@ def str_to_iterable(func, iterable_str):
             iterable_str = iterable_str[1:-1]
         items = [item.strip() for item in iterable_str.split(",")]
         return func(items)
+    except TypeError:
+        return func()
 
 
 def str_to_set(iterable_str) -> set:
