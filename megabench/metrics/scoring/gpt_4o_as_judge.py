@@ -22,8 +22,14 @@ class OpenAIGPT4Judger(OpenAI):
         self.template_mapping = metric_config["template_mapping"]
         model = "gpt-4o-2024-08-06"
         super().__init__(
-            os.getenv("OPENAI_API_KEY"), model, None, 0, print_response=verbose
+            os.getenv("OPENAI_API_KEY"), model, None, print_response=verbose
         )
+        if os.getenv("MEGABENCH_OPEN_API_KEY") is not None:
+            self.api_key = os.getenv("MEGABENCH_OPEN_API_KEY")
+            self.url = os.getenv("MEGABENCH_OPEN_API_URL")
+            if os.getenv("MEGABENCH_OPEN_API_MODEL") is not None:
+                self.model = os.getenv("MEGABENCH_OPEN_API_MODEL")
+            assert self.url, "You must set up the API URL for evaluating the Open tasks using your own API"
 
     def prepare_eval_prompt(
         self, reference, response, images, question, eval_context=None
@@ -60,8 +66,6 @@ class OpenAIGPT4Judger(OpenAI):
         context = self.prepare_eval_prompt(
             reference_info, response, images, question, eval_context
         )
-        # context.append({"type": "text", "text": "if there is no meaningful model-generated response, or the model-generated response is missing, give 0 score"})
-        # context.append({"type": "text", "text": "if the actual model-generated response is not provided, give 0 score"})
 
         query_payload = {
             "model": self.model,
@@ -71,12 +75,18 @@ class OpenAIGPT4Judger(OpenAI):
 
         response_data = None
         while response_data is None:
-            response = requests.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers=headers,
-                json=query_payload,
-            )
-            response_ = response.json()
+            try:
+                response = requests.post(
+                    self.url,
+                    headers=headers,
+                    json=query_payload,
+                )
+                response_ = response.json()
+            except (requests.exceptions.JSONDecodeError, requests.exceptions.ConnectionError) as e:
+                logging.info(f'Error in requests: {e}')
+                logging.info('Retry...')
+                continue
+
             if "error" in response_:
                 error_info = response_["error"]
                 logging.info(

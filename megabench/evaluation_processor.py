@@ -5,6 +5,7 @@ import logging
 import pathlib
 from metrics import MetricType, AggregationType, ResponseParseType
 from metrics.parsing.common.utils import evaluate_as_string
+from metrics.scoring.gpt_4o_as_judge import GPT4OJudgeScore
 import os
 import ast
 
@@ -133,12 +134,6 @@ class EvaluationProcessor:
                         and len(saved_example["scores"]["field"]) == 0
                     ):
                         return True
-                    elif (
-                        "eval_context" not in saved_example
-                        and "eval_context" in res_example
-                    ) or (res_example["eval_context"] != saved_example["eval_context"]):
-                        # the eval context changed
-                        return True
                     else:
                         # nothing changed, using the old eval results
                         res_example["scores"] = saved_example["scores"]
@@ -221,9 +216,7 @@ class EvaluationProcessor:
             task["eval_type"] = eval_type  # add the eval_type info into the task data
 
             if skip_eval:
-                num_samples_all[eval_type] += len(task["example_contents"]) + len(
-                    task["query_response"]
-                )
+                num_samples_all[eval_type] += 1 + len(task["query_response"]) # 1 for the example_info
                 if evaluated:  # skipped and already evaluated, update the stats
                     num_tasks_evaluated[eval_type] += 1
                     num_queries_evaluated[eval_type] += len(task["query_response"])
@@ -519,7 +512,7 @@ class EvaluationProcessor:
             score, eval_info = metric.match(response_obj.get(field), eval_context)
             query["scores"]["field"][field] = score
             query["scores"]["info"][field] = eval_info
-        elif metric == MetricType.GPT_4O_AS_JUDGE:
+        elif isinstance(metric, GPT4OJudgeScore):
             response_info = (
                 response_obj.get(field)
                 if isinstance(response_obj, dict)

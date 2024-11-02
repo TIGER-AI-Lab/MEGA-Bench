@@ -21,6 +21,7 @@
    - [Open-source Models](#open-source-models-qwen2vl-internvl2)
    - [Ground truth sanity check](#ground-truth-sanity-check)
    - [Detailed explanation of command line arguments](#detailed-explanation-of-command-line-arguments)
+   - [Evaluate Open-ended tasks with a VLM judge](#evaluate-open-ended-tasks-with-a-vlm-judge)
 4. [Contact and Citation](#contact-and-citation)
 
 ## Introduction
@@ -204,6 +205,16 @@ The launch script ``main.py`` has the following arguments:
 | `--print_response` | Print model's response (helpful for debugging) | False |
 | `--dataset_name` | Name of the dataset | "TIGER-Lab/MEGA-Bench" |
 | `--dataset_subset_name` | Subset of the dataset to use | "core" |
+
+### Evaluate Open-ended tasks with a VLM judge
+
+By default, we use GPT-4o-2024-08-06 as the VLM judge to evaluate the Open-ended tasks. If you want to use a different VLM model for evaluating the Open subset, you can set the following environment variables:
+
+```bash
+export MEGABENCH_OPEN_API_KEY=<your_api_key>
+export MEGABENCH_OPEN_API_MODEL=<your_vlm_model_name>
+export MEGABENCH_OPEN_API_URL=<your_vlm_api_url>
+```
 
 
 ## Contact and Citation

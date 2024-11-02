@@ -82,7 +82,12 @@ class OpenAI(BaseModel):
     @property
     def url(self) -> str:
         """The server URL."""
-        return "https://api.openai.com/v1/chat/completions"
+        return self._url if hasattr(self, '_url') else "https://api.openai.com/v1/chat/completions"
+
+    @url.setter
+    def url(self, value: str) -> None:
+        """Set the server URL."""
+        self._url = value
 
     def query(self, task_name, query_data, position=0):
         self.query_data = query_data

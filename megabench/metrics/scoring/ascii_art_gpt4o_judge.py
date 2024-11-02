@@ -13,15 +13,20 @@ class AsciiArtGPT4Judger(OpenAI):
 
     def __init__(self, verbose=True):
         self.eval_prompt = 'Determine if the following two ASCII art images depict the same object. Your answer should be either "yes" or "no", but without the quotation marks.'
-        model = "gpt-4o"
+        model = "gpt-4o-2024-08-06"
         super().__init__(
             os.getenv("OPENAI_API_KEY"),
             model,
             None,
-            0,
             resize=False,
             print_response=verbose,
         )
+        if os.getenv("MEGABENCH_OPEN_API_KEY") is not None:
+            self.api_key = os.getenv("MEGABENCH_OPEN_API_KEY")
+            self.url = os.getenv("MEGABENCH_OPEN_API_URL")
+            if os.getenv("MEGABENCH_OPEN_API_MODEL") is not None:
+                self.model = os.getenv("MEGABENCH_OPEN_API_MODEL")
+            assert self.url, "You must set up the API URL for evaluating the Open tasks using your own API"
 
     def encode_image(self, image):
         """Encode an image into base64 and return its mime type."""
@@ -66,7 +71,7 @@ class AsciiArtGPT4Judger(OpenAI):
         response_data = None
         while response_data is None:
             response = requests.post(
-                "https://api.openai.com/v1/chat/completions",
+                self.url,
                 headers=headers,
                 json=query_payload,
             )
