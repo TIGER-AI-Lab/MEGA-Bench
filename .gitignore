@@ -241,6 +241,7 @@ megabench/results/**/code_eval
 megabench/results/**/temp.json
 !/megabench/results/**/all_query_responses.json
 !/megabench/results/**/data_with_scores.json
+!/megabench/results/**/analysis
 
 *lock
 

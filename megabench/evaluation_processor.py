@@ -216,9 +216,10 @@ class EvaluationProcessor:
             eval_type = self._determine_eval_style(task)
             skip_eval, evaluated = self._determine_skip_eval(task, eval_type)
             task["eval_type"] = eval_type  # add the eval_type info into the task data
+            num_demo = 1 if len(task["example_info"]["example_text"]) > 0 or len(task["example_info"]["image_paths"]) > 0 else 0
 
             if skip_eval:
-                num_samples_all[eval_type] += 1 + len(task["query_response"]) # 1 for the example_info
+                num_samples_all[eval_type] += num_demo + len(task["query_response"]) # 1 for the example_info
                 if evaluated:  # skipped and already evaluated, update the stats
                     num_tasks_evaluated[eval_type] += 1
                     num_queries_evaluated[eval_type] += len(task["query_response"])
@@ -249,7 +250,6 @@ class EvaluationProcessor:
                 )
 
                 num_tasks_evaluated[eval_type] += 1
-                num_demo = 1 if len(task["example_info"]) > 0 else 0
                 num_samples_all[eval_type] += len(task["query_response"]) + num_demo
                 task_score = 0
 

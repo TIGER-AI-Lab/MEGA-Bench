@@ -1,0 +1,3537 @@
+[
+    {
+        "name": "brand_logo_recognition_and_elaboration",
+        "score": 0.72,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 25
+    },
+    {
+        "name": "exchange_rate_estimate_plot",
+        "score": 0.9296857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "places365_similar_scene_retrieval",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "math_parity",
+        "score": 0.5333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "av_human_multiview_counting",
+        "score": 0.3333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "traffic_future_prediction_from_line_plot",
+        "score": 0.4931578947368421,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "graph_chordless_cycle",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_load_type_prediction_from_plot",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "youtube_video_info_parsing",
+        "score": 0.761904761904762,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "super_clevr_scene_understanding",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "figureqa",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_programming_test_advanced",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 18
+    },
+    {
+        "name": "face_keypoint_detection",
+        "score": 0.7573680555408505,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "widerface_face_count_and_event_classification",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "average_humidity_estimate_plot",
+        "score": 0.4413333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "code_output_result",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "clevrer_video_moving_object_count",
+        "score": 0.47619047619047616,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 21
+    },
+    {
+        "name": "weather_info_parsing",
+        "score": 0.9722222222222222,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "egocentric_analysis_single_image",
+        "score": 0.6666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "logo2k_same_type_logo_retrieval",
+        "score": 0.4642857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "graph_hamiltonian_cycle",
+        "score": 0.4017857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "waybill_number_sequence_extraction",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "graph_maxflow",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "clevrer_object_existence_video",
+        "score": 0.875,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "TV_show_info_parsing",
+        "score": 0.7301587301587302,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "sta_action_localization_video",
+        "score": 0.125,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "visual_dialog_image_guessing",
+        "score": 0.6666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "insect_order_classification",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "electricity_plot_future_prediction",
+        "score": 0.40291578947368417,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "perception_test_video_character_order",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "chemistry_exams_v",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "vlnqa_egocentric_navigation_video",
+        "score": 0.0625,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "finance_table_understanding",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "funsd_document_qa",
+        "score": 0.8571428571428571,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "star_object_interaction_video",
+        "score": 0.125,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "video_to_camera_trajectory_retrieval",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "vibe_eval_open",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "question_solution_solving",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "graph_theory",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_programming_test_hard",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_analytic",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "3d_fragments_understanding",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_length",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "algebra",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chess_puzzle_single_step",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "action_sequence_understanding",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "emotion_recognition",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chess_winner_identification",
+        "score": 0.6,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "perception_test_object_shuffle_video",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "physical_property_reasoning",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "humor_understand_caption_match",
+        "score": 0.26666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "coco_object_detection_by_query_property",
+        "score": 0.6241757920518586,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "cam_traj_to_video_selection",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multilingual_game_info_parsing",
+        "score": 0.7410714285714286,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "mnist_pattern",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "clevrer_moving_direction_video",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "dvqa",
+        "score": 0.8421052631578947,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "physics_exams_v",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "snli_ve_visual_entailment",
+        "score": 0.8,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "music_info_retrieval",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "3d_indoor_scene_text_bbox_selection",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_descriptive",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "top_rated_hotel_identification",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "science_molecule_chemistry",
+        "score": 0.6,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "game_info_parsing",
+        "score": 0.8766233766233765,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "deciphering_oracle_bone",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "muma_theory_of_mind_belief_of_goal",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "signboard_identification",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "image_style_recognition",
+        "score": 1.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "math_convexity_value_estimation",
+        "score": 0.36049605605319107,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "3d_indoor_scene_text_bbox_prediction",
+        "score": 0.1200090842879735,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "movie_info_parsing",
+        "score": 0.7232142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "arc_agi",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "next_action_prediction",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "human_relationship_reasoning",
+        "score": 0.9285714285714286,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "graph_shortest_path_kamada_kawai",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "coco_person_detection",
+        "score": 0.7670540550695605,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chart_vqa",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "clevrer_video_moving_object_property_recognition",
+        "score": 0.875,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "graph_hamiltonian_path",
+        "score": 0.3928571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "nlvr2_two_image_compare_qa",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "weather_info_retrieval",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "math_exams_v",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "coco_ood_global_image_retrieval_by_query_property",
+        "score": 0.5087868480725624,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "newspaper_ocr_in_query_box",
+        "score": 0.5333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "clevr_arithmetic",
+        "score": 0.5263157894736842,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "stock_info_retrieval",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "mvsa_sentiment_classification",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "av_multicamera_tracking_predict_bbox",
+        "score": 0.034679469795497846,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "egocentric_spatial_reasoning",
+        "score": 0.6666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "perception_test_video_action_count",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "nextqa_mc",
+        "score": 0.8947368421052632,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "graph_isomorphism",
+        "score": 0.4666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "code_programming_test_easy",
+        "score": 0.20833333333333334,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 24
+    },
+    {
+        "name": "biology_exams_v",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "long_string_number_recognition",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "kvqa_knowledge_aware_qa",
+        "score": 0.3684210526315789,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "math_breakpoint",
+        "score": 0.7333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "landmark_recognition_and_qa",
+        "score": 0.5999999999999999,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "muma_theory_of_mind_social_goal",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "photo_sharing_image_retrieval",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "map_diagram_qa",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "movie_info_retrieval",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "pmc_vqa_medical_image_qa",
+        "score": 0.47368421052631576,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "cheapest_flight_identification",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "newspaper_page_parse_and_count",
+        "score": 0.4666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "science_basic_physics",
+        "score": 0.5333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "electricity_future_prediction_from_table",
+        "score": 0.7352631578947368,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "license_plate_recognition",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "game_info_retrieval",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "places365_scene_type_classification",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_error_line_identification",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "face_identity_matching",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "music_info_parsing",
+        "score": 0.6160714285714286,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_content_reasoning",
+        "score": 0.2222222222222222,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "multilingual_movie_info_parsing",
+        "score": 0.6224489795918366,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "iconqa_count_and_reasoning",
+        "score": 0.47368421052631576,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "graph_connectivity",
+        "score": 0.18333333333333332,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "graph_shortest_path_planar",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "famous_building_recognition",
+        "score": 0.78125,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "geometry_transformation",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "av_vehicle_multiview_counting",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "long_string_letter_recognition",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "av_view_identification",
+        "score": 0.1,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "handwritten_math_expression_extraction",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_solid",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "animal_pose_estimation",
+        "score": 0.1966903175797918,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "single_person_pose_estimation",
+        "score": 0.15444037052995438,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_area",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "IAM_line_ocr_and_locate",
+        "score": 0.41277783587672545,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "hotel_booking_confirmation_parsing",
+        "score": 0.6357142857142858,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ili_ratio_future_prediction",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "landmark_check_two_images",
+        "score": 0.6888888888888889,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "vizwiz_quality_accessment_for_blind",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "electricity_load_estimate_plot",
+        "score": 0.44085714285714284,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "tqa_textbook_qa",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "stock_info_parsing",
+        "score": 0.9747899159663866,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "quizlet_question_solving",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_programming_extremely_hard",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "stock_price_future_prediction",
+        "score": 0.5885714285714286,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "Ad_count_detection",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "recover_masked_word_in_figure",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "polygon_interior_angles",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "web_action_grounding",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "latex_complex_formula_convertion",
+        "score": 0.23529411764705882,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "transit_map_intersection_points",
+        "score": 0.16071428571428573,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "paper_review_acceptance",
+        "score": 0.6,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "arxiv_vqa",
+        "score": 0.8571428571428571,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_match_problem",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "vln_hindi_next_step",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "medical_image_artifacts_indentification",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "song_title_identification_from_lyrics",
+        "score": 0.25,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_abdomen_endscopy_organ_recognition",
+        "score": 0.047619047619047616,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "move_pos_to_pos_hanoi_4_pole",
+        "score": 0.0503968253968254,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_camera_motion_description",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "actor_recognition_in_Movie",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "bongard_problem",
+        "score": 0.07894736842105263,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "ascii_art_understanding",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "calendar_schedule_suggestion",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_reasoning_overlapped_circle",
+        "score": 0.25,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_screenshot_barman",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "planning_screenshot_floortile",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "video_grounding_temporal",
+        "score": 0.3333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "ancient_map_understanding",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_blood_vessels_recognition",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "google_streetview_circle_sorting",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "location_vqa",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "mindmap_elements_parsing",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_add_tag",
+        "score": 0.6,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "painting_QA",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "vln_identify_robot",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "TRANCE_physics_reasoning_view",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_translation_hard",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "2d_image_jigsaw_puzzle_easy",
+        "score": 0.20833333333333331,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "rocks_samples_compare",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "mensa_iq_test",
+        "score": 0.35490196078431374,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "flowchart_code_generation",
+        "score": 0.4444444444444444,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "functionality_matching_in_different_objects",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "stackoverflow_debug_QA",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "logical_reasoning_find_odd_one_out",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "web_action_prediction",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_execution",
+        "score": 0.1875,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "music_sheet_format_QA",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_solution_compare",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "annoying_word_search",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "interpret_force_perspective_illusion",
+        "score": 0.6,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "healthcare_info_judgement",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multiview_reasoning_camera_moving",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_plot_position_relationship",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "vln_identify_location",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "medical_polyp_segmentation_single_object_rater",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "logical_reasoning_2D_views_of_3D_shapes",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_abdomen_MRI_organ_recognition",
+        "score": 0.047619047619047616,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "relative_depth_of_different_points",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "topological_sort",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_visual_barman",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "scibench_fundamental_wo_solution",
+        "score": 0.02040816326530612,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 49
+    },
+    {
+        "name": "geometry_reasoning_nested_squares",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "font_recognition",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "dish_ingredient_match",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_reasoning_count_line_intersections",
+        "score": 0.25,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "worldle",
+        "score": 0.24260483119648843,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "circuit_diagram_understanding",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "google_streetview_line_sorting",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "TRANCE_physics_reasoning_basic",
+        "score": 0.35294117647058826,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "go_capture_stone",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "code_translation_advanced",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_eval_visual_pref",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "visual_correspondance_in_two_images",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "sign_language",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "monthly_weather_days_count",
+        "score": 0.380952380952381,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "weather_map_climate_type_temperature_parsing",
+        "score": 0.6071428571428571,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "top_video_creator_identification",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "TRANCE_physics_reasoning_event",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "rebus",
+        "score": 0.08695652173913043,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 23
+    },
+    {
+        "name": "vln_tegulu_next_step",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "ishihara_test",
+        "score": 0.3714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "paper_vqa",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "google_streetview_circle_reasoning",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "medical_retrieval_given_surgeon_activity",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "recipe_image_ordering",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "music_sheet_sentiment",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "signage_navigation",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "google_streetview_direction_understanding",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_retrieval",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "comic_page_ordering",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "movie_retrieval_by_actor",
+        "score": 0.8571428571428571,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "webpage_code_understanding",
+        "score": 0.6666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "counting_multi_image",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "forensic_detection_of_different_images",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_counting_lymphocytes",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "knowledge_sign_recognition",
+        "score": 0.1111111111111111,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "code_visualization_output_understanding",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 10
+    },
+    {
+        "name": "video_grounding_spatial",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "music_sheet_name",
+        "score": 0.13333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "vln_english_next_step",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "multilingual_news_qa",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "music_sheet_author",
+        "score": 0.25,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "planning_visual_blocksworld",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "game_platform_support_identification",
+        "score": 0.8214285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "GUI_Act_Mobile_swipe",
+        "score": 0.3716988010666115,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 13
+    },
+    {
+        "name": "mahjong",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "booking_web_recommendation",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "scibench_calculus_wo_solution",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 49
+    },
+    {
+        "name": "knowledge_graph_understanding",
+        "score": 0.4,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "media_homepage_profile",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "image_translation_en2cn",
+        "score": 0.2559936949277072,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "realworld_qa_en2cn",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_visual_floortile",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "planning_visual_storage",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "video_intent_recognition",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "GUI_Act_Web_Multi",
+        "score": 0.43116598138631473,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chinese_idiom_recognition",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "number_comparison",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_visual_termes",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "planning_screenshot_blocksworld",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "planning_visual_grippers",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "product_ocr_qa",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_reasoning_circled_letter",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "GUI_Act_Web_Single",
+        "score": 0.02812451464411082,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_eval_dynamic_pref",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "extract_webpage_headline",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_action_recognition",
+        "score": 0.8214285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_screenshot_storage",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "google_streetview_line_reasoning",
+        "score": 0.3333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "code_translation_easy",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "soccer_offside",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "video_segments_reordering",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_parasite_detection",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "geometry_reasoning_grid",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "relative_reflectance_of_different_regions",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "entertainment_web_game_style",
+        "score": 0.8214285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "media_recommend_solutions_stackoverflow",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "orchestra_score_recognition",
+        "score": 0.10714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_eval_factual_pref",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "icon_arithmetic_puzzle",
+        "score": 0.10714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_screenshot_grippers",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "MMMU_pro_exam_screenshot",
+        "score": 0.26262626262626265,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 99
+    },
+    {
+        "name": "waldo",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 18
+    },
+    {
+        "name": "clevrer_physics",
+        "score": 0.45,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 20
+    },
+    {
+        "name": "MMMU_physics_chemistry_selected",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_screenshot_tyreworld",
+        "score": 0.13333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "music_sheet_note_count",
+        "score": 0.058823529411764705,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "semantic_matching_of_two_images",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_keywords_based_retrieval_non_radiology",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "booking_web_rating",
+        "score": 0.8928571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "logical_reasoning_2d_folding",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "hashtag_recommendation",
+        "score": 0.8761904761904761,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "llavaguard",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "photoshop_operation",
+        "score": 0.17261904761904762,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_multi_organ_segmentation_rater",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "cultural_vqa",
+        "score": 0.3333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "medical_content_based_retrieval_radiology",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "logical_reasoning_fit_pattern",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "tv_show_retrieval_by_character",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "character_recognition_in_TV_shows",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "highest_discount_game_price_identification",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "remaining_playback_time_calculation",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "medical_cell_recognition",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "pokemon_3D_recognition",
+        "score": 0.36666666666666664,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "chess_find_legal_moves",
+        "score": 0.03296776632380673,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "rocks_samples_identify",
+        "score": 0.13333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "paper_review_rating",
+        "score": 0.6576440282412922,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "distinguish_ai_generated_image",
+        "score": 0.7368421052631579,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "autonomous_driving_scene_analysis",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "code_translation_Python",
+        "score": 0.16666666666666669,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "counting_single_image",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "GUI_Act_Mobile_tap",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "road_map_find_highway_between_two_place",
+        "score": 0.4117647058823529,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "chess_sygyzy_endgames",
+        "score": 0.04693877551020409,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "planning_screenshot_termes",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "geographic_remote_sensing_land_cover",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "visual_prediction_rater_plane_segmentation",
+        "score": 0.2222222222222222,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "visual_prediction_rater_surface_normal_estimation",
+        "score": 0.11904761904761904,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "visual_prediction_rater_openable_part_segmentation",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "visual_prediction_rater_3d_assembled_quality_understanding",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "visual_prediction_rater_semantic_segmentation",
+        "score": 0.0625,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "visual_prediction_rater_depth_estimation",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "visual_prediction_rater_novel_view_synthesis",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "visual_prediction_rater_panoptic_segmentation",
+        "score": 0.09523809523809523,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multiple_states_identify_asia",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multiple_states_identify_africa",
+        "score": 0.05714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multiple_states_identify_europe",
+        "score": 0.1142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multiple_states_identify_americas",
+        "score": 0.08571428571428572,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "adapted_cvbench_distance",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "adapted_cvbench_count",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "adapted_cvbench_depth",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "adapted_cvbench_relation",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "symbolic_graphics_programs_computer_aided_design",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "symbolic_graphics_programs_scalable_vector_graphics",
+        "score": 0.1111111111111111,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 18
+    },
+    {
+        "name": "table_understanding_complex_question_answering",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "table_understanding_fact_verification",
+        "score": 0.6666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "panel_images_multi_question",
+        "score": 0.6190476190476192,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "panel_images_single_question",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "MMSoc_Misinformation_GossipCop",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "MMSoc_HatefulMemes",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "MMSoc_Memotion",
+        "score": 0.6352941176470588,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "MMSoc_Misinformation_PolitiFact",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "poetry_acrostic_alliteration",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "poetry_acrostic",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "poetry_limerick",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "poetry_custom_rhyming_scheme",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "poetry_petrarchian_sonnet_optional_meter",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "poetry_haiku",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "poetry_shakespearean_sonnet",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "screenshot_lighteval_math",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "screenshot_theoremqa",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "number_puzzle_sudoku",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "number_puzzle_kakuro_5x5",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "app_interactive_operations_iphone_settings",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_amazon",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_tiktok",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_ppt",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_alipay",
+        "score": 0.4117647058823529,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "app_interactive_operations_leetcode",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_excel",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_zoom",
+        "score": 0.6,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "app_interactive_operations_youtube",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_twitter",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_word",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_instagram",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_interactive_operations_notes",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "text_entity_replace",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "background_change",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "face_attribute_edit",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "face_swap",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "text_style",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "out_of_context",
+        "score": 0.8571428571428571,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "clip_stable_diffusion_generate",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "veracity",
+        "score": 0.8571428571428571,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "counterfactual_arithmetic",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "maze_2d_8x8",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "shape_composition_shapes",
+        "score": 0.2900510204081633,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "shape_composition_colours",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_aesthetics",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_unmask",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_semantics",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_motion_guided_editing",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_artifact",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_mask",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_subject",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_artifact_reason",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "autorater_control",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "autorater_3d_model_texturing",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chess_puzzles_crushing",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chess_puzzles_checkmate",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "chess_puzzles_equality",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "app_layout_understanding_notes",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_twitter",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_youtube",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_tiktok",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_excel",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_amazon",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_instagram",
+        "score": 0.42857142857142855,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_zoom",
+        "score": 0.3333333333333333,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "app_layout_understanding_word",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_iphone_settings",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_leetcode",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_ppt",
+        "score": 0.14285714285714285,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "app_layout_understanding_alipay",
+        "score": 0.058823529411764705,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 17
+    },
+    {
+        "name": "ball_cup_swap_3",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_table_to_markdown",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_table_to_latex",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_resume_employer_plain",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_article_journal",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_resume_experience_plain",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_math_text_latex",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_article_authors",
+        "score": 0.8214285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_table_to_csv",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_math_equation",
+        "score": 0.5714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_resume_school_plain",
+        "score": 0.7857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_table_to_html",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ocr_resume_skill_plain",
+        "score": 0.35714285714285715,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "crossword_mini_5x5",
+        "score": 0.10714285714285714,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_contain_position_only",
+        "score": 0.13333333333333333,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "xor_images",
+        "score": 0.06666666666666667,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "contain_position_length",
+        "score": 0.3333333333333333,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "contain_repeat_length",
+        "score": 0.13333333333333333,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "contain_position_images",
+        "score": 0.4,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "multi_contain_repeat",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "multi_contain_repeat_position_only_length",
+        "score": 0.13333333333333333,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "contain_contain_images",
+        "score": 0.9333333333333333,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "contain_length",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "contain_contain_length",
+        "score": 0.8666666666666667,
+        "eval_type": "rule",
+        "num_demo": 0,
+        "num_query": 15
+    },
+    {
+        "name": "pictionary_skribbl_io",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 20
+    },
+    {
+        "name": "pictionary_doodle_guess",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "pictionary_genai_output_chinese",
+        "score": 0.07142857142857142,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "pictionary_cartoon_drawing_guess",
+        "score": 0.5,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "pictionary_chinese_food_img2en",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_motion_matching_real_3D",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_motion_matching_3D_real",
+        "score": 0.2,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "reward_models_t2i_reward",
+        "score": 0.6428571428571429,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "reward_models_i2t_reward",
+        "score": 0.7142857142857143,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "memorization_chinese_celebrity",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "memorization_papers",
+        "score": 0.26666666666666666,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "memorization_famous_treaty",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "memorization_indian_celebrity",
+        "score": 0.2857142857142857,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "research_website_parsing_blogpost",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "research_website_parsing_publication",
+        "score": 0.0,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "research_website_parsing_homepage",
+        "score": 0.21428571428571427,
+        "eval_type": "rule",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "ascii_art_30",
+        "score": 0.07142857142857142,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "humor_explanation",
+        "score": 0.37333333333333335,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "funqa_unexpected_action_humor_video",
+        "score": 0.31333333333333335,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "science_figure_explanation",
+        "score": 0.510344827586207,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "video_qa",
+        "score": 0.7928571428571428,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "vibe_eval_phrase",
+        "score": 0.6,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "traffic_accident_analysis",
+        "score": 0.4071428571428571,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "figurative_speech_explanation",
+        "score": 0.6241379310344826,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "video_detail_description",
+        "score": 0.4368421052631579,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "table2latex_complex",
+        "score": 0.5333333333333333,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "unusual_images",
+        "score": 0.40344827586206894,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "funqa_unexpected_action_creative_video",
+        "score": 0.33333333333333337,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "art_explanation",
+        "score": 0.35517241379310344,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "ocr_open_ended_qa",
+        "score": 0.6275862068965516,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "video_short_title",
+        "score": 0.6571428571428569,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "bar_chart_interpretation",
+        "score": 0.3793103448275862,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "activitynetqa",
+        "score": 0.5684210526315789,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "scibench_w_solution_open_ended",
+        "score": 0.106,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 25
+    },
+    {
+        "name": "doc_vqa",
+        "score": 0.75625,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "video2notes",
+        "score": 0.4642857142857143,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "GUI_Chat_Hard",
+        "score": 0.5230769230769231,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 26
+    },
+    {
+        "name": "image_humor_understanding",
+        "score": 0.482758620689655,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "video_summary",
+        "score": 0.5857142857142856,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "defeasible_reasoning",
+        "score": 0.5758620689655171,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "funny_image_title",
+        "score": 0.6714285714285715,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "video_content_follow_up",
+        "score": 0.5071428571428571,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "nextqa_oe",
+        "score": 0.2947368421052632,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "tweets_captioning",
+        "score": 0.507142857142857,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "wikihow_complex_task_completion",
+        "score": 0.4444444444444444,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 9
+    },
+    {
+        "name": "graph_interpretation",
+        "score": 0.5310344827586208,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "generated_video_artifacts",
+        "score": 0.31875,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 16
+    },
+    {
+        "name": "meme_explain",
+        "score": 0.5571428571428572,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "funqa_unexpected_action_magic_video",
+        "score": 0.44000000000000006,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "guess_image_generation_prompt",
+        "score": 0.8105263157894737,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "visualization_with_code",
+        "score": 0.2642857142857143,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "iq_test_open_ended",
+        "score": 0.31034482758620685,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 29
+    },
+    {
+        "name": "electrocardiogram",
+        "score": 0.1285714285714286,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "image_captioning_with_additional_requirements",
+        "score": 0.8000000000000002,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "docci_image_description_long",
+        "score": 0.7214285714285714,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "paper_review_writing",
+        "score": 0.16,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 15
+    },
+    {
+        "name": "sceneqa_scene_transition_video",
+        "score": 0.2857142857142857,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "GUI_Chat_Easy",
+        "score": 0.7153846153846156,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 26
+    },
+    {
+        "name": "bridge_strategies_advanced",
+        "score": 0.15,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "bridge_strategies_worldclass",
+        "score": 0.22142857142857147,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "bridge_strategies_expert",
+        "score": 0.3714285714285715,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_manual_explanation_scooter_Arabic",
+        "score": 0.1285714285714286,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_manual_explanation_scooter_Russian",
+        "score": 0.14285714285714285,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_manual_explanation_scooter_French",
+        "score": 0.19285714285714284,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_manual_explanation_scooter_Spanish",
+        "score": 0.2214285714285714,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_manual_explanation_scooter_Chinese",
+        "score": 0.14999999999999997,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_Ruozhiba_expalnation_Spanish",
+        "score": 0.38571428571428573,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_Ruozhiba_expalnation_Japanese",
+        "score": 0.24285714285714288,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_Ruozhiba_expalnation_French",
+        "score": 0.40714285714285703,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_Ruozhiba_expalnation_Arabic",
+        "score": 0.21428571428571427,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_Ruozhiba_expalnation_Russian",
+        "score": 0.2571428571428571,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "multi_lingual_Ruozhiba_expalnation_English",
+        "score": 0.4499999999999999,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "table_understanding_fetaqa",
+        "score": 0.6,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 14
+    },
+    {
+        "name": "red_teaming_celebrity",
+        "score": 0.7100000000000001,
+        "eval_type": "llm",
+        "num_demo": 0,
+        "num_query": 20
+    },
+    {
+        "name": "red_teaming_captcha",
+        "score": 0.12105263157894738,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "red_teaming_jailbreak",
+        "score": 0.25,
+        "eval_type": "llm",
+        "num_demo": 0,
+        "num_query": 20
+    },
+    {
+        "name": "red_teaming_visualmisleading",
+        "score": 0.9,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "red_teaming_visual_order_A",
+        "score": 0.8789473684210528,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "red_teaming_racial",
+        "score": 0.7449999999999999,
+        "eval_type": "llm",
+        "num_demo": 0,
+        "num_query": 20
+    },
+    {
+        "name": "red_teaming_visual_order_B",
+        "score": 0.9,
+        "eval_type": "llm",
+        "num_demo": 1,
+        "num_query": 19
+    },
+    {
+        "name": "red_teaming_politics",
+        "score": 0.575,
+        "eval_type": "llm",
+        "num_demo": 0,
+        "num_query": 20
+    }
+]
