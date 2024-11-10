@@ -3,8 +3,7 @@ import logging
 from pathlib import Path
 from task_processor import TaskProcessor
 from evaluation_processor import EvaluationProcessor
-from datasets import load_dataset, DatasetDict
-from utils import organize_hf_dataset
+from utils import prepare_megabench_data
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
@@ -61,6 +60,11 @@ if __name__ == "__main__":
         help="If set, only the evaluation will be performed.",
     )
     parser.add_argument(
+        "--force_eval_rule_tasks",
+        action="store_true",
+        help="If set, rule tasks will always be re-evaluated even if there are already scores in the score output file.",
+    )
+    parser.add_argument(
         "--multiprocess",
         action="store_true",
         help="If set, tasks will be processed using multiple processes.",
@@ -84,6 +88,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset_subset_name",
         type=str,
+        choices=["core", "open", "core_single_image", "open_single_image"],
         default="core",
     )
 
@@ -91,9 +96,7 @@ if __name__ == "__main__":
     logger.info(f"Arguments: {args}")
 
     # Load HF datasets
-    dataset = load_dataset(args.dataset_name, args.dataset_subset_name)
-    all_test_samples = list(dataset["test"])
-    organized_dataset = organize_hf_dataset(all_test_samples)
+    subset_dataset, all_dataset = prepare_megabench_data(args.dataset_name, args.dataset_subset_name)
 
     if not args.evaluation_only:
         additional_args = {}
@@ -117,7 +120,7 @@ if __name__ == "__main__":
             single_task_name=args.task_name,
             multiprocess=args.multiprocess,
             processes=args.processes,
-            data=organized_dataset,
+            data=subset_dataset,
         )
 
     if not args.query_only:
@@ -128,10 +131,11 @@ if __name__ == "__main__":
         sanity_check_eval = args.model_type == "GROUND_TRUTH_ORACLE_SANITY_CHECK"
         # Score the model's responses, using the configured metrics
         evaluation_processor = EvaluationProcessor(
-            hf_data=organized_dataset,
+            hf_data=all_dataset,
             data_file=args.output_file,
             logging_file=eval_log_file,
             output_score_file=output_score_file,
             sanity_check_eval=sanity_check_eval,
+            force_eval_rule_tasks=args.force_eval_rule_tasks,
         )
         evaluation_processor.process(single_task_name=args.task_name)

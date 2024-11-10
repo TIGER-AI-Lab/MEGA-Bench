@@ -70,11 +70,17 @@ class AsciiArtGPT4Judger(OpenAI):
 
         response_data = None
         while response_data is None:
-            response = requests.post(
-                self.url,
-                headers=headers,
-                json=query_payload,
-            )
+            try:
+                response = requests.post(
+                    self.url,
+                    headers=headers,
+                    json=query_payload,
+                )
+            except (requests.exceptions.JSONDecodeError, requests.exceptions.ConnectionError) as e:
+                logging.info(f'Error in requests: {e}')
+                logging.info('Retry...')
+                continue
+
             response_ = response.json()
             if "error" in response_:
                 error_info = response_["error"]

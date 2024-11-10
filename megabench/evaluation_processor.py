@@ -18,6 +18,7 @@ class EvaluationProcessor:
         logging_file: str,
         output_score_file: str,
         sanity_check_eval: bool = False,
+        force_eval_rule_tasks: bool = False,
     ):
         self.data_file = data_file
         self.data = self._load_json(data_file)
@@ -28,6 +29,7 @@ class EvaluationProcessor:
             else {"data": self.data}
         )
         self.sanity_check_eval = sanity_check_eval
+        self.force_eval_rule_tasks = force_eval_rule_tasks
 
         # Configure logging
         self.file_logger = logging.getLogger("errorLogger")
@@ -53,7 +55,7 @@ class EvaluationProcessor:
             self.organized_hf_data[task["task_name"]] = task["task_samples"]
 
     def _get_eval_context(self, task_name, query):
-        query_index = query["task_idx"]
+        query_index = query["query_idx"]
         eval_context = self.organized_hf_data[task_name][query_index]["eval_context"]
         eval_context = ast.literal_eval(eval_context)
         return eval_context
@@ -106,7 +108,7 @@ class EvaluationProcessor:
         for existing_task in self.eval_results["data"]:
             if task.get("task_name") == existing_task.get("task_name"):
                 # rule-eval tasks are fast and easy to run, we can always re-evaluate them
-                if eval_type == "rule":
+                if eval_type == "rule" and self.force_eval_rule_tasks:
                     return True
 
                 # Do not re-evaluate gpt-4o-as-judge, unless it's nenessary
@@ -541,7 +543,7 @@ class EvaluationProcessor:
                 return
             score = query["scores"]["field"][field]
             self.file_logger.error(
-                f"Example did not get a score of 1: {task_name=}, {field=}, {query['task_idx']=}, {score=}"
+                f"Example did not get a score of 1: {task_name=}, {field=}, {query['query_idx']=}, {score=}"
             )
 
     def _save_json_safe(self, file_path: str, data: Any) -> None:

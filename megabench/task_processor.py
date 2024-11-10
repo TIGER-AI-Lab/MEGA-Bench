@@ -167,7 +167,7 @@ class TaskProcessor:
     def update_query_response(self, query_response, examples):
         for i, query in enumerate(query_response):
             query["global_idx"] = examples[i]["global_idx"]
-            query["task_idx"] = examples[i]["task_idx"]
+            query["query_idx"] = examples[i]["query_idx"]
             query["images"] = examples[i]["image_paths"]
             query["query_text"] = examples[i]["query_text"]
         return query_response
@@ -327,7 +327,7 @@ class TaskProcessor:
             query_data["queries"].append(
                 {
                     "global_idx": global_idx,
-                    "task_idx": query_idx,
+                    "query_idx": query_idx,
                     "image_paths": query_media,
                     "query_text": query_text,
                     "query_answer": query_answer,

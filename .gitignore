@@ -234,17 +234,18 @@ local/
 # The evaluation artifacts should only go in the results folder.
 **/all_query_responses.json
 **/data_with_scores.json
-!/vision-bigbench/result/**/all_query_responses.json
-!/vision-bigbench/result/**/data_with_scores.json
-vision-bigbench/*/all_query_responses copy.json
-vision-bigbench/metrics/**/scoring_metrics.json
-vision-bigbench/result/**/evaluation_logs.txt
-vision-bigbench/result/**/code_eval
+megabench/*/all_query_responses copy.json
+megabench/metrics/**/scoring_metrics.json
+megabench/results/**/evaluation_logs.txt
+megabench/results/**/code_eval
+megabench/results/**/temp.json
+!/megabench/results/**/all_query_responses.json
+!/megabench/results/**/data_with_scores.json
 
 *lock
 
 */taxonomy/*png
 */taxonomy/*nwk
 */taxonomy/*pdf
-vision-bigbench/error_analysis
+megabench/error_analysis
 *.zip
