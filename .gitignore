@@ -250,3 +250,5 @@ megabench/results/**/temp.json
 */taxonomy/*pdf
 megabench/error_analysis
 *.zip
+
+*.sqlite

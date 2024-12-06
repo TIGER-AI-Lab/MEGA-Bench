@@ -1,17 +1,114 @@
+from datetime import timedelta
 import functools
 import logging
 import math
 import random
+import ssl
+from geopy.adapters import (
+    RequestsAdapter,
+    RequestsHTTPAdapter,
+    RequestsHTTPWithSSLContextAdapter,
+    requests_available,
+    _normalize_proxies,
+)
 from geopy.distance import distance
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
-
-
-USER_AGENT_SUFFIX = hex(random.getrandbits(128))[2:]
-geolocator = Nominatim(user_agent=f"vlm-mega-benchmark_{USER_AGENT_SUFFIX}")
+import requests_cache
 
 
 error_logger = logging.getLogger("errorLogger")
+
+
+class CachedRequestsAdapter(RequestsAdapter):
+    """The adapter which uses `requests`_ library.
+
+    .. _requests: https://requests.readthedocs.io
+
+    `requests` supports keep-alives, retries, persists Cookies,
+    allows response compression and uses HTTP/1.1 [currently].
+
+    ``requests`` package must be installed in order to use this adapter.
+
+    The requests' ``trust_env`` value is set to false, meaning that
+    environment doesn't affect the requests' configuration.
+    The ``ssl_context`` and ``proxies`` settings can be used for configuration.
+
+    .. versionchanged:: 2.4
+        This adapter used to use the `certifi` CA bundle by default,
+        if an ``ssl_context`` wasn't provided explicitly. This has been
+        changed to use the system CA store by default.
+    """
+
+    is_available = requests_available
+
+    def __init__(
+        self,
+        *,
+        proxies,
+        ssl_context,
+        pool_connections=10,
+        pool_maxsize=10,
+        max_retries=2,
+        pool_block=False,
+    ):
+        if not requests_available:
+            raise ImportError(
+                "`requests` must be installed in order to use RequestsAdapter. "
+                "If you have installed geopy via pip, you may use "
+                "this command to install requests: "
+                '`pip install "geopy[requests]"`.'
+            )
+        proxies = _normalize_proxies(proxies)
+        if ssl_context is None:
+            # By default requests uses CA bundle from `certifi` package.
+            # This is typically overridden with the `REQUESTS_CA_BUNDLE`
+            # environment variable. However, trust_env is disabled
+            # below to turn off the requests-specific logic of proxy
+            # servers configuration, which is re-implemented in geopy
+            # so that it's similar between different Adapters implementations.
+            #
+            # Here, in order to align the adapter's behavior with
+            # the default URLLibAdapter, we explicitly pass an ssl context,
+            # which would be initialized with the system's CA store
+            # rather than the certifi's bundle requests uses by default.
+            #
+            # See also https://github.com/geopy/geopy/issues/546
+            ssl_context = ssl.create_default_context()
+        super().__init__(proxies=proxies, ssl_context=ssl_context)
+
+        self.session = requests_cache.CachedSession(
+            backend="sqlite", expire_after=timedelta(days=30)
+        )
+        self.session.trust_env = False  # don't use system proxies
+        self.session.proxies = proxies
+
+        self.session.mount(
+            "http://",
+            RequestsHTTPAdapter(
+                pool_connections=pool_connections,
+                pool_maxsize=pool_maxsize,
+                max_retries=max_retries,
+                pool_block=pool_block,
+            ),
+        )
+        self.session.mount(
+            "https://",
+            RequestsHTTPWithSSLContextAdapter(
+                ssl_context=ssl_context,
+                pool_connections=pool_connections,
+                pool_maxsize=pool_maxsize,
+                max_retries=max_retries,
+                pool_block=pool_block,
+            ),
+        )
+
+
+USER_AGENT_SUFFIX = hex(random.getrandbits(128))[2:]
+geolocator = Nominatim(
+    user_agent=f"vlm-mega-benchmark_{USER_AGENT_SUFFIX}",
+    adapter_factory=CachedRequestsAdapter,
+)
 
 
 def calculate_proximity_score(guess_coords, actual_coords, k=100):
