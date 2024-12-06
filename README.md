@@ -81,7 +81,10 @@ python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"
 
 ## Evaluation
 
-**📌 Note:** Due to slight reorganization of the prompt and cleanup for uploading to Hugging Face Datasets, the evaluation results from this repository may differ slightly from those reported in our paper and leaderboard. However, the overall performance trend and capability report should remain consistent.
+**📌 Note:** Due to slight reorganization of the prompt and cleanup for uploading to Hugging Face Datasets, the evaluation results from this repository may differ slightly from those reported in our paper and leaderboard. However, the overall performance trend and capability report should remain consistent. 
+
+For several popular models, we convert the evaluation results used in our paper to the format of the this repository, please find them in ``megabench/results/paper_results_converted``.
+
 
 The table below lists information about supported models in this repository. See `megabench/models/model_type.py` for the full list. We will add code for more models in the future.
 
