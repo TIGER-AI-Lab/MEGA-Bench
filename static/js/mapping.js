@@ -1,9 +1,10 @@
 const modelNameMapping = {
     'GPT-4o (0513)': 'GPT_4o',
-    'Claude-3.5-Sonnet': 'Claude_3.5',
+    'Claude-3.5-Sonnet (0620)': 'Claude_3.5',
+    'Claude-3.5-Sonnet (1022)': 'Claude_3.5_new',
     'Gemini-1.5-Pro-002': 'Gemini_1.5_pro_002',
     'Gemini-1.5-Flash-002': 'Gemini_1.5_flash_002',
-    'GPT-4O Mini': 'GPT_4o_mini',
+    'GPT-4o mini': 'GPT_4o_mini',
     'Qwen2-VL-72B': 'Qwen2_VL_72B',
     'InternVL2-Llama3-76B': 'InternVL2_76B',
     'LLaVA-OneVision-72B': 'llava_onevision_72B',
@@ -15,6 +16,9 @@ const modelNameMapping = {
     'LLaVA-OneVision-7B': 'llava_onevision_7B',
     'Llama-3.2-11B': 'Llama_3_2_11B',
     'Idefics3-8B-Llama3': 'Idefics3',
+    'MAmmoTH-VL-8B': 'Mammoth_VL',
+    'Aria-MoE-25B': 'Aria',
+    'NVLM-D-72B': 'NVLM',
 };
 
 const inputFormatMapping = {
@@ -28,16 +32,16 @@ const inputFormatMapping = {
 };
 
 const outputFormatMapping = {
-    'Contextual Formatted Text': 'Contextual Formatted',
-    'Structured Output': 'Structured',
-    'Exact Text': 'Exact',
-    'Numerical Data': 'Numerical',
-    'Open-ended Output': 'Open-ended',
-    'Multiple-choice': 'Multiple-choice'
+    'contextual_formatted_text': 'Contextual Formatted',
+    'structured_output': 'Structured',
+    'exact_text': 'Exact',
+    'numerical_data': 'Numerical',
+    'open_ended_output': 'Open-ended',
+    'multiple_choice': 'Multiple-choice'
 };
 
 const appMapping = {
-    'Information Extraction': 'Info Extraction',
+    'Information_Extraction': 'Info Extraction',
     'Planning': 'Planning',
     'Coding': 'Coding',
     'Perception': 'Perception',
@@ -63,17 +67,21 @@ const skillsMapping = {
 // Model order (desired display order)
 const modelOrder = [
     'GPT-4o (0513)',
-    'Claude-3.5-Sonnet',
+    'Claude-3.5-Sonnet (1022)',
+    'Claude-3.5-Sonnet (0620)',
     'Gemini-1.5-Pro-002',
     'Gemini-1.5-Flash-002',
-    'GPT-4O Mini',
+    'GPT-4o mini',
     'Qwen2-VL-72B',
     'InternVL2-Llama3-76B',
     'LLaVA-OneVision-72B',
+    'NVLM-D-72B', 
+    'Aria-MoE-25B',
     'Qwen2-VL-7B',
     'Pixtral 12B',
     'InternVL2-8B',
     'Phi-3.5-Vision',
+    'Mammoth-VL-8B',
     'MiniCPM-V2.6',
     'LLaVA-OneVision-7B',
     'Llama-3.2-11B',
@@ -83,16 +91,20 @@ const modelOrder = [
 // Color mapping for models
 const modelColorMapping = {
     'GPT-4o (0513)': 'rgba(255, 99, 132, 0.6)',
-    'Claude-3.5-Sonnet': 'rgba(54, 162, 235, 0.6)',
+    'Claude-3.5-Sonnet (0620)': 'rgba(54, 162, 235, 0.6)', 
+    'Claude-3.5-Sonnet (1022)': 'rgba(75, 192, 192, 0.6)',
     'Gemini-1.5-Pro-002': 'rgba(255, 206, 86, 0.6)',
     'Gemini-1.5-Flash-002': 'rgba(75, 192, 192, 0.6)',
-    'GPT-4O Mini': 'rgba(153, 102, 255, 0.6)',
+    'GPT-4o mini': 'rgba(153, 102, 255, 0.6)',
     'Qwen2-VL-72B': 'rgba(255, 159, 64, 0.6)',
     'InternVL2-Llama3-76B': 'rgba(199, 199, 199, 0.6)',
+    'NVLM-D-72B': 'rgba(128, 128, 0, 0.6)',
     'LLaVA-OneVision-72B': 'rgba(83, 102, 255, 0.6)',
+    'Aria-MoE-25B': 'rgba(138, 43, 226, 0.6)',
     'Qwen2-VL-7B': 'rgba(255, 99, 71, 0.6)',
     'Pixtral 12B': 'rgba(50, 205, 50, 0.6)',
     'InternVL2-8B': 'rgba(255, 165, 0, 0.6)',
+    'Mammoth-VL-8B': 'rgba(147, 112, 219, 0.6)',
     'Phi-3.5-Vision': 'rgba(128, 0, 128, 0.6)',
     'MiniCPM-V2.6': 'rgba(0, 128, 128, 0.6)',
     'LLaVA-OneVision-7B': 'rgba(255, 192, 203, 0.6)',

@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var mapping = {
   'GPT_4o': 'GPT-4o (0513)',
-  'Claude_3.5': 'Claude-3.5-Sonnet',
+  'Claude_3.5': 'Claude-3.5-Sonnet (0620)',
+  'Claude_3.5_new': 'Claude-3.5-Sonnet (1022)',
   'Gemini_1.5_pro_002': 'Gemini-1.5-Pro-002',
   'Gemini_1.5_flash_002': 'Gemini-1.5-Flash-002',
   'GPT_4o_mini': 'GPT-4O Mini',
@@ -54,7 +55,7 @@ var mapping = {
 };
 
 const proprietaryModels = new Set([
-  'GPT-4o (0513)', 'Claude-3.5-Sonnet', 'Gemini-1.5-Pro-002', 'Gemini-1.5-Flash-002', 'GPT-4O Mini'
+  'GPT-4o (0513)', 'Claude-3.5-Sonnet (0620)', 'Claude-3.5-Sonnet (1022)', 'Gemini-1.5-Pro-002', 'Gemini-1.5-Flash-002', 'GPT-4O Mini'
 ]);
 
 function loadTableData() {
@@ -70,9 +71,11 @@ function loadTableData() {
 
       // Prepare data for styling
       const overallScores = prepareScoresForStyling(Object.values(data).map(model => model.overall_score));
-      const coreScores = prepareScoresForStyling(Object.values(data).map(model => 
-        Math.max(model.core_noncot.macro_mean_score, model.core_cot.macro_mean_score)
-      ));
+      const coreScores = prepareScoresForStyling(Object.values(data).map(model => {
+        const nonCotScore = model.core_noncot?.macro_mean_score ?? -Infinity;
+        const cotScore = model.core_cot?.macro_mean_score ?? -Infinity;
+        return Math.max(nonCotScore, cotScore);
+      }));
       const openScores = prepareScoresForStyling(Object.values(data).map(model => model.open.macro_mean_score));
 
       Object.entries(data).forEach(([modelKey, modelData], index) => {
@@ -80,7 +83,10 @@ function loadTableData() {
         const tr = document.createElement('tr');
         tr.classList.add(getModelTypeClass(modelName));
         
-        const coreScore = Math.max(modelData.core_noncot.macro_mean_score, modelData.core_cot.macro_mean_score).toFixed(4);
+        const coreScore = Math.max(
+          modelData.core_noncot?.macro_mean_score ?? -Infinity,
+          modelData.core_cot?.macro_mean_score ?? -Infinity
+        ).toFixed(4);
         
         tr.innerHTML = `
           <td>${modelName}</td>

@@ -4,371 +4,351 @@
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.5187898818829914,
-            "micro_mean_score": 0.5127977300993917
+            "macro_mean_score": 0.5203440930873326,
+            "micro_mean_score": 0.514302640282204
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.5251654337401854,
-            "micro_mean_score": 0.522332974147119
+            "macro_mean_score": 0.5265030595065238,
+            "micro_mean_score": 0.5236338521693411
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2448,
             "macro_mean_score": 0.6478225794744895,
             "micro_mean_score": 0.665391229578676
         },
-        "overall_score": 0.5409529871515315
+        "overall_score": 0.5421184432647768
     },
     "Gemini_1.5_pro_002": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.46887846869580546,
-            "micro_mean_score": 0.46403536258864253
+            "macro_mean_score": 0.4699992918320008,
+            "micro_mean_score": 0.4651116133689296
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.481393687771543,
-            "micro_mean_score": 0.4756661334397647
+            "macro_mean_score": 0.4822473962867704,
+            "micro_mean_score": 0.4764805563057179
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2448,
             "macro_mean_score": 0.5858190649927173,
             "micro_mean_score": 0.6104901117798793
         },
-        "overall_score": 0.4948345779089219
+        "overall_score": 0.4955784031499121
     },
     "Gemini_1.5_flash_002": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.4183865592515826,
-            "micro_mean_score": 0.41216971462683855
+            "macro_mean_score": 0.41898948981774853,
+            "micro_mean_score": 0.4127376993779598
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.4183865592515826,
-            "micro_mean_score": 0.41216971462683855
+            "macro_mean_score": 0.4189319021967416,
+            "micro_mean_score": 0.41567515414375245
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2168,
             "macro_mean_score": 0.5691365176285039,
             "micro_mean_score": 0.5987532244196045
         },
-        "overall_score": 0.4377900192406913
+        "overall_score": 0.43831534488249924
     },
     "Claude_3.5": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.4863241841253708,
-            "micro_mean_score": 0.4798092874490549
+            "macro_mean_score": 0.48800427486796155,
+            "micro_mean_score": 0.4814327812005499
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.5023557473841108,
-            "micro_mean_score": 0.4985442599850241
+            "macro_mean_score": 0.5040975742801586,
+            "micro_mean_score": 0.5002259116666758
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2288,
             "macro_mean_score": 0.6373907158949892,
             "micro_mean_score": 0.6569647463456579
         },
-        "overall_score": 0.519736485905313
+        "overall_score": 0.5212541172602853
+    },
+    "Claude_3.5_new": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.4919657684484185,
+            "micro_mean_score": 0.4874520567007144
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.5259191914020757,
+            "micro_mean_score": 0.5230785894131227
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.6563419761104125,
+            "micro_mean_score": 0.6724419604471196
+        },
+        "overall_score": 0.5427062825031487
     },
     "GPT_4o_mini": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.3974259652331149,
-            "micro_mean_score": 0.392578163407945
+            "macro_mean_score": 0.39854757130003565,
+            "micro_mean_score": 0.3936551517403452
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.4070959243997505,
-            "micro_mean_score": 0.40376078514357017
+            "macro_mean_score": 0.40767494558789397,
+            "micro_mean_score": 0.40431644154143376
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 1224,
             "macro_mean_score": 0.586537827213665,
             "micro_mean_score": 0.6133276010318144
         },
-        "overall_score": 0.43019240694015537
+        "overall_score": 0.43069690064863675
     },
     "Qwen2_VL_72B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.4623988230573754,
-            "micro_mean_score": 0.4568583770401895
+            "macro_mean_score": 0.46406654108789214,
+            "micro_mean_score": 0.4584702152011697
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.45284699372478177,
-            "micro_mean_score": 0.4487693487093462
+            "macro_mean_score": 0.4542376574527161,
+            "micro_mean_score": 0.4501201906164793
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2448,
             "macro_mean_score": 0.5639771804231668,
             "micro_mean_score": 0.5835339638865004
         },
-        "overall_score": 0.4754732650945565
+        "overall_score": 0.4769263263488681
     },
     "Qwen2_VL_7B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.34725455697890745,
-            "micro_mean_score": 0.34344091516995323
+            "macro_mean_score": 0.3480020832611913,
+            "micro_mean_score": 0.3441858958345098
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.3284357723853296,
-            "micro_mean_score": 0.32443422147119677
+            "macro_mean_score": 0.3293449599230247,
+            "micro_mean_score": 0.325331493515679
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1170,
-            "num_total_samples": 2452,
             "macro_mean_score": 0.43955105763038577,
             "micro_mean_score": 0.45508547008546996
         },
-        "overall_score": 0.35913430458751355
+        "overall_score": 0.3597856146156421
     },
     "llava_onevision_72B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.31960132549012704,
-            "micro_mean_score": 0.3173848563095166
+            "macro_mean_score": 0.3199332158220174,
+            "micro_mean_score": 0.31770770553892647
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.29725827011768174,
-            "micro_mean_score": 0.2954433666362564
+            "macro_mean_score": 0.2974368415462532,
+            "micro_mean_score": 0.2956217833156672
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 1224,
             "macro_mean_score": 0.4599484231632498,
             "micro_mean_score": 0.4850386930352536
         },
-        "overall_score": 0.33766580340844976
+        "overall_score": 0.33795497518277007
     },
     "llava_onevision_7B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.2239290419841492,
-            "micro_mean_score": 0.22222171180488767
+            "macro_mean_score": 0.22409531510496777,
+            "micro_mean_score": 0.22238854298563537
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.21347545703998197,
-            "micro_mean_score": 0.210586172002703
+            "macro_mean_score": 0.21362697219149712,
+            "micro_mean_score": 0.21073910058505504
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2448,
             "macro_mean_score": 0.33979975321921935,
             "micro_mean_score": 0.36474634565778147
         },
-        "overall_score": 0.23884309392529685
+        "overall_score": 0.23898796555531696
     },
     "InternVL2_76B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.34977582844066846,
-            "micro_mean_score": 0.3452353155814884
+            "macro_mean_score": 0.3502244283768534,
+            "micro_mean_score": 0.3456783051732046
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.35539585884136143,
-            "micro_mean_score": 0.35043335903915124
+            "macro_mean_score": 0.3562710424410931,
+            "micro_mean_score": 0.35129859801162616
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 1224,
             "macro_mean_score": 0.5192997443033639,
             "micro_mean_score": 0.5421324161650903
         },
-        "overall_score": 0.37649239855429245
+        "overall_score": 0.3772549347599992
     },
     "InternVL2_8B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.25920867490737526,
-            "micro_mean_score": 0.2543416126895087
+            "macro_mean_score": 0.25956581776451815,
+            "micro_mean_score": 0.2546984460483302
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.24055897165959364,
-            "micro_mean_score": 0.23784634936127952
+            "macro_mean_score": 0.24090301358258295,
+            "micro_mean_score": 0.23819084111520938
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1165,
-            "num_total_samples": 2452,
             "macro_mean_score": 0.3978571701460552,
             "micro_mean_score": 0.4108583690987125
         },
-        "overall_score": 0.2770545208291856
+        "overall_score": 0.2773656948037259
     },
     "MiniCPM_v2.6": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.22838207666977445,
-            "micro_mean_score": 0.22452805919103805
+            "macro_mean_score": 0.2287645706203155,
+            "micro_mean_score": 0.2249087742955901
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.22901463640480854,
-            "micro_mean_score": 0.2250606411323753
+            "macro_mean_score": 0.22955895202146906,
+            "micro_mean_score": 0.22560399396899078
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2448,
             "macro_mean_score": 0.41728623355613875,
             "micro_mean_score": 0.43452278589853827
         },
-        "overall_score": 0.25324761425596987
+        "overall_score": 0.2537218694467236
     },
     "Phi-3.5-vision": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.23240864879023493,
-            "micro_mean_score": 0.22932978620408923
+            "macro_mean_score": 0.23271251159409778,
+            "micro_mean_score": 0.2296262323791101
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.2295097914016776,
-            "micro_mean_score": 0.2266573336398296
+            "macro_mean_score": 0.22995297916629392,
+            "micro_mean_score": 0.22708502951025372
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2428,
             "macro_mean_score": 0.3947914647737769,
             "micro_mean_score": 0.42459157351676696
         },
-        "overall_score": 0.2533094072831661
+        "overall_score": 0.25357415903306635
     },
     "Pixtral_12B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.3186510310643637,
-            "micro_mean_score": 0.3151734861550665
+            "macro_mean_score": 0.31905695620134694,
+            "micro_mean_score": 0.31556607913724777
         },
         "core_cot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.3132232487306254,
-            "micro_mean_score": 0.30971424472967524
+            "macro_mean_score": 0.31362045151669854,
+            "micro_mean_score": 0.3100986209078182
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 1224,
             "macro_mean_score": 0.4566234428542061,
             "micro_mean_score": 0.4870593293207223
         },
-        "overall_score": 0.3364098563442444
+        "overall_score": 0.33676353369131895
     },
     "Llama_3_2_11B": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
             "macro_mean_score": 0.10044261716549671,
             "micro_mean_score": 0.09980638766828835
         },
@@ -376,25 +356,22 @@
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
-            "macro_mean_score": 0.15984490401619783,
-            "micro_mean_score": 0.15794038158731832
+            "macro_mean_score": 0.15999641916771298,
+            "micro_mean_score": 0.15809331016967038
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 1224,
             "macro_mean_score": 0.3173342406187366,
             "micro_mean_score": 0.3487962166809973
         },
-        "overall_score": 0.1801158087274157
+        "overall_score": 0.1802478219287358
     },
     "Idefics3": {
         "core_noncot": {
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
             "macro_mean_score": 0.11118980301103833,
             "micro_mean_score": 0.11201785633274061
         },
@@ -402,17 +379,147 @@
             "num_eval_tasks": 440,
             "num_eval_samples": 6539,
             "num_not_eval_samples": 0,
-            "num_total_samples": 6961,
             "macro_mean_score": 0.08956972487602757,
             "micro_mean_score": 0.08982225274252693
         },
         "open": {
             "num_eval_tasks": 65,
             "num_eval_samples": 1163,
-            "num_total_samples": 2448,
             "macro_mean_score": 0.3210866162255635,
             "micro_mean_score": 0.35649183147033553
         },
         "overall_score": 0.138206224513898
+    },
+    "Aria": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.30485930718699694,
+            "micro_mean_score": 0.3016713629035311
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.289073788209904,
+            "micro_mean_score": 0.2859007507765791
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.5103725263180767,
+            "micro_mean_score": 0.5349957007738607
+        },
+        "overall_score": 0.3313115037088191
+    },
+    "NVLM": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.2420528895703979,
+            "micro_mean_score": 0.23838419989257642
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.21589726765847422,
+            "micro_mean_score": 0.21406043849932396
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.3478114310231307,
+            "micro_mean_score": 0.3947549441100602
+        },
+        "overall_score": 0.25566537510391796
+    },
+    "InternVL2_2B": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.09089701489596874,
+            "micro_mean_score": 0.09036328295381871
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.13141974398938763,
+            "micro_mean_score": 0.13063500716262516
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.23864417043743646,
+            "micro_mean_score": 0.24901117798796224
+        },
+        "overall_score": 0.14522090778963154
+    },
+    "Qwen2_VL_2B": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.16448220309703876,
+            "micro_mean_score": 0.1610710186451323
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.20877163406364055,
+            "micro_mean_score": 0.20561526268932287
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.3154302566225611,
+            "micro_mean_score": 0.33856405846947557
+        },
+        "overall_score": 0.22249997162072932
+    },
+    "Aquila_VL_2B": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.16317824309838627,
+            "micro_mean_score": 0.16198837245148487
+        },
+        "core_cot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.159970161379836,
+            "micro_mean_score": 0.15844711671722148
+        },
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.24567572098570653,
+            "micro_mean_score": 0.2704213241616509
+        },
+        "overall_score": 0.17379673035120966
+    },
+    "Mammoth_VL": {
+        "core_noncot": {
+            "num_eval_tasks": 440,
+            "num_eval_samples": 6539,
+            "num_not_eval_samples": 0,
+            "macro_mean_score": 0.264052880412689,
+            "micro_mean_score": 0.2626894374387823
+        },
+        "core_cot": null,
+        "open": {
+            "num_eval_tasks": 65,
+            "num_eval_samples": 1163,
+            "macro_mean_score": 0.37992668750165337,
+            "micro_mean_score": 0.40120378331900275
+        },
+        "overall_score": 0.27896733083008046
     }
 }
