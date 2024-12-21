@@ -172,17 +172,22 @@ class TaskProcessor:
             query["query_text"] = examples[i]["query_text"]
         return query_response
 
-    def check_processed_samples(self, tasks):
-        skipped, to_be_processed = [], []
-        for task in tasks:
-            task_name = task["task_name"]
-            query_data = self.construct_query_data(task)
+    def verify_task_completeness(self, task):
+        task_name = task["task_name"]
+        query_data = self.construct_query_data(task)
 
-            if self.task_already_processed(task_name, query_data):
-                logging.info(f"Task {task_name} already processed. Skipping...")
-                skipped.append(task)
-            else:
-                to_be_processed.append(task)
+        if self.task_already_processed(task_name, query_data):
+            logging.info(f"Task {task_name} already processed. Skipping...")
+            return True
+        else:
+            return False
+
+    def check_processed_samples(self, tasks):
+        with Pool(processes=1) as pool:
+            results = list(pool.imap(self.verify_task_completeness, tasks))
+
+        skipped = [task for task, completed in zip(tasks, results) if completed]
+        to_be_processed = [task for task, completed in zip(tasks, results) if not completed]
         return skipped, to_be_processed
 
     def process_task(self, task_item, model) -> bool:

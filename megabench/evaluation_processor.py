@@ -282,6 +282,7 @@ class EvaluationProcessor:
                         query_question = query["query_text"]
                         is_single_line_ans = "\n" not in correct_answer[answer_key]
 
+                        # import pdb; pdb.set_trace()
                         response_obj = parser.parse(
                             response,
                             answer_key,

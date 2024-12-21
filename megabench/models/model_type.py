@@ -85,6 +85,12 @@ class ModelType(Enum):
         "GEMINI_API_KEY",
         ModelClass.Gemini,
     )
+    GEMINI_THINKING = (
+        "gemini_thinking",
+        "gemini-2.0-flash-thinking-exp-1219",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+    )
     QWEN2_VL_72B = (
         "Qwen2_VL_72B",
         "Qwen/Qwen2-VL-72B-Instruct",
@@ -188,6 +194,10 @@ MAX_IMAGES_PER_API_CALL = {
         "total_demo_video_frames": 16,
     },
     ModelType.GEMINI_PRO_002: {
+        "max_num_image": 128,
+        "total_demo_video_frames": 16,
+    },
+    ModelType.GEMINI_THINKING: {
         "max_num_image": 128,
         "total_demo_video_frames": 16,
     },

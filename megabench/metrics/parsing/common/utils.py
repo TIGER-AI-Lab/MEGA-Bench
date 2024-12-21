@@ -37,9 +37,33 @@ def extract_code_block_content(
         return response, False
 
 
+def keep_the_last_answer(s: str):
+    # 1. Find the last occurrence
+    s = s.replace('answer:', 'Answer:')
+    last_index = s.rfind("Answer:")
+
+    # If "Answer:" is found in the string
+    if last_index != -1:
+        # 2. Separate into prefix and suffix
+        prefix = s[:last_index]
+        suffix = s[last_index:]
+        
+        # 3. Remove all earlier occurrences of "Answer:"
+        cleaned_prefix = prefix.replace("Answer:", "")
+        
+        # 4. Combine them back together
+        result = cleaned_prefix + suffix
+    else:
+        # No occurrence of "Answer:" found, so just keep the string as is
+        result = s
+
+    return result
+
+
 def extract_answer_content(
     response, is_ascii_art=False, should_remove_surrounding_whitespace=True
 ):
+    response = keep_the_last_answer(response)
     if is_ascii_art:
         match = re.search(r"\*\*?Answer:(.*?)\*\*?|\bAnswer:(.*)", response, re.DOTALL)
     else:
@@ -48,9 +72,7 @@ def extract_answer_content(
         )
     if match:
         # Extract the content after "Answer:"
-        response = match.group(1) or match.group(
-            2
-        )  # Return the first capturing group or second if the first is None
+        response = match.group(1) or match.group(2)
         if response is None:
             response = ""
     if is_ascii_art:

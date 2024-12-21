@@ -245,7 +245,7 @@ class Gemini(BaseModel):
                         attempt += 1
                         if attempt > self.ERROR_THRESHOLD:
                             response_data = (
-                                f"API quota exceeded, recheck the results: {e}"
+                                f"API quota exceeded, recheck the results: {exec}"
                             )
             else:
                 response_data = (

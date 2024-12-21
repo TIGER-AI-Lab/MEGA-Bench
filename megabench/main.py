@@ -104,7 +104,7 @@ if __name__ == "__main__":
             additional_args["ngpus"] = args.ngpus
         if args.gpu_utils:
             additional_args["gpu_utils"] = args.gpu_utils
-        
+
         output_file_dir = Path(args.output_file).parent
         output_file_dir.mkdir(parents=True, exist_ok=True)
 
