@@ -7,6 +7,62 @@ from analysis_utils import (
     derive_keyword_stats,
 )
 
+def calculate_model_summary(task_results, task_metadata):
+    """
+    Re-calculate model performance summary statistics across core and open tasks.
+    
+    Args:
+        task_results: List of task results with scores
+        task_metadata: Dictionary containing task metadata including task types
+    
+    Returns:
+        Dictionary containing summary statistics for core and open tasks
+    """
+    core_tasks = []
+    open_tasks = []
+
+    # Separate core and open tasks
+    for task in task_results:
+        task_name = task['name']
+        if task_name in task_metadata:
+            if task_metadata[task_name]['eval_type'] == 'llm':
+                open_tasks.append(task)
+            else:
+                core_tasks.append(task)
+    
+    def calculate_stats(tasks):
+        if not tasks:
+            return None
+        
+        total_samples = sum(task.get('num_query', 0) for task in tasks)
+        macro_scores = [task.get('score', 0) for task in tasks]
+        
+        return {
+            "num_eval_tasks": len(tasks),
+            "num_eval_samples": total_samples,
+            "macro_mean_score": sum(macro_scores) / len(tasks) if tasks else 0,
+        }
+    
+    core_stats = calculate_stats(core_tasks)
+    open_stats = calculate_stats(open_tasks)
+    
+    # Calculate overall score (weighted average based on number of tasks)
+    total_tasks = (core_stats["num_eval_tasks"] + open_stats["num_eval_tasks"])
+    overall_score = (
+        (core_stats["macro_mean_score"] * core_stats["num_eval_tasks"] + 
+         open_stats["macro_mean_score"] * open_stats["num_eval_tasks"]) / total_tasks
+        if core_stats and open_stats
+        else 0
+    )
+    
+    return {
+        "model_summary": {
+            "core": core_stats,
+            "open": open_stats,
+            "overall_score": overall_score
+        }
+    }
+
 def merge_json_files(input_dir, output_path, key="name"):
     """
     Merge multiple JSON files containing evaluation results from a directory.
@@ -61,17 +117,25 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Merge files
-    output_path = output_dir / "merged_results.json"
-    merged_data = merge_json_files(input_dir, output_path)
+    output_path = output_dir / "task_results.json"
+    task_results = merge_json_files(input_dir, output_path)
     
     # Collect metadata and derive keyword stats
-    task_metadata = collect_task_metadata(merged_data, all_task_meta_path="all_task_meta.json")
+    task_metadata = collect_task_metadata(task_results, all_task_meta_path="all_task_meta.json")
     keyword_stats = derive_keyword_stats(task_metadata)
     
+    # Calculate model summary
+    model_summary = calculate_model_summary(task_results, task_metadata)
+
+    summary_results = {
+        "model_summary": model_summary,
+        "keyword_stats": keyword_stats
+    }
+    
     # Save keyword stats
-    stats_output = output_dir / "multi_dim_keyword_stats.json"
+    stats_output = output_dir / "summary_and_keyword_stats.json"
     with open(stats_output, "w") as f:
-        json.dump(keyword_stats, f, indent=4)
+        json.dump(summary_results, f, indent=4)
     
     print(f"\nResults saved in {output_dir}:")
     print(f"- Merged data: {output_path}")
