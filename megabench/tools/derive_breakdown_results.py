@@ -50,7 +50,7 @@ def merge_json_files(input_dir, output_path, key="name"):
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Merge and process evaluation score files.')
-    parser.add_argument('input_dir', type=str, help='Directory containing score files')
+    parser.add_argument('--input_dir', type=str, help='Directory containing score files')
     args = parser.parse_args()
 
     # Convert path to Path object
