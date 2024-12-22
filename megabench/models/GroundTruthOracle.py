@@ -51,8 +51,8 @@ class GroundTruthOracle(BaseModel):
                 miniters=1,
             )
         ):
-            response = query_answer = query_info["query_answer"]
-            assert isinstance(query_answer, dict)
+            response = correct_answer = query_info["correct_answer"]
+            assert isinstance(correct_answer, dict)
 
             # Process the response to match what we produce for the other models.
             for field_name in response:
@@ -76,7 +76,7 @@ class GroundTruthOracle(BaseModel):
             if self.print_response:
                 logging.info(f"response {query_idx}: {response}")
             query_response.append(
-                {"response": response, "correct_answer": query_answer}
+                {"response": response, "correct_answer": correct_answer}
             )
 
         return query_response

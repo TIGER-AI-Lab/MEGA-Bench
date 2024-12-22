@@ -162,7 +162,7 @@ class Phi3v(InternVL):
             query_response.append(
                 {
                     "response": response,
-                    "correct_answer": query_info["query_answer"],
+                    "correct_answer": query_info["correct_answer"],
                 }
             )
 

@@ -165,7 +165,7 @@ class OpenAI(BaseModel):
             query_response.append(
                 {
                     "response": message_content,
-                    "correct_answer": query_info["query_answer"],
+                    "correct_answer": query_info["correct_answer"],
                 }
             )
 

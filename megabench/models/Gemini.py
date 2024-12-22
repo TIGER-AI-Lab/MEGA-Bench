@@ -257,7 +257,7 @@ class Gemini(BaseModel):
             query_response.append(
                 {
                     "response": response_data,
-                    "correct_answer": query_info["query_answer"],
+                    "correct_answer": query_info["correct_answer"],
                 }
             )
 

@@ -291,7 +291,7 @@ class LlavaOV(OpenAI):
             query_response.append(
                 {
                     "response": text_outputs,
-                    "correct_answer": query_info["query_answer"],
+                    "correct_answer": query_info["correct_answer"],
                 }
             )
         return query_response

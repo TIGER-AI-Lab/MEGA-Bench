@@ -55,8 +55,8 @@ class EvaluationProcessor:
             self.organized_hf_data[task["task_name"]] = task["task_samples"]
 
     def _get_eval_context(self, task_name, query):
-        query_index = query["query_idx"]
-        eval_context = self.organized_hf_data[task_name][query_index]["eval_context"]
+        query_idx = query["query_idx"]
+        eval_context = self.organized_hf_data[task_name][query_idx]["eval_context"]
         eval_context = ast.literal_eval(eval_context)
         return eval_context
 
@@ -282,7 +282,6 @@ class EvaluationProcessor:
                         query_question = query["query_text"]
                         is_single_line_ans = "\n" not in correct_answer[answer_key]
 
-                        # import pdb; pdb.set_trace()
                         response_obj = parser.parse(
                             response,
                             answer_key,
