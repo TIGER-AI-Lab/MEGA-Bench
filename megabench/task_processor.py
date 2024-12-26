@@ -478,7 +478,7 @@ class TaskProcessor:
 
         # Load the model outside of the multiprocessing context if running locally
         # otherwise, load the model inside each task's process to facilitate MP
-        if "KEY" in self.model_type.value[2]:
+        if "KEY" in self.model_type.api_key:
             model = None
         else:
             model = self.model_type.get_model_instance(

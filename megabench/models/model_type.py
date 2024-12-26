@@ -24,10 +24,29 @@ class ModelClass(ModelClassContainer, Enum):
     LlavaOV = ("models.LlavaOV", "LlavaOV")
     Pixtral = ("models.Pixtral", "Pixtral")
     Phi3v = ("models.Phi3v", "Phi3v")
+    Grok = ("models.Grok", "Grok")
     GroundTruthOracle = ("models.GroundTruthOracle", "GroundTruthOracle")
 
 
-class ModelType(Enum):
+@dataclasses.dataclass(frozen=True)
+class MaxImagesPerApiCallConfig:
+    max_num_image: int
+    total_demo_video_frames: int
+
+
+@dataclasses.dataclass(frozen=True)
+class ModelTypeContainer:
+    key: str
+    model_name: str
+    api_key: str
+    constructor: type
+    system_message: str | None = dataclasses.field(default=None)
+    max_images_per_api_call: MaxImagesPerApiCallConfig = dataclasses.field(
+        default=MaxImagesPerApiCallConfig(64, 8)
+    )
+
+
+class ModelType(ModelTypeContainer, Enum):
 
     GPT_4O_MINI = ("gpt_mini", "gpt-4o-mini", "OPENAI_API_KEY", ModelClass.OpenAI)
     GPT_4 = ("gpt-4", "gpt-4-0613", "OPENAI_API_KEY", ModelClass.OpenAI)
@@ -66,12 +85,20 @@ class ModelType(Enum):
         "gemini-1.5-flash-001",
         "GEMINI_API_KEY",
         ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
+            max_num_image=128,
+            total_demo_video_frames=16,
+        ),
     )
     GEMINI_FLASH_002 = (
         "gemini_flash",
         "gemini-1.5-flash-002",
         "GEMINI_API_KEY",
         ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
+            max_num_image=128,
+            total_demo_video_frames=16,
+        ),
     )
     GEMINI_PRO = (
         "gemini_pro",
@@ -84,51 +111,106 @@ class ModelType(Enum):
         "gemini-1.5-pro-002",
         "GEMINI_API_KEY",
         ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
+            max_num_image=128,
+            total_demo_video_frames=16,
+        ),
     )
     GEMINI_THINKING = (
         "gemini_thinking",
         "gemini-2.0-flash-thinking-exp-1219",
         "GEMINI_API_KEY",
         ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
+            max_num_image=128,
+            total_demo_video_frames=16,
+        ),
     )
     QWEN2_VL_72B = (
         "Qwen2_VL_72B",
         "Qwen/Qwen2-VL-72B-Instruct",
         "",
         ModelClass.Qwen2VL,
+        MaxImagesPerApiCallConfig(max_num_image=24, total_demo_video_frames=2),
     )
-    QWEN2_VL_7B = ("Qwen2_VL_7B", "Qwen/Qwen2-VL-7B-Instruct", "", ModelClass.Qwen2VL)
-    QWEN2_VL_2B = ("Qwen2_VL_2B", "Qwen/Qwen2-VL-2B-Instruct", "", ModelClass.Qwen2VL)
+    QWEN2_VL_7B = (
+        "Qwen2_VL_7B",
+        "Qwen/Qwen2-VL-7B-Instruct",
+        "",
+        ModelClass.Qwen2VL,
+        MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
+    )
+    QWEN2_VL_2B = (
+        "Qwen2_VL_2B",
+        "Qwen/Qwen2-VL-2B-Instruct",
+        "",
+        ModelClass.Qwen2VL,
+        MaxImagesPerApiCallConfig(max_num_image=16, total_demo_video_frames=2),
+    )
     INTERNVL2_LLAMA3_76B = (
         "InternVL2-Llama3-76B",
         "OpenGVLab/InternVL2-Llama3-76B",
         "",
         ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=24, total_demo_video_frames=2),
     )
-    INTERNVL2_8B = ("InternVL2-8B", "OpenGVLab/InternVL2-8B", "", ModelClass.InternVL)
+    INTERNVL2_8B = (
+        "InternVL2-8B",
+        "OpenGVLab/InternVL2-8B",
+        "",
+        ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
+    )
     LLAVA_ONEVISION_72B = (
         "Llava_OneVision_72B",
         "lmms-lab/llava-onevision-qwen2-72b-ov-chat",
         "",
         ModelClass.LlavaOV,
+        MaxImagesPerApiCallConfig(
+            max_num_image=28,
+            total_demo_video_frames=4,
+        ),
     )
     LLAVA_ONEVISION_7B = (
         "Llava_OneVision_7B",
         "lmms-lab/llava-onevision-qwen2-7b-ov",
         "",
         ModelClass.LlavaOV,
+        MaxImagesPerApiCallConfig(
+            max_num_image=20,
+            total_demo_video_frames=4,
+        ),
     )
     PIXTRAL_12B = (
         "Pixtral-12B",
         "mistralai/Pixtral-12B-2409",
         "",
         ModelClass.Pixtral,
+        MaxImagesPerApiCallConfig(
+            max_num_image=48,
+            total_demo_video_frames=6,
+        ),
     )
     PHI_3_5_VISION = (
         "Phi_3_5_vision",
         "microsoft/Phi-3.5-vision-instruct",
         "",
         ModelClass.Phi3v,
+        MaxImagesPerApiCallConfig(
+            max_num_image=16,
+            total_demo_video_frames=2,
+        ),
+    )
+    # This Grok model seems to use many tokens per image.
+    GROK_2_VISION_1212 = (
+        "grok-2-vision",
+        "grok-2-vision-1212",
+        "XAI_API_KEY",
+        ModelClass.Grok,
+        MaxImagesPerApiCallConfig(
+            max_num_image=16,
+            total_demo_video_frames=2,
+        ),
     )
     GROUND_TRUTH_ORACLE_SANITY_CHECK = (
         "Ground-Truth-Oracle_Sanity-Check",
@@ -137,22 +219,15 @@ class ModelType(Enum):
         ModelClass.GroundTruthOracle,
     )
 
-    def __init__(self, key: str, model_name: str, api_key: str, constructor: type):
-        self.key = key
-        self.model_name = model_name
-        self.api_key = api_key
-        self.constructor = constructor
-
     def get_model_instance(
-        self, print_response, use_cot=False, model_path=None, **kwargs
+        self, print_response, model_path=None, **kwargs
     ):
         return self.constructor.impl(
             api_key=os.getenv(self.api_key),
             model=self.model_name if model_path is None else model_path,
             print_response=print_response,
-            use_cot=use_cot,
             system_message=SYSTEM_MESSAGES.get(self),
-            **MAX_IMAGES_PER_API_CALL[self],
+            **dataclasses.asdict(self.max_images_per_api_call),
             **kwargs,
         )
 
@@ -162,94 +237,6 @@ class ModelType(Enum):
             return ModelType[s.upper()]
         except KeyError:
             raise ValueError(f"Invalid model type: {s}")
-
-
-MAX_IMAGES_PER_API_CALL = {
-    ModelType.GPT_4O_0513: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-    ModelType.GPT_4O_0806: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-    ModelType.GPT_4O_MINI: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-    ModelType.CLAUDE_3_HAIKU: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-    ModelType.CLAUDE_3_5_SONNET: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-    ModelType.CLAUDE_3_OPUS: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-    ModelType.GEMINI_PRO: {
-        "max_num_image": 128,
-        "total_demo_video_frames": 16,
-    },
-    ModelType.GEMINI_PRO_002: {
-        "max_num_image": 128,
-        "total_demo_video_frames": 16,
-    },
-    ModelType.GEMINI_THINKING: {
-        "max_num_image": 128,
-        "total_demo_video_frames": 16,
-    },
-    ModelType.GEMINI_FLASH: {
-        "max_num_image": 128,
-        "total_demo_video_frames": 16,
-    },
-    ModelType.GEMINI_FLASH_002: {
-        "max_num_image": 128,
-        "total_demo_video_frames": 16,
-    },
-    ModelType.QWEN2_VL_7B: {
-        "max_num_image": 18,
-        "total_demo_video_frames": 2,
-    },
-    ModelType.QWEN2_VL_2B: {
-        "max_num_image": 16,
-        "total_demo_video_frames": 2,
-    },
-    ModelType.QWEN2_VL_72B: {
-        "max_num_image": 24,
-        "total_demo_video_frames": 2,
-    },
-    ModelType.INTERNVL2_LLAMA3_76B: {
-        "max_num_image": 24,
-        "total_demo_video_frames": 4,
-    },
-    ModelType.INTERNVL2_8B: {
-        "max_num_image": 18,
-        "total_demo_video_frames": 2,
-    },
-    ModelType.LLAVA_ONEVISION_72B: {
-        "max_num_image": 28,
-        "total_demo_video_frames": 4,
-    },
-    ModelType.LLAVA_ONEVISION_7B: {
-        "max_num_image": 20,
-        "total_demo_video_frames": 4,
-    },
-    ModelType.PIXTRAL_12B: {
-        "max_num_image": 48,
-        "total_demo_video_frames": 6,
-    },
-    ModelType.PHI_3_5_VISION: {
-        "max_num_image": 16,
-        "total_demo_video_frames": 2,
-    },
-    ModelType.GROUND_TRUTH_ORACLE_SANITY_CHECK: {
-        "max_num_image": 64,
-        "total_demo_video_frames": 8,
-    },
-}
 
 
 # Add potential system messages here

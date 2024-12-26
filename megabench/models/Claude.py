@@ -8,7 +8,7 @@ import time
 import logging
 from tqdm import tqdm
 from anthropic.types import message
-from anthropic import InternalServerError, BadRequestError
+from anthropic import InternalServerError, BadRequestError, RateLimitError, APIStatusError
 
 
 class Claude(BaseModel):
@@ -67,7 +67,9 @@ class Claude(BaseModel):
     def prepare_example_content(self, example_info):
         example_text = example_info["example_text"]
         example_media_paths = example_info["image_paths"]
-        return self._process_text_and_media(example_text, example_media_paths, is_example=True)
+        return self._process_text_and_media(
+            example_text, example_media_paths, is_example=True
+        )
 
     def prepare_query_content(self, query_info):
         query_text = query_info.get("query_text", "")
@@ -75,15 +77,17 @@ class Claude(BaseModel):
         query_content = self._process_text_and_media(query_text, image_paths)
         return query_content
 
+    def make_client(self):
+        return anthropic.Anthropic(api_key=self.api_key, max_retries=5)
+
     def query(self, task_name, query_data, position=0):
         self.query_data = query_data
-        client = anthropic.Anthropic(api_key=self.api_key, max_retries=5)
+        client = self.make_client()
 
         self._set_sampling_config(0)
         context = self.prepare_context()
 
         query_response = []
-
         for query_idx, query_info in enumerate(
             tqdm(
                 query_data["queries"],
@@ -93,7 +97,6 @@ class Claude(BaseModel):
             )
         ):
             exceed_image_quota = self._set_sampling_config(query_idx)
-
             if not exceed_image_quota:
                 query_content = self.prepare_query_content(query_info)
 
@@ -119,6 +122,14 @@ class Claude(BaseModel):
                         time.sleep(2)
                         if n_attempt >= self.ATTEMPT_LIMIT:
                             response = str(e)
+                    except RateLimitError as e:
+                        n_attempt += 1
+                        logging.info(
+                            f"Got RateLimit error: {e}. Retry... Attemp times: {n_attempt}"
+                        )
+                        time.sleep(2**n_attempt)
+                    except APIStatusError as e:
+                        response = str(e)
 
                 if isinstance(response, message.Message):
                     text_content = response.content[0].text

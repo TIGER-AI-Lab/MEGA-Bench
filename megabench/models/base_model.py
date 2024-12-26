@@ -213,27 +213,6 @@ class BaseModel(abc.ABC):
         )
         return image.resize(new_size)
 
-    def prepare_example_answer(self, example):
-        assert isinstance(
-            example["answers"], dict
-        ), "Unexpected answers format, check the annotation!"
-        answers = dict(example["answers"])  # make a copy of answers
-        for field, result in answers.items():
-            field_metric = self.query_data["fields_metrics"][field]
-            if "multi_ref" in field_metric:
-                # For multi-ref answers, only pick the first possible choice for the example answer
-                from metrics.scoring.common.conversions import str_to_iterable
-
-                refs = str_to_iterable(list, result)
-                answers[field] = refs[0]
-
-        if not self.use_cot:
-            return (
-                f"Answer: {list(answers.values())[0]}" if len(answers) == 1 else answers
-            )
-        else:
-            return list(answers.values())[0] if len(answers) == 1 else answers
-
     @abc.abstractmethod
     def query(self, task_name, query_data, position=0):
         pass
