@@ -100,19 +100,20 @@ class EvaluationProcessor:
         )
         return eval_type
 
-    def _check_task_needs_evaluate(self, task: Dict, eval_type: str) -> bool:
+    def _task_needs_eval(self, task: Dict, eval_type: str) -> bool:
         if not self.eval_results:
             return True
 
-        task_exist = False
+        task_in_results = False
         for existing_task in self.eval_results["data"]:
             if task.get("task_name") == existing_task.get("task_name"):
+                task_in_results = True
                 # rule-eval tasks are fast and easy to run, we can always re-evaluate them
                 if eval_type == "rule" and self.force_eval_rule_tasks:
                     return True
 
-                # Do not re-evaluate gpt-4o-as-judge, unless it's nenessary
-                task_exist = existing_task
+                # Do not re-evaluate open-ended tasks with llm-as-judge to save cost, 
+                # unless it's nenessary (model response or ground truth answer changed)
                 if len(task["query_response"]) != len(existing_task["query_response"]):
                     return True
                 for res_example, saved_example in zip(
@@ -123,7 +124,7 @@ class EvaluationProcessor:
                         or res_example["correct_answer"]
                         != saved_example["correct_answer"]
                     ):
-                        # model output or gt answer changed
+                        # model response or gt answer changed
                         return True
                     elif (
                         "scores" not in saved_example
@@ -143,23 +144,10 @@ class EvaluationProcessor:
                 task["mean_task_score"] = existing_task["mean_task_score"]
                 task["task_score"] = existing_task["task_score"]
 
-        if not task_exist:
+        if not task_in_results:
             return True
 
         return False
-
-    def _determine_skip_eval(self, task, eval_type):
-        # Skip the task if it has already been evaluated
-        evaluated = False
-        if not self._check_task_needs_evaluate(task, eval_type):
-            self.console_logger.info(
-                f"{task['task_name']} already evaluated, skipping..."
-            )
-            skip_eval = True
-            evaluated = True
-        else:
-            skip_eval = False
-        return skip_eval, evaluated
 
     @staticmethod
     def load_task_metrics(task_info, score_function_table):
@@ -214,27 +202,19 @@ class EvaluationProcessor:
                 continue
 
             eval_type = self._determine_eval_style(task)
-            skip_eval, evaluated = self._determine_skip_eval(task, eval_type)
+            need_eval = self._task_needs_eval(task, eval_type)
             task["eval_type"] = eval_type  # add the eval_type info into the task data
             num_demo = 1 if len(task["example_info"]["example_text"]) > 0 or len(task["example_info"]["image_paths"]) > 0 else 0
 
-            if skip_eval:
+            if not need_eval:
                 num_samples_all[eval_type] += num_demo + len(task["query_response"]) # 1 for the example_info
-                if evaluated:  # skipped and already evaluated, update the stats
-                    num_tasks_evaluated[eval_type] += 1
-                    num_queries_evaluated[eval_type] += len(task["query_response"])
-                    per_task_model_score[eval_type] += task["mean_task_score"]
-                    per_query_model_score[eval_type] += task["task_score"]
-                    self.console_logger.info(
-                        f"task: {task_name}, score: {task['task_score']} / {len(task['query_response'])}"
-                    )
-                else:
-                    num_tasks_unevaluated[eval_type] += 1
-                    num_queries_unevaluated[eval_type] += len(task["query_response"])
-                    self.console_logger.info(
-                        f"task: {task_name} skipped and not evaluated yet!"
-                    )
-
+                num_tasks_evaluated[eval_type] += 1
+                num_queries_evaluated[eval_type] += len(task["query_response"])
+                per_task_model_score[eval_type] += task["mean_task_score"]
+                per_query_model_score[eval_type] += task["task_score"]
+                self.console_logger.info(
+                    f"task: {task_name}, score: {task['task_score']} / {len(task['query_response'])}"
+                )
                 continue
 
             self.console_logger.info(f"Start evaluating {task['task_name']}...")
