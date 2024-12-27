@@ -40,10 +40,10 @@ class ModelTypeContainer:
     model_name: str
     api_key: str
     constructor: type
-    system_message: str | None = dataclasses.field(default=None)
     max_images_per_api_call: MaxImagesPerApiCallConfig = dataclasses.field(
         default=MaxImagesPerApiCallConfig(64, 8)
     )
+    system_message: str | None = dataclasses.field(default=None)
 
 
 class ModelType(ModelTypeContainer, Enum):
@@ -146,6 +146,16 @@ class ModelType(ModelTypeContainer, Enum):
         "",
         ModelClass.Qwen2VL,
         MaxImagesPerApiCallConfig(max_num_image=16, total_demo_video_frames=2),
+    )
+    QVQ_72B_PREVIEW = (
+        "QVQ_72B_Preview",
+        "Qwen/QVQ-72B-Preview",
+        "",
+        ModelClass.Qwen2VL,
+        MaxImagesPerApiCallConfig(
+            max_num_image=24,
+            total_demo_video_frames=2,
+        ),
     )
     INTERNVL2_LLAMA3_76B = (
         "InternVL2-Llama3-76B",
