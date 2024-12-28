@@ -56,11 +56,9 @@ def calculate_model_summary(task_results, task_metadata):
     )
     
     return {
-        "model_summary": {
-            "core": core_stats,
-            "open": open_stats,
-            "overall_score": overall_score
-        }
+        "core": core_stats,
+        "open": open_stats,
+        "overall_score": overall_score
     }
 
 def merge_json_files(input_dir, output_path, key="name"):
