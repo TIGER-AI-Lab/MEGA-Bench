@@ -253,7 +253,7 @@ class Gemini(BaseModel):
                 )
 
             if self.print_response:
-                logging.info("response " + str(query_idx) + ": " + response_data)
+                logging.info(f"Response: {response_data}")
             query_response.append(
                 {
                     "response": response_data,

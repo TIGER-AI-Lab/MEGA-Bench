@@ -122,6 +122,26 @@ class ModelType(ModelTypeContainer, Enum):
         "GEMINI_API_KEY",
         ModelClass.Gemini,
         MaxImagesPerApiCallConfig(
+            max_num_image=100,
+            total_demo_video_frames=12,
+        ),
+    )
+    GEMINI_EXP_1206 = (
+        "gemini_exp_1206",
+        "gemini-exp-1206",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
+            max_num_image=128,
+            total_demo_video_frames=16,
+        ),
+    )
+    GEMINI_FLASH_2_0_EXP = (
+        "gemini_flash_2.0_exp",
+        "gemini-2.0-flash-exp",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
             max_num_image=128,
             total_demo_video_frames=16,
         ),
