@@ -7,7 +7,7 @@ from analysis_utils import (
     derive_keyword_stats,
 )
 
-def calculate_model_summary(task_results, task_metadata):
+def calculate_model_summary(task_results_with_meta):
     """
     Re-calculate model performance summary statistics across core and open tasks.
     
@@ -22,13 +22,11 @@ def calculate_model_summary(task_results, task_metadata):
     open_tasks = []
 
     # Separate core and open tasks
-    for task in task_results:
-        task_name = task['name']
-        if task_name in task_metadata:
-            if task_metadata[task_name]['eval_type'] == 'llm':
-                open_tasks.append(task)
-            else:
-                core_tasks.append(task)
+    for task in task_results_with_meta.values():
+        if task['eval_type'] == 'llm':
+            open_tasks.append(task)
+        else:
+            core_tasks.append(task)
     
     def calculate_stats(tasks):
         if not tasks:
@@ -119,11 +117,11 @@ def main():
     task_results = merge_json_files(input_dir, output_path)
     
     # Collect metadata and derive keyword stats
-    task_metadata = collect_task_metadata(task_results, all_task_meta_path="all_task_meta.json")
-    keyword_stats = derive_keyword_stats(task_metadata)
+    task_results_with_meta = collect_task_metadata(task_results, all_task_meta_path="all_task_meta.json")
+    keyword_stats = derive_keyword_stats(task_results_with_meta)
     
     # Calculate model summary
-    model_summary = calculate_model_summary(task_results, task_metadata)
+    model_summary = calculate_model_summary(task_results_with_meta)
 
     summary_results = {
         "model_summary": model_summary,

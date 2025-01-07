@@ -18,7 +18,7 @@ def task_list_refine(task_list):
     return task_results
 
 
-def derive_keyword_stats(task_metas, include_per_task_info=False):
+def derive_keyword_stats(task_results_with_meta, include_per_task_info=False):
     """
     Calculate keyword-based statistics for skills, input_format, and output_format.
     """
@@ -28,7 +28,7 @@ def derive_keyword_stats(task_metas, include_per_task_info=False):
     input_num_stats = defaultdict(lambda: {"count": 0, "total_score": 0.0, "num_samples": 0, "tasks": []})
     app_stats = defaultdict(lambda: {"count": 0, "total_score": 0.0, "num_samples": 0, "tasks": []})
 
-    for task_name, task in task_metas.items():
+    for task_name, task in task_results_with_meta.items():
         task_name = task.get("original_task_name", "Unknown Task")
         score = task.get("score", 0.0)
         num_samples = task.get("num_query", 0) + task.get("num_demo", 0)
