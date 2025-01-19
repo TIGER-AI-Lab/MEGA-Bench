@@ -16,16 +16,17 @@ class ModelClassContainer:
 
 
 class ModelClass(ModelClassContainer, Enum):
-    OpenAI = ("models.OpenAI", "OpenAI")
-    Claude = ("models.Claude", "Claude")
-    Gemini = ("models.Gemini", "Gemini")
-    Qwen2VL = ("models.Qwen2VL", "Qwen2VL")
-    InternVL = ("models.InternVL", "InternVL")
-    LlavaOV = ("models.LlavaOV", "LlavaOV")
-    Pixtral = ("models.Pixtral", "Pixtral")
-    Phi3v = ("models.Phi3v", "Phi3v")
-    Grok = ("models.Grok", "Grok")
-    GroundTruthOracle = ("models.GroundTruthOracle", "GroundTruthOracle")
+    OpenAI = ("models.openai", "OpenAI")
+    Claude = ("models.claude", "Claude")
+    Gemini = ("models.gemini", "Gemini")
+    Qwen2VL = ("models.qwen2_vl", "Qwen2VL")
+    InternVL = ("models.internvl", "InternVL")
+    LlavaOV = ("models.llava_ov", "LlavaOV")
+    Pixtral = ("models.pixtral", "Pixtral")
+    Phi3v = ("models.phi3v", "Phi3v")
+    Grok = ("models.grok", "Grok")
+    DeepSeekVL2 = ("models.deepseek_vl2", "DeepSeekVL2")
+    GroundTruthOracle = ("models.ground_truth_oracle", "GroundTruthOracle")
 
 
 @dataclasses.dataclass(frozen=True)
@@ -237,6 +238,26 @@ class ModelType(ModelTypeContainer, Enum):
         "grok-2-vision-1212",
         "XAI_API_KEY",
         ModelClass.Grok,
+        MaxImagesPerApiCallConfig(
+            max_num_image=16,
+            total_demo_video_frames=2,
+        ),
+    )
+    DEEPSEEK_VL2_TINY = (
+        "DeepSeekVL2_Tiny",
+        "deepseek-ai/deepseek-vl2-tiny",
+        "",
+        ModelClass.DeepSeekVL2,
+        MaxImagesPerApiCallConfig(
+            max_num_image=16,
+            total_demo_video_frames=2,
+        ),
+    )
+    DEEPSEEK_VL2_SMALL = (
+        "DeepSeekVL2_Small",
+        "deepseek-ai/deepseek-vl2-small",
+        "",
+        ModelClass.DeepSeekVL2,
         MaxImagesPerApiCallConfig(
             max_num_image=16,
             total_demo_video_frames=2,

@@ -2,8 +2,8 @@ import logging
 from tqdm import tqdm
 import pathlib
 import json
-from models.InternVL import InternVL
-from models.OpenAI import OpenAI
+from models.internvl import InternVL
+from models.openai import OpenAI
 from transformers import AutoModelForCausalLM, AutoProcessor
 import re
 

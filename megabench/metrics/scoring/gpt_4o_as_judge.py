@@ -1,4 +1,4 @@
-from models.OpenAI import OpenAI
+from models.openai import OpenAI
 import os
 import requests
 import logging

@@ -5,7 +5,7 @@ from numbers import Number
 import os
 import requests
 from metrics.scoring.common.conversions import ascii_text_to_image
-from models.OpenAI import OpenAI
+from models.openai import OpenAI
 
 
 class AsciiArtGPT4Judger(OpenAI):

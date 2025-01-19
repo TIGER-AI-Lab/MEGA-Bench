@@ -2,7 +2,7 @@
 Works with either the OpenAI or Anthropic APIs: we choose the Anthropic API.
 """
 import anthropic
-from models.Claude import Claude
+from models.claude import Claude
 
 class Grok(Claude):
     def make_client(self):

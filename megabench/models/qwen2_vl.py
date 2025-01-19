@@ -5,7 +5,7 @@ from transformers import AutoProcessor
 from qwen_vl_utils import process_vision_info
 import pathlib
 import json
-from models.OpenAI import OpenAI
+from models.openai import OpenAI
 from vllm import LLM, SamplingParams
 
 logging.basicConfig(
@@ -26,7 +26,6 @@ class Qwen2VL(OpenAI):
         max_num_image=None,
         system_message=None,
         total_demo_video_frames=4,
-        tp=None,
         **kwargs,
     ):
         super().__init__(

@@ -1,4 +1,4 @@
-from models.Claude import Claude
+from models.claude import Claude
 import logging
 import torch
 from tqdm import tqdm

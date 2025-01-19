@@ -8,7 +8,7 @@ import json
 import copy
 import warnings
 import re
-from models.OpenAI import OpenAI
+from models.openai import OpenAI
 from llava.model.builder import load_pretrained_model
 from llava.mm_utils import (
     process_images,

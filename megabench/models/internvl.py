@@ -5,7 +5,7 @@ from io import BytesIO
 from tqdm import tqdm
 import pathlib
 import json
-from models.OpenAI import OpenAI
+from models.openai import OpenAI
 from PIL import Image
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
