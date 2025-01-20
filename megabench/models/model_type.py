@@ -249,7 +249,7 @@ class ModelType(ModelTypeContainer, Enum):
         "",
         ModelClass.DeepSeekVL2,
         MaxImagesPerApiCallConfig(
-            max_num_image=16,
+            max_num_image=10,
             total_demo_video_frames=2,
         ),
     )
@@ -259,7 +259,7 @@ class ModelType(ModelTypeContainer, Enum):
         "",
         ModelClass.DeepSeekVL2,
         MaxImagesPerApiCallConfig(
-            max_num_image=16,
+            max_num_image=10,
             total_demo_video_frames=2,
         ),
     )

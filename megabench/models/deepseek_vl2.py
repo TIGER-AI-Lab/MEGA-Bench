@@ -20,8 +20,6 @@ logging.basicConfig(
 )
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-logger = logging.getLogger("infoLogger")
-
 
 class DeepSeekVL2(OpenAI):
     def __init__(
@@ -55,36 +53,49 @@ class DeepSeekVL2(OpenAI):
             pathlib.Path(__file__).resolve().parent / "config.json"
         )
 
-        self.vl_chat_processor: DeepseekVLV2Processor = DeepseekVLV2Processor.from_pretrained(model)
+        self.vl_chat_processor: DeepseekVLV2Processor = (
+            DeepseekVLV2Processor.from_pretrained(model)
+        )
         self.tokenizer = self.vl_chat_processor.tokenizer
-        
-        vl_gpt: DeepseekVLV2ForCausalLM = AutoModelForCausalLM.from_pretrained(model, trust_remote_code=True)
-        self.model = vl_gpt.to(torch.bfloat16).cuda().eval()
-    
+
+        device_map = self.split_model(model)
+        if device_map:
+            vl_gpt: DeepseekVLV2ForCausalLM = AutoModelForCausalLM.from_pretrained(
+                model, trust_remote_code=True, device_map=device_map
+            )
+        else:
+            vl_gpt: DeepseekVLV2ForCausalLM = AutoModelForCausalLM.from_pretrained(
+                model, trust_remote_code=True
+            ).cuda()
+        self.model = vl_gpt.to(torch.bfloat16).eval()
+
     @staticmethod
     def split_model(model_name):
         device_map = {}
         model_splits = {
-            'deepseek-ai/deepseek-vl2-small': [13, 14], # 2 GPU for 16b
-            'deepseek-ai/deepseek-vl2': [10, 10, 10], # 3 GPU for 27b
+            "deepseek-ai/deepseek-vl2-small": [7, 10, 10],  # 2 GPU for 16b
+            "deepseek-ai/deepseek-vl2": [10, 10, 10],  # 3 GPU for 27b
         }
         if model_name not in model_splits:
+            print(
+                f"No specific device map available for {model_name}..."
+            )
             return None
         num_layers_per_gpu = model_splits[model_name]
-        num_layers =  sum(num_layers_per_gpu)
+        num_layers = sum(num_layers_per_gpu)
         layer_cnt = 0
         for i, num_layer in enumerate(num_layers_per_gpu):
             for j in range(num_layer):
-                device_map[f'language.model.layers.{layer_cnt}'] = i
+                device_map[f"language.model.layers.{layer_cnt}"] = i
                 layer_cnt += 1
-        device_map['vision'] = 0
-        device_map['projector'] = 0
-        device_map['image_newline'] = 0
-        device_map['view_seperator'] = 0
-        device_map['language.model.embed_tokens'] = 0
-        device_map['language.model.norm'] = 0
-        device_map['language.lm_head'] = 0
-        device_map[f'language.model.layers.{num_layers - 1}'] = 0
+        device_map["vision"] = 0
+        device_map["projector"] = 0
+        device_map["image_newline"] = 0
+        device_map["view_seperator"] = 0
+        device_map["language.model.embed_tokens"] = 0
+        device_map["language.model.norm"] = 0
+        device_map["language.lm_head"] = 0
+        device_map[f"language.model.layers.{num_layers - 1}"] = 0
         return device_map
 
     @staticmethod
@@ -204,17 +215,17 @@ class DeepSeekVL2(OpenAI):
         )
 
         return query_content, query_images
-    
+
     def _create_temp_image_list(self, images):
         tmp_dir = tempfile.mkdtemp()
-        
+
         tmp_paths = []
         # First process all images
         for i, img in enumerate(images):
             tmp_path = os.path.join(tmp_dir, f"img_{i}.png")
             img.save(tmp_path)
             tmp_paths.append(tmp_path)
-        
+
         return tmp_paths
 
     def query(self, task_name, query_data, position=0):
@@ -255,7 +266,7 @@ class DeepSeekVL2(OpenAI):
                         "content": query_payload,
                         "images": image_list,
                     },
-                    {"role": "<|Assistant|>", "content": ""}
+                    {"role": "<|Assistant|>", "content": ""},
                 ]
 
                 pil_images = load_pil_images(conversation)
@@ -263,7 +274,7 @@ class DeepSeekVL2(OpenAI):
                     conversations=conversation,
                     images=pil_images,
                     force_batchify=True,
-                    system_prompt=""
+                    system_prompt="",
                 ).to(self.model.device)
 
                 # run image encoder to get the image embeddings
@@ -276,11 +287,13 @@ class DeepSeekVL2(OpenAI):
                         pad_token_id=self.tokenizer.eos_token_id,
                         bos_token_id=self.tokenizer.bos_token_id,
                         eos_token_id=self.tokenizer.eos_token_id,
-                        max_new_tokens=8192,
+                        max_new_tokens=4096,
                         do_sample=False,
                         use_cache=True,
                     )
-                    text_outputs = self.tokenizer.decode(outputs[0].cpu().tolist(), skip_special_tokens=True)
+                    text_outputs = self.tokenizer.decode(
+                        outputs[0].cpu().tolist(), skip_special_tokens=True
+                    )
                 except TimeoutError as e:
                     text_outputs = str(e)
             else:
