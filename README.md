@@ -1,4 +1,4 @@
-# MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks
+# MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks [ICLR2025]
 
 [![arXiv](https://img.shields.io/badge/arXiv-2410.10563-b31b1b.svg)](https://arxiv.org/abs/2410.10563)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://tiger-ai-lab.github.io/MEGA-Bench/)
