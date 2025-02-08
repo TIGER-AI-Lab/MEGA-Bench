@@ -20,8 +20,8 @@ const modelNameMapping = {
     'Aria-MoE-25B': 'Aria',
     'NVLM-D-72B': 'NVLM',
     'Gemini-exp-1206': 'Gemini-exp-1206',
-    'Gemini-Flash-2.0-exp': 'Gemini-Flash-2.0-exp',
-    'Gemini-2.0-thinking': 'Gemini-2.0-thinking',
+    'Gemini-2.0-Flash-exp': 'Gemini-Flash-2.0-exp',
+    'Gemini-2.0-Flash-thinking': 'Gemini-2.0-thinking',
 };
 
 const inputFormatMapping = {
