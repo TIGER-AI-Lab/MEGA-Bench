@@ -19,6 +19,9 @@ const modelNameMapping = {
     'MAmmoTH-VL-8B': 'Mammoth_VL',
     'Aria-MoE-25B': 'Aria',
     'NVLM-D-72B': 'NVLM',
+    'Gemini-exp-1206': 'Gemini-exp-1206',
+    'Gemini-Flash-2.0-exp': 'Gemini-Flash-2.0-exp',
+    'Gemini-2.0-thinking': 'Gemini-2.0-thinking',
 };
 
 const inputFormatMapping = {
@@ -69,6 +72,9 @@ const modelOrder = [
     'GPT-4o (0513)',
     'Claude-3.5-Sonnet (1022)',
     'Claude-3.5-Sonnet (0620)',
+    'Gemini-exp-1206',
+    'Gemini-Flash-2.0-exp',
+    'Gemini-2.0-thinking',
     'Gemini-1.5-Pro-002',
     'Gemini-1.5-Flash-002',
     'GPT-4o mini',
@@ -95,6 +101,9 @@ const modelColorMapping = {
     'Claude-3.5-Sonnet (1022)': 'rgba(75, 192, 192, 0.6)',
     'Gemini-1.5-Pro-002': 'rgba(255, 206, 86, 0.6)',
     'Gemini-1.5-Flash-002': 'rgba(75, 192, 192, 0.6)',
+    'Gemini-exp-1206': 'rgba(255, 140, 0, 0.6)',
+    'Gemini-Flash-2.0-exp': 'rgba(106, 90, 205, 0.6)',
+    'Gemini-2.0-thinking': 'rgba(60, 179, 113, 0.6)',
     'GPT-4o mini': 'rgba(153, 102, 255, 0.6)',
     'Qwen2-VL-72B': 'rgba(255, 159, 64, 0.6)',
     'InternVL2-Llama3-76B': 'rgba(199, 199, 199, 0.6)',
