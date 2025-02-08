@@ -12,12 +12,12 @@ import {
 
 const modelSets = {
     all: modelOrder,
-    all_flagship: ['GPT-4o (0513)', 'Claude-3.5-Sonnet (0620)', 'Claude-3.5-Sonnet (1022)', , 'Gemini-1.5-Pro-002', 'Gemini-exp-1206', 'Qwen2-VL-72B', 'InternVL2-Llama3-76B', 'LLaVA-OneVision-72B'],
-    all_efficiency: ['Gemini-1.5-Flash-002', 'Gemini-2.0-thinking', 'Gemini-Flash-2.0-exp', 'GPT-4O Mini', 'Qwen2-VL-7B', 'Pixtral 12B', 'InternVL2-8B', 'Phi-3.5-Vision', 'MiniCPM-V2.6', 'LLaVA-OneVision-7B', 'Llama-3.2-11B', 'Idefics3-8B-Llama3', 'Mammoth-VL-8B'],
+    all_flagship: ['GPT-4o (0513)', 'Claude-3.5-Sonnet (0620)', 'Claude-3.5-Sonnet (1022)', 'Gemini-1.5-Pro-002', 'Gemini-exp-1206', 'Qwen2-VL-72B', 'InternVL2-Llama3-76B', 'LLaVA-OneVision-72B', 'Gemini-exp-1206'],
+    all_efficiency: ['Gemini-1.5-Flash-002', 'Gemini-2.0-Flash-exp', 'Gemini-2.0-Flash-thinking', 'GPT-4O Mini', 'Qwen2-VL-7B', 'Pixtral 12B', 'InternVL2-8B', 'Phi-3.5-Vision', 'MiniCPM-V2.6', 'LLaVA-OneVision-7B', 'Llama-3.2-11B', 'Idefics3-8B-Llama3', 'Mammoth-VL-8B'],
     prop_flagship: ['GPT-4o (0513)', 'Claude-3.5-Sonnet (0620)', 'Claude-3.5-Sonnet (1022)', 'Gemini-1.5-Pro-002', 'Gemini-exp-1206'],
     open_source_efficiency: ['Qwen2-VL-7B', 'Pixtral 12B', 'InternVL2-8B', 'Phi-3.5-Vision', 'MiniCPM-V2.6', 'LLaVA-OneVision-7B', 'Llama-3.2-11B', 'Idefics3-8B-Llama3', 'Mammoth-VL-8B'],
-    open_source_flagship: ['Qwen2-VL-72B', 'InternVL2-Llama3-76B', 'LLaVA-OneVision-72B', 'Gemini-Flash-2.0-exp', 'Gemini-2.0-thinking'],
-    prop_efficiency: ['Gemini-1.5-Flash-002', 'GPT-4O Mini']
+    open_source_flagship: ['Qwen2-VL-72B', 'InternVL2-Llama3-76B', 'LLaVA-OneVision-72B'],
+    prop_efficiency: ['Gemini-1.5-Flash-002', 'GPT-4O Mini', 'Gemini-2.0-Flash-exp', 'Gemini-2.0-Flash-thinking']
 };
 
 
