@@ -264,10 +264,10 @@ For any questions or concerns, please contact:
 If you find this work useful for your research, please consider citing our paper:
 
 ```bibtex
-@article{chen2024mega-bench,
+@inproceedings{chen2024mega-bench,
   title={MEGA-Bench: Scaling Multimodal Evaluation to over 500 Real-World Tasks},
   author={Chen, Jiacheng and Liang, Tianhao and Siu, Sherman and Wang, Zhengqing and Wang, Kai and Wang, Yubo and Ni, Yuansheng and Zhu, Wang and Jiang, Ziyan and Lyu, Bohan and Jiang, Dongfu and He, Xuan and Liu, Yuan and Hu, Hexiang and Yue, Xiang and Chen, Wenhu},
-  journal={arXiv preprint arXiv:2410.10563},
-  year={2024},
+  journal={International Conference on Learning Representations (ICLR)},
+  year={2025}
 }
 ```
