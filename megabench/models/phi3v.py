@@ -4,8 +4,9 @@ import pathlib
 import json
 from models.internvl import InternVL
 from models.openai import OpenAI
-from transformers import AutoModelForCausalLM, AutoProcessor
+from transformers import AutoModelForCausalLM, AutoProcessor, GenerationConfig
 import re
+import torch
 
 
 logging.basicConfig(
@@ -44,6 +45,8 @@ class Phi3v(InternVL):
             total_demo_video_frames,
             **kwargs,
         )
+        
+        self.model_name = model
 
         # load config from config.json
         self.config = self.load_config(
@@ -61,6 +64,8 @@ class Phi3v(InternVL):
         self.processor = AutoProcessor.from_pretrained(
             model, trust_remote_code=True, num_crops=4
         )
+        
+        self.generation_config = GenerationConfig.from_pretrained(model)
 
     @staticmethod
     def load_config(file_path):
@@ -109,17 +114,27 @@ class Phi3v(InternVL):
                 query_payload_list = context + query_content
                 query_payload = "\n".join(query_payload_list)
                 messages = self._preprocess_payload(query_payload)
-
                 prompt = self.processor.tokenizer.apply_chat_template(
                     messages, tokenize=False, add_generation_prompt=True
                 )
-                inputs = self.processor(prompt, images, return_tensors="pt").to(
-                    "cuda:0"
-                )
+                # print(f"Prompt: {prompt}")
+                # print(f"Images: {images}")
+                inputs = self.processor(
+                        prompt, 
+                        images,
+                        return_tensors="pt"
+                    )
+                processed_inputs = {}
+                for k, v in inputs.items():
+                    if v is not None:
+                        if isinstance(v, torch.Tensor):
+                            processed_inputs[k] = v.to("cuda:0")
+                        else:
+                            processed_inputs[k] = v
+         
                 max_new_tokens = self.config.get("session_len", 8192)
                 generation_args = {
                     "max_new_tokens": max_new_tokens,
-                    "temperature": 0.0,
                     "do_sample": False,
                 }
 
@@ -127,16 +142,24 @@ class Phi3v(InternVL):
                 def handler(signum, frame):
                     raise TimeoutError("Function call timed out")
 
-                timeout = self.config.get("timeout", 60)
+                timeout = self.config.get("timeout", 180)
                 signal.signal(signal.SIGALRM, handler)
                 signal.alarm(timeout)
 
                 try:
-                    generate_ids = self.model.generate(
-                        **inputs,
-                        eos_token_id=self.processor.tokenizer.eos_token_id,
-                        **generation_args,
-                    )
+                    if self.model_name == "microsoft/Phi-4-multimodal-instruct":
+                        generate_ids = self.model.generate(
+                            **processed_inputs,
+                            eos_token_id=self.processor.tokenizer.eos_token_id,
+                            num_logits_to_keep=1,
+                            **generation_args,
+                        )
+                    else:
+                        generate_ids = self.model.generate(
+                            **processed_inputs,
+                            eos_token_id=self.processor.tokenizer.eos_token_id,
+                            **generation_args,
+                        )
 
                     # remove input tokens
                     generate_ids = generate_ids[:, inputs["input_ids"].shape[1] :]
@@ -158,6 +181,7 @@ class Phi3v(InternVL):
 
             if self.print_response:
                 print(f"Model response:\n {response}")
+                print(f"Correct answer:\n {query_info['correct_answer']}")
 
             query_response.append(
                 {

@@ -232,6 +232,17 @@ class ModelType(ModelTypeContainer, Enum):
             total_demo_video_frames=2,
         ),
     )
+
+    PHI_4_MULTIMODAL = (
+        "Phi_4_multimodal",
+        "microsoft/Phi-4-multimodal-instruct",
+        "",
+        ModelClass.Phi3v,
+        MaxImagesPerApiCallConfig(
+            max_num_image=16,
+            total_demo_video_frames=2,
+        ),
+    )
     # This Grok model seems to use many tokens per image.
     GROK_2_VISION_1212 = (
         "grok-2-vision",
