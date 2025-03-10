@@ -1,5 +1,5 @@
 {
     "tp": 8,
     "session_len": 8192,
-    "timeout": 90        
+    "timeout": 180        
 }
