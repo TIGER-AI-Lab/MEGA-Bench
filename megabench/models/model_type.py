@@ -19,6 +19,7 @@ class ModelClass(ModelClassContainer, Enum):
     OpenAI = ("models.openai", "OpenAI")
     Claude = ("models.claude", "Claude")
     Gemini = ("models.gemini", "Gemini")
+    Gemma = ("models.gemma_hf", "Gemma")
     Qwen2VL = ("models.qwen2_vl", "Qwen2VL")
     InternVL = ("models.internvl", "InternVL")
     LlavaOV = ("models.llava_ov", "LlavaOV")
@@ -27,7 +28,6 @@ class ModelClass(ModelClassContainer, Enum):
     Grok = ("models.grok", "Grok")
     DeepSeekVL2 = ("models.deepseek_vl2", "DeepSeekVL2")
     GroundTruthOracle = ("models.ground_truth_oracle", "GroundTruthOracle")
-
 
 @dataclasses.dataclass(frozen=True)
 class MaxImagesPerApiCallConfig:
@@ -145,6 +145,16 @@ class ModelType(ModelTypeContainer, Enum):
         MaxImagesPerApiCallConfig(
             max_num_image=128,
             total_demo_video_frames=16,
+        ),
+    )
+    GEMMA_3_27B = (
+        "gemma_3_27b",
+        "google/gemma-3-27b-it",
+        "",
+        ModelClass.Gemma,
+        MaxImagesPerApiCallConfig(
+            max_num_image=32,
+            total_demo_video_frames=4,
         ),
     )
     QWEN2_VL_72B = (
