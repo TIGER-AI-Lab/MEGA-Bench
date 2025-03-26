@@ -284,6 +284,16 @@ class ModelType(ModelTypeContainer, Enum):
             total_demo_video_frames=2,
         ),
     )
+    DEEPSEEK_VL2 = (
+        "DeepSeekVL2",
+        "deepseek-ai/deepseek-vl2",
+        "",
+        ModelClass.DeepSeekVL2,
+        MaxImagesPerApiCallConfig(
+            max_num_image=16,
+            total_demo_video_frames=2,
+        ),
+    )
     GROUND_TRUTH_ORACLE_SANITY_CHECK = (
         "Ground-Truth-Oracle_Sanity-Check",
         "",

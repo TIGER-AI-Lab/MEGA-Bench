@@ -1,27 +1,57 @@
+"""
+DeepSeek-VL2 with vLLM for MEGA-Bench. 
+
+- The default max_model_len is 4096, which blocks many tasks (vLLM raises an error when the prompt length exceeds the max_model_len). We use 8192 instead.
+- DeepSeek-VL-2-tiny runs normally.
+- DeepSeek_VL2_Small tends to produce answers with infinite repetition, leading to very low scores.
+- DeepSeek_VL2 can't run with the current code and raises a CUDA error.
+
+"""
+
+from models.claude import Claude
 import logging
-from PIL import Image, ImageFile
-from mimetypes import guess_type
-from tqdm import tqdm
-import pathlib
 import torch
-import json
-import warnings
-import re
-from models.openai import OpenAI
-from transformers import AutoModelForCausalLM
-from deepseek_vl2.models import DeepseekVLV2Processor, DeepseekVLV2ForCausalLM
-from deepseek_vl2.utils.io import load_pil_images
-import tempfile
-import os
-
-warnings.filterwarnings("ignore")
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-)
-ImageFile.LOAD_TRUNCATED_IMAGES = True
+from tqdm import tqdm
+from vllm import LLM
+from vllm.sampling_params import SamplingParams
+import math
 
 
-class DeepSeekVL2(OpenAI):
+MAX_OUTPUT_TOKENS = 512
+MAX_TOKENS_PER_IMAGE = 4096
+SAMPLING_PARAMS = SamplingParams(temperature=0.0, max_tokens=MAX_OUTPUT_TOKENS)
+
+
+deepseek_vl2_chat_template = """
+{%- if messages[0]['role'] == 'system' -%}
+    {%- set system_message = messages[0]['content'] -%}
+    {%- set messages = messages[1:] -%}
+{%- else -%}
+    {% set system_message = '' -%}
+{%- endif -%}
+
+{{ bos_token + system_message }}
+{%- for message in messages -%}
+    {%- if (message['role'] == 'user') != (loop.index0 % 2 == 0) -%}
+        {{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}
+    {%- endif -%}
+
+    {%- if message['role'] == 'user' -%}
+        {{ '<|User|>: ' + message['content'] + '\n\n' }}
+    {%- elif message['role'] == 'assistant' -%}
+        {{ '<|Assistant|>: ' + message['content'] + eos_token + '\n\n' }}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- if add_generation_prompt -%}
+    {{ '<|Assistant|>: ' }}
+{%- endif -%}
+
+"""
+
+
+class DeepSeekVL2(Claude):
+
     def __init__(
         self,
         api_key=None,
@@ -31,208 +61,77 @@ class DeepSeekVL2(OpenAI):
         max_side=1000,
         print_response=False,
         max_num_image=None,
-        system_message=None,
+        system_message: str | None = None,
         total_demo_video_frames=4,
         **kwargs,
     ):
         super().__init__(
-            api_key,
-            model,
-            query_data,
-            resize,
-            max_side,
-            print_response,
-            max_num_image,
-            system_message,
-            total_demo_video_frames,
+            api_key=api_key,
+            model=model,
+            query_data=query_data,
+            resize=resize,
+            max_side=max_side,
+            print_response=print_response,
+            max_num_image=max_num_image,
+            system_message=system_message,
+            total_demo_video_frames=total_demo_video_frames,
             **kwargs,
         )
+        self.kwargs = kwargs
+        self.llm = LLM(**self.make_model_kwargs())
+        self.ATTEMPT_LIMIT = 5
 
-        # load config from config.json
-        self.config = self.load_config(
-            pathlib.Path(__file__).resolve().parent / "config.json"
+    def make_model_kwargs(self):
+        """Set the LLM loading configuration."""
+        kwargs = dict(
+            model=self.model,
+            max_model_len=4096,
+            max_num_seqs=2,
+            trust_remote_code=True,
+            hf_overrides={"architectures": ["DeepseekVLV2ForCausalLM"]},
+            limit_mm_per_prompt={"image": self.max_num_image},
+            tensor_parallel_size=self.kwargs.get("ngpus", 1),
+            gpu_memory_utilization=self.kwargs.get("gpu_utils", 0.9),
+            max_num_batched_tokens=self.max_num_image * MAX_TOKENS_PER_IMAGE,
         )
 
-        self.vl_chat_processor: DeepseekVLV2Processor = (
-            DeepseekVLV2Processor.from_pretrained(model)
-        )
-        self.tokenizer = self.vl_chat_processor.tokenizer
+        num_gpus = torch.cuda.device_count()
+        if num_gpus:
+            kwargs["tensor_parallel_size"] = num_gpus
 
-        device_map = self.split_model(model)
-        if device_map:
-            vl_gpt: DeepseekVLV2ForCausalLM = AutoModelForCausalLM.from_pretrained(
-                model, trust_remote_code=True, device_map=device_map
-            )
-        else:
-            vl_gpt: DeepseekVLV2ForCausalLM = AutoModelForCausalLM.from_pretrained(
-                model, trust_remote_code=True
-            ).cuda()
-        self.model = vl_gpt.to(torch.bfloat16).eval()
-
-    @staticmethod
-    def split_model(model_name):
-        device_map = {}
-        model_splits = {
-            "deepseek-ai/deepseek-vl2-small": [7, 10, 10],  # 2 GPU for 16b
-            "deepseek-ai/deepseek-vl2": [10, 10, 10],  # 3 GPU for 27b
-        }
-        if model_name not in model_splits:
-            print(
-                f"No specific device map available for {model_name}..."
-            )
-            return None
-        num_layers_per_gpu = model_splits[model_name]
-        num_layers = sum(num_layers_per_gpu)
-        layer_cnt = 0
-        for i, num_layer in enumerate(num_layers_per_gpu):
-            for j in range(num_layer):
-                device_map[f"language.model.layers.{layer_cnt}"] = i
-                layer_cnt += 1
-        device_map["vision"] = 0
-        device_map["projector"] = 0
-        device_map["image_newline"] = 0
-        device_map["view_seperator"] = 0
-        device_map["language.model.embed_tokens"] = 0
-        device_map["language.model.norm"] = 0
-        device_map["language.lm_head"] = 0
-        device_map[f"language.model.layers.{num_layers - 1}"] = 0
-        return device_map
-
-    @staticmethod
-    def load_config(file_path):
-        with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+        return kwargs
 
     def create_image_content(self, image_path):
-        image, mime_type = self.encode_image(image_path)
-        return image
+        base64_image, mime_type = self.encode_image(image_path)
+        return {
+            "type": "image_url",
+            "image_url": {"url": f"data:{mime_type};base64,{base64_image}"},
+        }
 
-    def encode_image(self, image_path, max_side=None):
-        mime_type, _ = guess_type(image_path)
-        if mime_type is None:
-            mime_type = "image/jpeg"
-
-        image = Image.open(image_path)
-        # Handle the alpha channel
-        if image.mode == "RGBA":
-            image = self._rgba_to_rgb(image)
-
-        # if not specified, using the
-        if not max_side and self.max_side:
-            max_side = self.max_side
-
-        if self.resize and max(image.size) > self.max_side:
-            image = self._resize_image(image)
-
-        return image.convert("RGB"), mime_type
-
-    def create_media_content(self, file_path, is_demo=False):
-        if self._is_video_file(file_path):
-            # Handle video processing with the frame subsampling logic
-            return self.process_video(file_path, is_demo)
-        else:
-            # Handle image processing otherwise
-            return [self.create_image_content(file_path)]
-
-    def _process_text_and_media(self, text, media_paths, is_example=False):
-        content = []
-        images = []
-        chunks = re.split(r"(<image>|<video>)", text)
-
-        placeholder_count = sum(
-            1 for chunk in chunks if chunk in ["<image>", "<video>"]
+    def _prepare_data_with_lower_rate(self, query_info, query_idx, rate):
+        _save = (
+            self.max_num_image,
+            self.total_demo_video_frames,
+            self.max_demo_num_image,
         )
-
-        if placeholder_count != len(media_paths):
-            raise ValueError(
-                f"Mismatch between number of placeholders ({placeholder_count}) and media paths ({len(media_paths)})"
-            )
-
-        media_index = 0
-        curr_demo_images = 0
-        for chunk in chunks:
-            if chunk == "<image>":
-                if is_example and curr_demo_images >= self.max_demo_num_image:
-                    logging.warning(
-                        "Exceed the quota for demo image, skip the demo image"
-                    )
-                else:
-                    image_content = self.create_media_content(
-                        media_paths[media_index], is_demo=is_example
-                    )
-                    content.append("<image>")
-                    images.extend(image_content)
-                    if is_example:
-                        curr_demo_images += 1
-                media_index += 1
-            elif chunk == "<video>":
-                video_content = self.create_media_content(
-                    media_paths[media_index], is_demo=is_example
-                )
-                content.append(self.prompts["video_start"])
-                for _ in video_content:
-                    content.append("<image>")
-                content.append(self.prompts["video_end"])
-                images.extend(video_content)
-                media_index += 1
-            elif chunk.strip():  # Only add non-empty text chunks
-                content.append(chunk.strip())
-
-        return content, images
-
-    def prepare_context(self):
-        content, images = [], []
-        global_description = self.query_data.get("global_description", "")
-        global_image_paths = self.query_data.get("global_images", [])
-
-        context_content, context_images = self._process_text_and_media(
-            global_description, global_image_paths
+        self.max_num_image = math.floor(self.max_num_image / rate)
+        self.total_demo_video_frames = math.floor(self.total_demo_video_frames / rate)
+        self.max_demo_num_image = math.floor(self.max_demo_num_image / rate)
+        self._set_sampling_config(query_idx)
+        content = self.prepare_context()
+        query_content = self.prepare_query_content(query_info)
+        # recover the origial values
+        self.max_num_image, self.total_demo_video_frames, self.max_demo_num_image = (
+            _save
         )
-        content.extend(context_content)
-        images.extend(context_images)
-
-        example_info = self.query_data["example_info"]
-        example_content, example_images = self.prepare_example_content(example_info)
-        content.extend(example_content)
-        images.extend(example_images)
-
-        return content, images
-
-    def prepare_example_content(self, example_info):
-        example_text = example_info["example_text"]
-        example_media_paths = example_info["image_paths"]
-        example_content, example_images = self._process_text_and_media(
-            example_text, example_media_paths, is_example=True
-        )
-
-        return example_content, example_images
-
-    def prepare_query_content(self, query_info):
-        query_text = query_info.get("query_text", "")
-        image_paths = query_info.get("image_paths", [])
-        query_content, query_images = self._process_text_and_media(
-            query_text, image_paths
-        )
-
-        return query_content, query_images
-
-    def _create_temp_image_list(self, images):
-        tmp_dir = tempfile.mkdtemp()
-
-        tmp_paths = []
-        # First process all images
-        for i, img in enumerate(images):
-            tmp_path = os.path.join(tmp_dir, f"img_{i}.png")
-            img.save(tmp_path)
-            tmp_paths.append(tmp_path)
-
-        return tmp_paths
+        return content, query_content
 
     def query(self, task_name, query_data, position=0):
         self.query_data = query_data
-
         self._set_sampling_config(0)
-        context, context_image_list = self.prepare_context()
+
+        context = self.prepare_context()
+
         query_response = []
 
         for query_idx, query_info in enumerate(
@@ -246,68 +145,52 @@ class DeepSeekVL2(OpenAI):
             exceed_image_quota = self._set_sampling_config(query_idx)
 
             if not exceed_image_quota:
-                images = []
-                images.extend(context_image_list)
+                query_content = self.prepare_query_content(query_info)
+                text_content = None
+                n_attempt = 0
+                context_ = context  # avoid changing the context for later queries
+                while text_content is None:
+                    messages = self.prepare_system_message()
+                    try:
+                        messages.append(
+                            {"role": "user", "content": context_ + query_content}
+                        )
+                        response = self.llm.chat(
+                            messages, sampling_params=SAMPLING_PARAMS,
+                            chat_template=deepseek_vl2_chat_template,
+                        )[0]
+                        text_content = response.outputs[0].text
+                        metrics = response.metrics
+                        is_finished = response.finished
+                    except ValueError as e:
+                        logging.warning(
+                            f"Error: {e}. Retry {n_attempt}/{self.ATTEMPT_LIMIT}..."
+                        )
+                        n_attempt += 1
+                        context_, query_content = self._prepare_data_with_lower_rate(
+                            query_info, query_idx, 1 + n_attempt * 0.2
+                        )
+                        if n_attempt > self.ATTEMPT_LIMIT:
+                            text_content = str(e)
+                            metrics = ""
+                            is_finished = False
 
-                query_content, query_images_list = self.prepare_query_content(
-                    query_info
-                )
-
-                if query_images_list:
-                    images.extend(query_images_list)
-
-                query_payload_list = context + query_content
-                query_payload = "\n".join(query_payload_list)
-                image_list = self._create_temp_image_list(images)
-
-                conversation = [
-                    {
-                        "role": "<|User|>",
-                        "content": query_payload,
-                        "images": image_list,
-                    },
-                    {"role": "<|Assistant|>", "content": ""},
-                ]
-
-                pil_images = load_pil_images(conversation)
-                prepare_inputs = self.vl_chat_processor(
-                    conversations=conversation,
-                    images=pil_images,
-                    force_batchify=True,
-                    system_prompt="",
-                ).to(self.model.device)
-
-                # run image encoder to get the image embeddings
-                inputs_embeds = self.model.prepare_inputs_embeds(**prepare_inputs)
-
-                try:
-                    outputs = self.model.language.generate(
-                        inputs_embeds=inputs_embeds,
-                        attention_mask=prepare_inputs.attention_mask,
-                        pad_token_id=self.tokenizer.eos_token_id,
-                        bos_token_id=self.tokenizer.bos_token_id,
-                        eos_token_id=self.tokenizer.eos_token_id,
-                        max_new_tokens=4096,
-                        do_sample=False,
-                        use_cache=True,
-                    )
-                    text_outputs = self.tokenizer.decode(
-                        outputs[0].cpu().tolist(), skip_special_tokens=True
-                    )
-                except TimeoutError as e:
-                    text_outputs = str(e)
             else:
-                text_outputs = (
+                text_content = (
                     "Exceed the specified max number of images, skip running the model."
                 )
+                metrics = ""
+                is_finished = False
 
             if self.print_response:
-                print("Model response:", text_outputs)
-
+                logging.info(
+                    f"Model response: {text_content}\n Metrics: {metrics}\n is_finished: {is_finished}"
+                )
             query_response.append(
                 {
-                    "response": text_outputs,
+                    "response": text_content,
                     "correct_answer": query_info["correct_answer"],
                 }
             )
+
         return query_response

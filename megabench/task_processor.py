@@ -58,6 +58,7 @@ class TaskProcessor:
             "rate limit exceeded",
             "quota exceeded",
             "API limit reached",
+            "Function call timed out"
         ]
 
     # 1. Output File Management
@@ -233,7 +234,7 @@ class TaskProcessor:
                 # Check for API errors
                 if self.is_api_error_response(prev_response["response"]):
                     logging.warning(
-                        f"API error detected for task {task_name} sample {query_idx}, will rerun..."
+                        f"API or timeout error detected for task {task_name} sample {query_idx}, will rerun..."
                     )
                     should_rerun = True
                 # Check if sample content changed

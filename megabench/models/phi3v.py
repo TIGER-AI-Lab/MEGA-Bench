@@ -62,7 +62,7 @@ class Phi3v(InternVL):
         )
 
         self.processor = AutoProcessor.from_pretrained(
-            model, trust_remote_code=True, num_crops=4
+            model, trust_remote_code=True, num_crops=4, use_fast=True
         )
         
         self.generation_config = GenerationConfig.from_pretrained(model)
@@ -148,6 +148,9 @@ class Phi3v(InternVL):
 
                 try:
                     if self.model_name == "microsoft/Phi-4-multimodal-instruct":
+                        ## phi4-mm seems to generate long repeated & infinite responses for some tasks
+                        # reduce the max_new_tokens so not to waste time
+                        generation_args["max_new_tokens"] = min(generation_args["max_new_tokens"], 1000)
                         generate_ids = self.model.generate(
                             **processed_inputs,
                             eos_token_id=self.processor.tokenizer.eos_token_id,
