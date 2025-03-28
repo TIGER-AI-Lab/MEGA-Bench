@@ -19,7 +19,7 @@ class ModelClass(ModelClassContainer, Enum):
     OpenAI = ("models.openai", "OpenAI")
     Claude = ("models.claude", "Claude")
     Gemini = ("models.gemini", "Gemini")
-    Gemma = ("models.gemma_hf", "Gemma")
+    Gemma = ("models.gemma", "Gemma")
     Qwen2VL = ("models.qwen2_vl", "Qwen2VL")
     InternVL = ("models.internvl", "InternVL")
     LlavaOV = ("models.llava_ov", "LlavaOV")
@@ -147,14 +147,34 @@ class ModelType(ModelTypeContainer, Enum):
             total_demo_video_frames=16,
         ),
     )
+    GEMMA_3_4B = (
+        "gemma_3_4b",
+        "google/gemma-3-4b-it",
+        "",
+        ModelClass.Gemma,
+        MaxImagesPerApiCallConfig(
+            max_num_image=24,
+            total_demo_video_frames=2,
+        ),
+    )
+    GEMMA_3_12B = (
+        "gemma_3_12b",
+        "google/gemma-3-12b-it",
+        "",
+        ModelClass.Gemma,
+        MaxImagesPerApiCallConfig(
+            max_num_image=24,
+            total_demo_video_frames=2,
+        ),
+    )
     GEMMA_3_27B = (
         "gemma_3_27b",
         "google/gemma-3-27b-it",
         "",
         ModelClass.Gemma,
         MaxImagesPerApiCallConfig(
-            max_num_image=32,
-            total_demo_video_frames=4,
+            max_num_image=24,
+            total_demo_video_frames=2,
         ),
     )
     QWEN2_VL_72B = (

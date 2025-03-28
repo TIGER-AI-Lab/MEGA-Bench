@@ -1,15 +1,18 @@
+"""
+VLLM_WORKER_MULTIPROC_METHOD=spawn python main.py --model_type GEMMA_3_27B \
+   --output_file results/GEMMA_3_27B/all_query_responses.json \
+   --print_response \
+   --dataset_name TIGER-Lab/MEGA-Bench \
+   --dataset_subset_name core  --ngpus 2 --gpu_utils 0.95
+"""
+
 import base64
-import requests
 import logging
 from models.openai import OpenAI
-from PIL import Image, ImageFile
+from PIL import Image
 from io import BytesIO
-from mimetypes import guess_type
 from tqdm import tqdm
-from transformers import AutoProcessor, Gemma3ForConditionalGeneration
-from transformers import pipeline
-import torch
-import pathlib
+from transformers import AutoProcessor
 import re
 from vllm import LLM, SamplingParams
 
@@ -45,7 +48,7 @@ class Gemma(OpenAI):
         self.processor = AutoProcessor.from_pretrained(model)
         self.llm = LLM(
             model=model,
-            max_model_len=32768,
+            max_model_len=16384,
             max_num_seqs=2,
             limit_mm_per_prompt={"image": max_num_image},
             tensor_parallel_size=kwargs.get("ngpus", 4),
@@ -176,7 +179,7 @@ class Gemma(OpenAI):
                                             tokenize=False,
                                             add_generation_prompt=True)
                 
-                print(prompt)
+                print("Prompt: ", prompt)
                 sampling_params = SamplingParams(temperature=0.0,
                                      max_tokens=4096)
 
