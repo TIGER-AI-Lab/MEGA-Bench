@@ -147,6 +147,16 @@ class ModelType(ModelTypeContainer, Enum):
             total_demo_video_frames=16,
         ),
     )
+    GEMINI_2_5_PRO_EXP_03_25 = (
+        "gemini_2_5_pro_exp_03_25",
+        "gemini-2.5-pro-exp-03-25",
+        "GEMINI_API_KEY",
+        ModelClass.Gemini,
+        MaxImagesPerApiCallConfig(
+            max_num_image=128,
+            total_demo_video_frames=16,
+        ),
+    )
     GEMMA_3_4B = (
         "gemma_3_4b",
         "google/gemma-3-4b-it",
