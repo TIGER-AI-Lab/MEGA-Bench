@@ -7,13 +7,13 @@
 
 ## 🔔 News
 
-🛠️[2025-03]: We have integrated MEGA-Bench into unified evaluation toolkits [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)([instructions](https://github.com/EvolvingLMMs-Lab/lmms-eval/tree/main/lmms_eval/tasks/megabench)) and [VLMEvalKit](https://github.com/open-compass/VLMEvalKit)([instructions](https://github.com/open-compass/VLMEvalKit/pull/724)).
+**🛠️[2025-03]**: We have integrated MEGA-Bench into unified evaluation toolkits [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval)([instructions](https://github.com/EvolvingLMMs-Lab/lmms-eval/tree/main/lmms_eval/tasks/megabench)) and [VLMEvalKit](https://github.com/open-compass/VLMEvalKit)([instructions](https://github.com/open-compass/VLMEvalKit/pull/724)).
 
-🎯[2025-01]: MEGA-Bench paper is accepted by ICLR 2025.
+**🎯[2025-01]**: MEGA-Bench paper is accepted by ICLR 2025 ([OpenReview link](https://openreview.net/forum?id=2rWbKbmOuM)).
 
-🔥[2024-10-18]: Data and evaluation code are now available. We will continue to add evaluation pipelines for more models.
+**🔥[2024-10-18]**: Data and evaluation code are now available. We will continue to add evaluation pipelines for more models.
 
-📄[2024-10-14]: Paper released on arXiv.
+**📄[2024-10-14]**: [Paper](https://arxiv.org/abs/2410.10563) released on arXiv.
 
 ## Table of Contents
 1. [Introduction](#introduction)
