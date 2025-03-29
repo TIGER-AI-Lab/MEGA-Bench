@@ -19,6 +19,7 @@ class EvaluationProcessor:
         output_score_file: str,
         sanity_check_eval: bool = False,
         force_eval_rule_tasks: bool = False,
+        save_eval_log_to_file: bool = False,
     ):
         self.data_file = data_file
         self.data = self._load_json(data_file)
@@ -30,13 +31,20 @@ class EvaluationProcessor:
         )
         self.sanity_check_eval = sanity_check_eval
         self.force_eval_rule_tasks = force_eval_rule_tasks
+        self.save_eval_log_to_file = save_eval_log_to_file
+
+        # Force to dump the eval logs to a file for sanity check eval
+        if self.sanity_check_eval:
+            self.save_eval_log_to_file = True
 
         # Configure logging
         self.file_logger = logging.getLogger("errorLogger")
-        file_handler = logging.FileHandler(logging_file, "w+")
-        file_handler.setLevel(logging.ERROR)
-        self.file_logger.addHandler(file_handler)
-        self.file_logger.propagate = False  # Prevent propagation to the root logger
+
+        if save_eval_log_to_file:
+            file_handler = logging.FileHandler(logging_file, "w+")
+            file_handler.setLevel(logging.ERROR)
+            self.file_logger.addHandler(file_handler)
+            self.file_logger.propagate = False  # Prevent propagation to the root logger
 
         self.console_logger = logging.getLogger("infoLogger")
         console_handler = logging.StreamHandler()
@@ -195,7 +203,7 @@ class EvaluationProcessor:
             task_info = {
                 "task_name": task_name,
                 "task_folder": task_folder,
-                "results_file": self.data_file,
+                "results_file": self.data_file if self.save_eval_log_to_file else None,
             }
             # Only evaluate a single task for fast check
             if single_task_name and task_name != single_task_name:
@@ -289,9 +297,10 @@ class EvaluationProcessor:
                         self.console_logger.info(
                             f"Response parsing failed for {task_name}, query index: {query_idx+1}, use the raw output instead"
                         )
-                        self.file_logger.error(
-                            f"Task:{task_name}, cannot parse {response}"
-                        )
+                        if self.save_eval_log_to_file:
+                            self.file_logger.error(
+                                f"Task:{task_name}, cannot parse {response}"
+                            )
 
                     query["scores"] = {"field": {}, "info": {}}
 
@@ -473,9 +482,10 @@ class EvaluationProcessor:
             self.console_logger.warning(
                 f"The metric for {field} in task {task_name} is not supported"
             )
-            self.file_logger.error(
-                f'The metric for {field} in task {task_name}: "{field_score_function_table[field]}" is not supported'
-            )
+            if self.save_eval_log_to_file:
+                self.file_logger.error(
+                    f'The metric for {field} in task {task_name}: "{field_score_function_table[field]}" is not supported'
+                )
         elif metric == MetricType.SYMBOLIC_PLANNING_TEST:
             query["scores"]["field"][field] = metric.match(
                 response_obj.get(field),

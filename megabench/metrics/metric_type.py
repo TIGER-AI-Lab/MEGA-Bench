@@ -233,10 +233,16 @@ class MetricType(Enum):
         return importer()
 
     def match(self, response: str, correct_answer: str, task_info=None):
-        if not task_info:
-            return self.class_impl.match(response, correct_answer)
-        else:
-            return self.class_impl.match(response, correct_answer, task_info)
+        try:
+            if not task_info:
+                return self.class_impl.match(response, correct_answer)
+            else:
+                return self.class_impl.match(response, correct_answer, task_info)
+        except Exception as e:
+            logging.error(
+                f"Assign 0 score - the metric {self.name} got error, likely due to unexpected answer format. Error info: {e}"
+            )
+            return 0
 
     @classmethod
     def from_string(cls, s):

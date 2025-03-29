@@ -37,16 +37,16 @@ class ProgramJudge:
     def match(response: str, eval_context: str, task_info: str = None) -> int:
         # Load all test cases from the benchmark_tasks directory
         task_name = task_info["task_name"]
-        task_folder = task_info["task_folder"]
         query_results_file = task_info["results_file"]
 
         test_cases = eval_context["test_case"]
-
         # Create a CodeTester instance with the response and the found test cases
         tester = CodeTester(response, test_cases)
         score, results = tester.run_tests()
 
-        ProgramJudge.save_test_results(task_name, results, query_results_file)
+        if query_results_file is not None:
+            ProgramJudge.save_test_results(task_name, results, query_results_file)
+
         return score
 
 

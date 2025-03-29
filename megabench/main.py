@@ -60,6 +60,11 @@ if __name__ == "__main__":
         help="If set, only the evaluation will be performed.",
     )
     parser.add_argument(
+        "--save_eval_log_to_file",
+        action="store_true",
+        help="If set, the evaluation logs will be saved to a file.",
+    )
+    parser.add_argument(
         "--force_eval_rule_tasks",
         action="store_true",
         help="If set, rule tasks will always be re-evaluated even if there are already scores in the score output file.",
@@ -137,5 +142,6 @@ if __name__ == "__main__":
             output_score_file=output_score_file,
             sanity_check_eval=sanity_check_eval,
             force_eval_rule_tasks=args.force_eval_rule_tasks,
+            save_eval_log_to_file=args.save_eval_log_to_file,
         )
         evaluation_processor.process(single_task_name=args.task_name)
