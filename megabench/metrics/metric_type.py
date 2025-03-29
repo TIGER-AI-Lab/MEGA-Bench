@@ -240,7 +240,7 @@ class MetricType(Enum):
                 return self.class_impl.match(response, correct_answer, task_info)
         except Exception as e:
             logging.error(
-                f"Assign 0 score - the metric {self.name} got error, likely due to unexpected answer format. Error info: {e}"
+                f"Assign 0 score - the metric {self.value} got error, likely due to unexpected answer format. Error info: {e}"
             )
             return 0
 
