@@ -15,6 +15,7 @@ from google.api_core.exceptions import (
     PermissionDenied,
     ResourceExhausted,
     InternalServerError,
+    DeadlineExceeded,
 )
 from googleapiclient.errors import HttpError
 
@@ -238,6 +239,7 @@ class Gemini(BaseModel):
                         if retrieve_attempt > self.REJ_THRESHOLD:
                             response_data = f"API Blocked: {e}"
                     except (ResourceExhausted, InternalServerError) as exc:
+                        # Out of quota error
                         logging.info(f"API exceptions: {exc}...")
                         logging.info(f"Retry {attempt + 1}...")
                         wait_time = min(2**attempt, 32)
@@ -247,6 +249,12 @@ class Gemini(BaseModel):
                             response_data = (
                                 f"API quota exceeded, recheck the results: {exec}"
                             )
+                    except DeadlineExceeded as exc:
+                        # Query takes too long, exceeding the deadline limit
+                        # directly return the timeout message in this case
+                        logging.info(f"API query timeout: {exc}...")
+                        response_data = "API timeout"
+
             else:
                 response_data = (
                     "Exceed the specified max number of images, skip running the model."
