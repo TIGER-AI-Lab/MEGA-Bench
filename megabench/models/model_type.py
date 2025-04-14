@@ -27,6 +27,9 @@ class ModelClass(ModelClassContainer, Enum):
     Phi3v = ("models.phi3v", "Phi3v")
     Grok = ("models.grok", "Grok")
     DeepSeekVL2 = ("models.deepseek_vl2", "DeepSeekVL2")
+    Virgo = ("models.virgo", "Virgo")
+    Llama4 = ("models.llama4", "Llama4")
+    KimiVL = ("models.kimi_vl", "KimiVL")
     GroundTruthOracle = ("models.ground_truth_oracle", "GroundTruthOracle")
 
 @dataclasses.dataclass(frozen=True)
@@ -323,6 +326,27 @@ class ModelType(ModelTypeContainer, Enum):
             max_num_image=16,
             total_demo_video_frames=2,
         ),
+    )
+    LLAMA_4_SCOUT_17B = (
+        "Llama_4_scout_17b",
+        "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "",
+        ModelClass.Llama4,
+        MaxImagesPerApiCallConfig(max_num_image=10, total_demo_video_frames=2),
+    )
+    KIMI_VL_A3B_THINKING = (
+        "KimiVL",
+        "moonshotai/Kimi-VL-A3B-Thinking",
+        "",
+        ModelClass.KimiVL,
+        MaxImagesPerApiCallConfig(max_num_image=16, total_demo_video_frames=2),
+    )
+    KIMI_VL_A3B_INSTRUCT = (
+        "KimiVL",
+        "moonshotai/Kimi-VL-A3B-Instruct",
+        "",
+        ModelClass.KimiVL,
+        MaxImagesPerApiCallConfig(max_num_image=16, total_demo_video_frames=2),
     )
     GROUND_TRUTH_ORACLE_SANITY_CHECK = (
         "Ground-Truth-Oracle_Sanity-Check",
