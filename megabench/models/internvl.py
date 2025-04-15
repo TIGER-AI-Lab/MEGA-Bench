@@ -60,6 +60,7 @@ class InternVL(OpenAI):
             tensor_parallel_size=kwargs.get("ngpus", 1),
             gpu_memory_utilization=kwargs.get("gpu_utils", 0.9)
         )
+        self.patch = kwargs.get("patch", 0)
 
     @staticmethod
     def load_config(file_path):
@@ -112,7 +113,10 @@ class InternVL(OpenAI):
         return query_content, query_images
 
     def _set_patch_strategy(self, images, use_one=False):
-        if len(images) > 8 or use_one:
+        if self.patch:
+            self.llm.llm_engine.model_config.hf_config.use_thumbnail = False
+            self.llm.llm_engine.model_config.hf_config.max_dynamic_patch = self.patch
+        elif len(images) > 8 or use_one:
             self.llm.llm_engine.model_config.hf_config.use_thumbnail = False
             self.llm.llm_engine.model_config.hf_config.max_dynamic_patch = 1
         elif len(images) > 4:
@@ -155,13 +159,23 @@ class InternVL(OpenAI):
                 # Do not update the image patching strategy if in single-image setting
                 # (all tasks will use only one image)
                 self._set_patch_strategy(images)
+                if "InternVL3" in self.model and task_name in [
+                    "painting_QA", "code_translation_hard", 
+                    "counting_multi_image", "character_recognition_in_TV_shows",
+                    "chess_puzzles_equality", "multi_contain_position_only", 
+                    "multi_contain_repeat_position_only_length",
+                    "funqa_unexpected_action_humor_video",
+                ]:
+                    self._set_patch_strategy(images, use_one=True)
                 query_payload = "\n".join(query_payload_list)
                 message = [{"role": "user", "content": query_payload}]
-
                 prompt = self.tokenizer.apply_chat_template(
                     message, tokenize=False, add_generation_prompt=True
                 )
-                stop_tokens = ["<|endoftext|>", "<|im_start|>", "<|im_end|>", "<|end|>"]
+                if "InternVL3" in self.model:
+                    stop_tokens = ["<|endoftext|>", "<|im_start|>", "<|im_end|>", "<|quad_end|>", "<|vision_end|>"]
+                else:
+                    stop_tokens = ["<|endoftext|>", "<|im_start|>", "<|im_end|>", "<|end|>"]
                 stop_token_ids = [
                     self.tokenizer.convert_tokens_to_ids(i) for i in stop_tokens
                 ]

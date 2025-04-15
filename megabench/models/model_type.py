@@ -235,6 +235,34 @@ class ModelType(ModelTypeContainer, Enum):
         ModelClass.InternVL,
         MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
     )
+    INTERNVL3_78B = (
+        "InternVL3-78B",
+        "OpenGVLab/InternVL3-78B",
+        "",
+        ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=24, total_demo_video_frames=2),
+    )
+    INTERNVL3_38B = (
+        "InternVL3-38B",
+        "OpenGVLab/InternVL3-38B",
+        "",
+        ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
+    )
+    INTERNVL3_9B = (
+        "InternVL3-9B",
+        "OpenGVLab/InternVL3-9B",
+        "",
+        ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
+    )
+    INTERNVL3_8B = (
+        "InternVL3-8B",
+        "OpenGVLab/InternVL3-8B",
+        "",
+        ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
+    )
     LLAVA_ONEVISION_72B = (
         "Llava_OneVision_72B",
         "lmms-lab/llava-onevision-qwen2-72b-ov-chat",

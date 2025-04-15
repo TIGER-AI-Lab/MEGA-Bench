@@ -205,9 +205,13 @@ class EvaluationProcessor:
                 "task_folder": task_folder,
                 "results_file": self.data_file if self.save_eval_log_to_file else None,
             }
-            # Only evaluate a single task for fast check
-            if single_task_name and task_name != single_task_name:
-                continue
+            
+            if single_task_name:
+                if isinstance(single_task_name, list):
+                    if task_name not in single_task_name:
+                        continue
+                elif task_name != single_task_name:
+                    continue
 
             eval_type = self._determine_eval_style(task)
             need_eval = self._task_needs_eval(task, eval_type)

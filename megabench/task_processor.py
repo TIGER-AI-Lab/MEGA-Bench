@@ -459,7 +459,7 @@ class TaskProcessor:
         """Process multiple tasks with optional multiprocessing.
         
         Args:
-            single_task_name (str, optional): Process only this task. Defaults to None.
+            single_task_name (str or list, optional): Process only this task or list of tasks. Defaults to None.
             processes (int, optional): Number of processes to use. Defaults to None.
             multiprocess (bool, optional): Use multiprocessing. Defaults to True.
             data (list, optional): Task data to process. Defaults to None.
@@ -468,15 +468,25 @@ class TaskProcessor:
         tasks_to_process = []
 
         if single_task_name:
-            logging.info(f"Processing single task: {single_task_name}")
-            tasks_to_process = [
-                item for item in data if item["task_name"] == single_task_name
-            ]
-            if not tasks_to_process:
-                logging.error(f"Task '{single_task_name}' not found in dataset.")
+            if isinstance(single_task_name, list):
+                tasks_to_process = [
+                    item for item in data if item["task_name"] in single_task_name
+                ]
+                if not tasks_to_process:
+                    logging.error(f"None of the specified tasks found in dataset.")
+            else:
+                tasks_to_process = [
+                    item for item in data if item["task_name"] == single_task_name
+                ]
+                if not tasks_to_process:
+                    logging.error(f"Task '{single_task_name}' not found in dataset.")
         else:
             tasks_to_process = data
-
+        
+        if tasks_to_process:
+            task_names = [item["task_name"] for item in tasks_to_process]
+            logging.info(f"Found {len(tasks_to_process)} tasks to process: {', '.join(task_names)}")
+        
         # Load the model outside of the multiprocessing context if running locally
         # otherwise, load the model inside each task's process to facilitate MP
         if "KEY" in self.model_type.api_key:

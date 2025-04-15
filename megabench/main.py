@@ -41,7 +41,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--task_name",
         type=str,
-        help="Name of the single task folder to process. If not provided, all tasks will be processed.",
+        nargs='+',
+        help="Name of the task(s) to process. If not provided, all tasks will be processed.",
         default=None,
     )
     parser.add_argument(
@@ -96,6 +97,13 @@ if __name__ == "__main__":
         choices=["core", "open", "core_single_image", "open_single_image"],
         default="core",
     )
+    parser.add_argument(
+        "--patch",
+        type=int,
+        default=0,
+        help="Number of image patches for InternVL series models. If 0, use dynamic patch strategy.",
+    )
+    
 
     args = parser.parse_args()
     logger.info(f"Arguments: {args}")
@@ -109,6 +117,8 @@ if __name__ == "__main__":
             additional_args["ngpus"] = args.ngpus
         if args.gpu_utils:
             additional_args["gpu_utils"] = args.gpu_utils
+        if args.patch:
+            additional_args["patch"] = args.patch
 
         output_file_dir = Path(args.output_file).parent
         output_file_dir.mkdir(parents=True, exist_ok=True)
