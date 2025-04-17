@@ -249,6 +249,13 @@ class ModelType(ModelTypeContainer, Enum):
         ModelClass.InternVL,
         MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
     )
+    INTERNVL3_14B = (
+        "InternVL3-14B",
+        "OpenGVLab/InternVL3-14B",
+        "",
+        ModelClass.InternVL,
+        MaxImagesPerApiCallConfig(max_num_image=18, total_demo_video_frames=2),
+    )
     INTERNVL3_9B = (
         "InternVL3-9B",
         "OpenGVLab/InternVL3-9B",

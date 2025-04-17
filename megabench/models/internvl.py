@@ -159,12 +159,20 @@ class InternVL(OpenAI):
                 # Do not update the image patching strategy if in single-image setting
                 # (all tasks will use only one image)
                 self._set_patch_strategy(images)
+                # NOTE: (April 15) It seems the patching strategy of InternVL3 are not well supported by the current vllm version,
+                # which can sometimes lead to the mismatch between visual tokens and the corresponding placeholders.
+                # We haven't found clear error pattern so far, so just manually enforce those tasks to use entire image without patching.
                 if "InternVL3" in self.model and task_name in [
                     "painting_QA", "code_translation_hard", 
                     "counting_multi_image", "character_recognition_in_TV_shows",
                     "chess_puzzles_equality", "multi_contain_position_only", 
                     "multi_contain_repeat_position_only_length",
-                    "funqa_unexpected_action_humor_video",
+                    "funqa_unexpected_action_humor_video", "code_programming_test_advanced",
+                    "clevr_arithmetic", "av_multicamera_tracking_predict_bbox", "code_error_line_identification", 
+                    "code_programming_extremely_hard", "code_add_tag", "rocks_samples_compare", "rocks_samples_identify", 
+                    "code_retrieval", "comic_page_ordering", "code_translation_advanced",
+                    "MMSoc_Misinformation_PolitiFact", "app_layout_understanding_notes", "multi_contain_repeat",
+                    "funqa_unexpected_action_magic_video",
                 ]:
                     self._set_patch_strategy(images, use_one=True)
                 query_payload = "\n".join(query_payload_list)
